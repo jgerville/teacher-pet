@@ -1,4 +1,9 @@
-import { RECEIVE_CLASS, RECEIVE_CLASSES, RECEIVE_CLASS_ERRORS, REMOVE_CLASS } from "../../actions/class_actions";
+import {
+  RECEIVE_CLASS,
+  RECEIVE_CLASSES,
+  RECEIVE_CLASS_ERRORS,
+  REMOVE_CLASS,
+} from "../../actions/class_actions";
 
 const classErrorsReducer = (state = [], action) => {
   Object.freeze(state);
@@ -12,9 +17,9 @@ const classErrorsReducer = (state = [], action) => {
       return [];
     case REMOVE_CLASS:
       return [];
-    default: 
-      return state
+    default:
+      return state;
   }
-}
+};
 
 export default classErrorsReducer;
