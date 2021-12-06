@@ -45,4 +45,19 @@ router.post('/',
   }
 );
 
+router.delete('/', 
+passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    Class.findById(req.body.id)
+      .then(klass => {
+        if (klass) {
+          klass.delete()
+          res.json('Class deleted successfully.')
+        } else {
+          res.status(404).json({ noclassfound: 'No class found with that ID.  Cannot delete.' })
+        }
+      })    
+  }
+)
+
 module.exports = router;
