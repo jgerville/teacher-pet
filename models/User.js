@@ -17,6 +17,9 @@ const UserSchema = new Schema({
   password: {
     type: String,
     required: true
+  },
+  schoolName: {
+    type: String
   }
 }, {
   timestamps: true
