@@ -17,10 +17,21 @@ router.get('/', passport.authenticate('jwt', { session: false }),
 
 router.get('/:id', passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    Class.findById(req.params.id)
-      .then(klass => res.json(klass))
-      .catch(err =>
+    // Class.findById(req.params.id)
+    const classId = (req.params.id)
+    Class.find({ user: req.user.id })
+      .then(klasses => {
+        const klass = klasses.filter(klass => klass.id === classId)[0]
+        if (klass) {
+          res.json(klass)
+        } else {
+          res.status(403).json({ noaccess: 'No class found belogning to the current user with that ID'})
+        }
+      })
+      .catch(err => {
+        console.log('in .catch')
         res.status(404).json({ noclassfound: 'No class found with that ID' })
+      }
       );
   }
 );
