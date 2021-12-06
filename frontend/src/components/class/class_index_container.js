@@ -11,5 +11,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   getClasses: () => dispatch(getClassesForOneTeacher(ownProps.match.params.userId)),
 })
 
-// still need to import withRouter and connect once we have installed them
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)());
