@@ -67,22 +67,6 @@ router.patch('/:id/edit',
         return res.json(klass);
       }
     )
-    // Class.find({ user: req.user.id })
-    //   .then(klasses => {
-    //     const klass = klasses.filter(klass => klass.id === classId)[0]
-    //     if (klass) {
-    //       if (!isValid) {
-    //         return res.status(400).json(errors);
-    //       }
-    //       console.log(req.body)
-    //       console.log(req.params)
-
-    //     } else {
-    //       res.status(403).json({ noaccess: 'No class found belogning to the current user with that ID'})
-    //     }
-    //   // newClass.save().then(klass => res.json(klass));
-    //   }
-    // )
   }
 )
 
