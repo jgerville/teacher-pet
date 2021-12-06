@@ -14,9 +14,9 @@ const receiveClasses = (classes) => ({
   classes,
 });
 
-const removeClass = (klass) => ({
+const removeClass = (classId) => ({
   type: REMOVE_CLASS,
-  klass,
+  classId,
 });
 
 const receiveErrors = (errors) => ({
@@ -37,4 +37,14 @@ export const getClassesForOneTeacher = (userId) => (dispatch) =>
 export const createClass = (klass) => (dispatch) =>
   ClassAPI.createClass(klass)
     .then((newClass) => dispatch(receiveClass(newClass)))
+    .catch((err) => dispatch(receiveErrors(err)));
+
+export const updateClass = (klass) => (dispatch) =>
+  ClassAPI.updateClass(klass)
+    .then((updatedKlass) => dispatch(receiveClass(updatedKlass)))
+    .catch((err) => dispatch(receiveErrors(err)));
+
+export const deleteClass = (classId) => (dispatch) =>
+  ClassAPI.deleteClass(classId)
+    .then(() => dispatch(removeClass(classId)))
     .catch((err) => dispatch(receiveErrors(err)));
