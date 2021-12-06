@@ -16,3 +16,12 @@ export const getClassesByUserId = async (userId) => {
   return response.data;
 }
 
+export const updateClass = async (klass) => {
+  const response = await axios.patch(`api/classes/${klass.id}`, klass);
+  return response.data;
+}
+
+export const deleteClass = async (classId) => {
+  const response = await axios.delete(`api/classes/${classId}`);
+  return response.data;
+}
