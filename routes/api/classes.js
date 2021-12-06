@@ -17,7 +17,6 @@ router.get('/', passport.authenticate('jwt', { session: false }),
 
 router.get('/:id', passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    // Class.findById(req.params.id)
     const classId = (req.params.id)
     Class.find({ user: req.user.id })
       .then(klasses => {
@@ -29,7 +28,6 @@ router.get('/:id', passport.authenticate('jwt', { session: false }),
         }
       })
       .catch(err => {
-        console.log('in .catch')
         res.status(404).json({ noclassfound: 'No class found with that ID' })
       }
       );
@@ -46,8 +44,6 @@ router.post('/',
     }
 
     const note = req.body.note ? req.body.note : ''
-    console.log('id', req.user.id)
-    console.log('_id', req.user._id)
     const newClass = new Class({
       name: req.body.name,
       user: req.user.id,
@@ -58,6 +54,37 @@ router.post('/',
     newClass.save().then(klass => res.json(klass));
   }
 );
+
+router.patch('/:id/edit',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    const { errors, isValid } = validateClassInput(req.body);
+    Class.findByIdAndUpdate(req.params.id,
+      req.body,
+      {new: true, useFindAndModify: false},
+      (err, klass) => {
+        if (err) return res.status(500).send(err);
+        return res.json(klass);
+      }
+    )
+    // Class.find({ user: req.user.id })
+    //   .then(klasses => {
+    //     const klass = klasses.filter(klass => klass.id === classId)[0]
+    //     if (klass) {
+    //       if (!isValid) {
+    //         return res.status(400).json(errors);
+    //       }
+    //       console.log(req.body)
+    //       console.log(req.params)
+
+    //     } else {
+    //       res.status(403).json({ noaccess: 'No class found belogning to the current user with that ID'})
+    //     }
+    //   // newClass.save().then(klass => res.json(klass));
+    //   }
+    // )
+  }
+)
 
 router.delete('/', 
 passport.authenticate('jwt', { session: false }),
