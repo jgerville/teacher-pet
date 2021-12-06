@@ -12,12 +12,12 @@ export const getClassesByUserId = async (userId) => {
 };
 
 export const createClass = async (klass) => {
-  const response = await axios.post("/api/classes", klass);
+  const response = await axios.post("/api/classes", { class: klass });
   return response.data;
 };
 
 export const updateClass = async (klass) => {
-  const response = await axios.patch(`api/classes/${klass.id}`, klass);
+  const response = await axios.patch(`api/classes/${klass.id}`, { class: klass });
   return response.data;
 };
 

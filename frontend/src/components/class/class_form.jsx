@@ -8,7 +8,11 @@ const ClassForm = ({ createClass }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    const klass = {
+      name,
+      subject,
+    }
+    createClass(klass)
   }
 
   return (
