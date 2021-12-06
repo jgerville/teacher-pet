@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const ClassIndex = ({ classes, getClasses }) => {
   useEffect(() => {
     getClasses();
-  }, []);
+  }, [getClasses]);
 
   return (
     <div className="class-index">
