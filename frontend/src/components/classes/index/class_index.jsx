@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import ClassIndexItem from "./class_index_item";
+import { sortAlphabetically } from "../../../util/array_util";
 
 const ClassIndex = ({ classes, getClasses }) => {
   useEffect(() => {
@@ -11,7 +12,7 @@ const ClassIndex = ({ classes, getClasses }) => {
     <div className="class-index">
       {classes ? (
         <ul className="class-list">
-          {classes.map((klass) => (
+          {sortAlphabetically(classes, "name").map((klass) => (
             <li key={klass._id}>
               <ClassIndexItem klass={klass} />
             </li>
