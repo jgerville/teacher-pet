@@ -12,6 +12,7 @@ import Modal from './modal/modal';
 const App = () => (
   <div>
     <Modal />
+    model goes here
     <NavBarContainer />
     <Switch>
       <AuthRoute exact path="/" component={MainPage} />
