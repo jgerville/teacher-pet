@@ -22,7 +22,7 @@ const StudentForm = (props) => {
       {currentTab === "addMany" ? (
         <AddManyForm />
       ) : (
-
+        null
       )}
     </div>
   );
