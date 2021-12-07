@@ -5,17 +5,17 @@ import { Link } from "react-router-dom";
 const ClassIndex = ({ classes, getClasses }) => {
   useEffect(() => {
     getClasses();
-  }, []);
+  }, [getClasses]);
 
   return (
     <div className="class-index">
-      {classes.length > 0 ? (
+      {classes ? (
         <ul className="class-list">
           {classes.map((classObject) => (
-            <li key={classObject.id}>
+            <li key={classObject._id}>
               <Link to="">
                 <span>{classObject.title}</span>
-                <i class="fas fa-chevron-right" />
+                <i className="fas fa-chevron-right" />
               </Link>
             </li>
           ))}
