@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 // import PropTypes from 'prop-types'
-import ClassIndex from "../class/index/class_index";
-import AddClassButton from "../class/add_class_button";
-import ClassFormContainer from "../class/form/class_form_container";
+import ClassIndex from "../classes/index/class_index";
+import AddClassButton from "../classes/add_class_button";
+import ClassFormContainer from "../classes/form/class_form_container";
 
 const ClassPage = (props) => {
   const [isCreatingClass, setIsCreatingClass] = useState(false);
