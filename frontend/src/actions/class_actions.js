@@ -29,8 +29,8 @@ export const getClass = (classId) => (dispatch) =>
     .then((klass) => dispatch(receiveClass(klass)))
     .catch((err) => dispatch(receiveErrors(err)));
 
-export const getClassesForOneTeacher = (userId) => (dispatch) =>
-  ClassAPI.getClassesByUserId(userId)
+export const getClassesForOneTeacher = () => (dispatch) =>
+  ClassAPI.getClassesByUserId()
     .then((classes) => dispatch(receiveClasses(classes)))
     .catch((err) => receiveErrors(err));
 

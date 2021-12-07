@@ -5,9 +5,8 @@ export const showClass = async (classId) => {
   return response.data;
 };
 
-export const getClassesByUserId = async (userId) => {
-  const response = await axios.get(`api/classes/byUser/${userId}`);
-  // the above route will probably be different
+export const getClassesByUserId = async () => {
+  const response = await axios.get(`api/classes`);
   return response.data;
 };
 
@@ -17,7 +16,7 @@ export const createClass = async (klass) => {
 };
 
 export const updateClass = async (klass) => {
-  const response = await axios.patch(`api/classes/${klass.id}`, { class: klass });
+  const response = await axios.patch(`api/classes/${klass.id}/edit`, { class: klass });
   return response.data;
 };
 

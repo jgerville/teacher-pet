@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { createClass } from "../../actions/class_actions";
 
 const AddClassButton = ({ open }) => {
   return (
