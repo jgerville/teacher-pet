@@ -12,6 +12,7 @@ router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
 
 // private auth route
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
+  console.log(res)
   res.json({
     id: req.user.id,
     firstName: req.body.firstName,
