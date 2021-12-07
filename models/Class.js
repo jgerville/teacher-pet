@@ -17,7 +17,7 @@ const ClassSchema = new Schema({
   note: {
     type: String
   },
-  students: {
+  studetnapps: {
     type: Array
   },
   date: {

@@ -30,6 +30,25 @@ router.get('/:id', passport.authenticate('jwt', { session: false }),
       .catch(err => {
         res.status(404).json({ noclassfound: 'No class found with that ID' })
       }
+    );
+  }
+);
+
+router.get('/:id/students', passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    const classId = (req.params.id)
+    Class.find({ user: req.user.id })
+      .then(klasses => {
+        const klass = klasses.filter(klass => klass.id === classId)[0]
+        if (klass) {
+          res.json(klass.students)
+        } else{ 
+          res.status(403).json({ noaccess: 'No class found belonging to the current user with that ID' })
+        }
+      })
+      .catch(err => {
+        res.status(404).json({ noclassfound: 'No class found with that ID' })
+      }
       );
   }
 );
