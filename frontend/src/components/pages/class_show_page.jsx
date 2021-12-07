@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import ClassShowHeader from './class_show_header';
+import ClassShowHeader from '../classes/show/class_show_header';
+import { connect } from 'react-redux';
 
 const ClassShowPage = ({ klass }) => {
   const [isCreatingStudent, setIsCreatingStudent] = useState(false);
@@ -24,4 +25,13 @@ ClassShowPage.propTypes = {
   }).isRequired,
 }
 
-export default ClassShowPage;
+const mapStateToProps = ({ entities: { classes }}, ownProps) => ({
+  klass: classes[ownProps.match.params.classId],
+})
+// the param name above might not be "classId". depends on how route is set up.
+
+// const mapDispatchToProps = (dispatch) => ({
+  
+// })
+
+export default connect(mapStateToProps, null)(ClassShowPage);

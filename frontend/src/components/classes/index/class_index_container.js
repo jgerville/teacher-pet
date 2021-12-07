@@ -1,4 +1,4 @@
-import { getClassesForOneTeacher } from "../../actions/class_actions"
+import { getClassesForOneTeacher } from "../../../actions/class_actions"
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 
