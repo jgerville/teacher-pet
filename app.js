@@ -7,6 +7,14 @@ const classes = require('./routes/api/classes')
 const students = require('./routes/api/students')
 const bodyParser = require('body-parser');
 const passport = require('passport');
+const path = require('path');
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('frontend/build'));
+  app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+  })
+}
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -16,7 +24,6 @@ app.use("/api/students", students);
 app.use(passport.initialize());
 require('./config/passport')(passport);
 
-app.get("/", (req, res) => res.send("Hello World!!!"));
 const db = require('./config/keys').mongoURI;
 
 mongoose
