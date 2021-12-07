@@ -4,6 +4,7 @@ const port = process.env.PORT || 5000;
 const mongoose = require('mongoose');
 const users = require('./routes/api/users')
 const classes = require('./routes/api/classes')
+const students = require('./routes/api/students')
 const bodyParser = require('body-parser');
 const passport = require('passport');
 
@@ -11,6 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use("/api/users", users);
 app.use("/api/classes", classes);
+app.use("/api/students", students);
 app.use(passport.initialize());
 require('./config/passport')(passport);
 

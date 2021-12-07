@@ -24,7 +24,7 @@ router.get('/:id', passport.authenticate('jwt', { session: false }),
         if (klass) {
           res.json(klass)
         } else {
-          res.status(403).json({ noaccess: 'No class found belogning to the current user with that ID'})
+          res.status(403).json({ noaccess: 'No class found belonging to the current user with that ID'})
         }
       })
       .catch(err => {
@@ -38,11 +38,9 @@ router.post('/',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
     const { errors, isValid } = validateClassInput(req.body);
-
     if (!isValid) {
       return res.status(400).json(errors);
     }
-
     const note = req.body.note ? req.body.note : ''
     const newClass = new Class({
       name: req.body.name,

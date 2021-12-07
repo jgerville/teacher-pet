@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const StudentSchema = new Schema({
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'users'
+  },
   firstName: {
     type: String,
     required: true
