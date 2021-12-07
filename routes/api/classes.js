@@ -34,13 +34,16 @@ router.get('/:id', passport.authenticate('jwt', { session: false }),
   }
 );
 
-router.get('/:id/students', passport.authenticate('jwt', { session: false }),
+router.patch('/:id/students', passport.authenticate('jwt', { session: false }),
   (req, res) => {
     const classId = (req.params.id)
     Class.find({ user: req.user.id })
       .then(klasses => {
         const klass = klasses.filter(klass => klass.id === classId)[0]
         if (klass) {
+          const studentId = req.body.studentId 
+          klass.students.push(studentId)
+          klass.save()
           res.json(klass.students)
         } else{ 
           res.status(403).json({ noaccess: 'No class found belonging to the current user with that ID' })

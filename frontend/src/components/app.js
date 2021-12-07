@@ -15,7 +15,7 @@ const App = () => (
     model goes here
     <NavBarContainer />
     <Switch>
-      {/* <AuthRoute exact path="/" component={MainPage} /> */}
+      <AuthRoute exact path="/" component={MainPage} />
       {/* <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} /> */}
     </Switch>

@@ -18,6 +18,9 @@ if (process.env.NODE_ENV === 'production') {
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+app.get("/", (req, res) => res.send("Hello World"));
+
 app.use("/api/users", users);
 app.use("/api/classes", classes);
 app.use("/api/students", students);
