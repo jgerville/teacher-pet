@@ -20,9 +20,15 @@ const App = () => (
     <Switch>
       {/* <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} /> */}
-      <Route path="/classes/:classId" component={ClassShowPage} />
-      <Route path="/classes" component={ClassPage} />
-      <Route exact path="/" component={MainPage} />
+      <Route path="/classes/:classId">
+        <ClassShowPage />
+      </Route>
+      <Route path="/classes">
+        <ClassPage />
+      </Route>
+      <Route exact path="/">
+        <MainPage />
+      </Route>
       <Redirect to="/" />
     </Switch>
   </div>

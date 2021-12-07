@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 // import PropTypes from 'prop-types'
-import ClassIndex from "../classes/index/class_index";
 import AddClassButton from "../classes/add_class_button";
 import ClassFormContainer from "../classes/form/class_form_container";
 import ClassIndexContainer from "../classes/index/class_index_container";

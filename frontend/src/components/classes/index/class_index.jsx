@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import ClassIndexItem from "./class_index_item";
 
 const ClassIndex = ({ classes, getClasses }) => {
   useEffect(() => {
@@ -11,12 +11,9 @@ const ClassIndex = ({ classes, getClasses }) => {
     <div className="class-index">
       {classes ? (
         <ul className="class-list">
-          {classes.map((classObject) => (
-            <li key={classObject._id}>
-              <Link to="">
-                <span>{classObject.title}</span>
-                <i className="fas fa-chevron-right" />
-              </Link>
+          {classes.map((klass) => (
+            <li key={klass._id}>
+              <ClassIndexItem klass={klass} />
             </li>
           ))}
         </ul>
