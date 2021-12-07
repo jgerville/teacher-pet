@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import PropTypes from 'prop-types'
-import AddClassButton from "../classes/add_class_button";
+import AddItemButton from "../reusable/add_item_button";
 import ClassFormContainer from "../classes/form/class_form_container";
 import ClassIndexContainer from "../classes/index/class_index_container";
 
@@ -12,7 +12,7 @@ const ClassPage = (props) => {
 
   return (
     <main className="class-page">
-      <AddClassButton open={openClassCreator} />
+      <AddItemButton open={openClassCreator} itemName="class" />
       <ClassIndexContainer />
       {isCreatingClass ? (
         <ClassFormContainer close={closeClassCreator} />

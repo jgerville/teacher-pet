@@ -4,14 +4,14 @@ import PropTypes from "prop-types";
 const ClassForm = ({ errors, createClass, close }) => {
   const [name, setName] = useState("");
   const [subject, setSubject] = useState("");
-  const [notes, setNotes] = useState("");
+  const [note, setNote] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const klass = {
       name,
       subject,
-      notes,
+      note,
     };
     try {
       await createClass(klass);
@@ -45,10 +45,10 @@ const ClassForm = ({ errors, createClass, close }) => {
         />
         <input
           type="text"
-          id="notes"
-          placeholder="notes"
-          onChange={(e) => setNotes(e.target.value)}
-          value={notes}
+          id="note"
+          placeholder="note"
+          onChange={(e) => setNote(e.target.value)}
+          value={note}
         />
         <button onClick={handleSubmit}>Add Class</button>
       </form>

@@ -5,7 +5,7 @@ const ClassShowHeader = ({ klass }) => (
   <header>
     <h1>{klass.name}</h1>
     <p>Subject: {klass.subject}</p>
-    <p className="notes">{klass.notes}</p>
+    <p className="note">Note: {klass.note}</p>
   </header>
 );
 

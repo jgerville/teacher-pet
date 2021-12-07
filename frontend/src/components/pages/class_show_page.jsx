@@ -4,6 +4,7 @@ import ClassShowHeader from '../classes/show/class_show_header';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { getClass } from '../../actions/class_actions';
+import AddItemButton from '../reusable/add_item_button';
 
 const ClassShowPage = ({ klass, classId, getClass }) => {
   const [isCreatingStudent, setIsCreatingStudent] = useState(false);
@@ -19,7 +20,10 @@ const ClassShowPage = ({ klass, classId, getClass }) => {
   return (
     <main>
       {klass ? (
-        <ClassShowHeader klass={klass} />
+        <>
+          <ClassShowHeader klass={klass} />
+          <AddItemButton open={openStudentForm} itemName="student" />
+        </>
       ) : null}
       
     </main>
@@ -30,7 +34,7 @@ ClassShowPage.propTypes = {
   klass: PropTypes.shape({
     name: PropTypes.string.isRequired,
     subject: PropTypes.string.isRequired,
-    notes: PropTypes.string,
+    note: PropTypes.string,
   }),
   getClass: PropTypes.func.isRequired,
   classId: PropTypes.string.isRequired,
