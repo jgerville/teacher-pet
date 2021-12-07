@@ -15,6 +15,7 @@ class SignupForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearedErrors = false;
+    this.closeModal = this.props.closeModal.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -42,6 +43,7 @@ class SignupForm extends React.Component {
     };
 
     this.props.signup(user, this.props.history);
+    this.closeModal();
   }
 
   renderErrors() {
