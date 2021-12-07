@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { createClass } from "../../actions/class_actions";
+import { createClass } from "../../../actions/class_actions";
 import ClassForm from "./class_form";
 
 const mapStateToProps = ({ errors: { classes } }) => ({
