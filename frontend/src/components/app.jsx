@@ -15,7 +15,6 @@ import ClassShowPage from './pages/class_show_page';
 const App = () => (
   <div>
     <Modal />
-    model goes here
     <NavBarContainer />
     <Switch>
       {/* <AuthRoute exact path="/login" component={LoginFormContainer} />
