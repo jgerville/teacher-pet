@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import ClassShowHeader from './class_show_header';
+import ClassShowHeader from '../class/show/class_show_header';
 
 const ClassShowPage = ({ klass }) => {
   const [isCreatingStudent, setIsCreatingStudent] = useState(false);
