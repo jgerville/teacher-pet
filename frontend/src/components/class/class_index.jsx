@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const ClassIndex = ({ classes, getClasses }) => {
   useEffect(() => {
     getClasses();
-  }, [getClasses]);
+  }, []);
 
   return (
     <div className="class-index">
@@ -13,9 +13,10 @@ const ClassIndex = ({ classes, getClasses }) => {
         <ul className="class-list">
           {classes.map((classObject) => (
             <li key={classObject.id}>
-              <h2>
-                <Link to="">{classObject.title}</Link>
-              </h2>
+              <Link to="">
+                <span>{classObject.title}</span>
+                <i class="fas fa-chevron-right" />
+              </Link>
             </li>
           ))}
         </ul>
