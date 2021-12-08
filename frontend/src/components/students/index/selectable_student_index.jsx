@@ -4,7 +4,7 @@ import ReactLoading from "react-loading";
 import { sortAlphabetically } from '../../../util/array_util';
 import StudentIndexItem from './student_index_item';
 
-const SelectableStudentIndex = ({ students, getStudents }) => {
+const SelectableStudentIndex = ({ students, getStudents, toggle }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -42,8 +42,8 @@ const SelectableStudentIndex = ({ students, getStudents }) => {
       )}
       {notEmpty(students) ? (
         <ul className="student-list">
-          {sortAlphabetically(students, "name").map((student) => (
-            <li key={student._id}>
+          {students.map((student) => (
+            <li key={student._id} onClick={() => toggle(student._id)}>
               <StudentIndexItem student={student} />
             </li>
           ))}
@@ -57,6 +57,7 @@ const SelectableStudentIndex = ({ students, getStudents }) => {
 
 SelectableStudentIndex.propTypes = {
   getStudents: PropTypes.func.isRequired,
+  toggle: PropTypes.func.isRequired,
   students: PropTypes.array,
 }
 

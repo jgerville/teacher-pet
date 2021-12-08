@@ -6,8 +6,8 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { getClass } from "../../actions/class_actions";
 import AddItemButton from "../reusable/add_item_button";
-import StudentForm from "../students/form/new_students/student_form";
 import FilteredStudentIndexContainer from "../students/index/filtered_student_index_container";
+import AddStudentsForm from "../students/form/add_to_class/add_students_form";
 
 const ClassShowPage = ({ klass, classId, getClass }) => {
   const [isAddingStudent, setIsAddingStudent] = useState(false);
@@ -50,7 +50,7 @@ const ClassShowPage = ({ klass, classId, getClass }) => {
         <>
           <ClassShowHeader klass={klass} />
           <AddItemButton open={openStudentForm} itemName="student" />
-          {isAddingStudent && <StudentForm /> }
+          {isAddingStudent && <AddStudentsForm /> }
           <FilteredStudentIndexContainer />
         </>
       ) : null}
