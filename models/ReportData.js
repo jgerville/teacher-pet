@@ -10,21 +10,55 @@ const ReportDataSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'students'
   },
-  genderPronouns: {
-    type: Number,
+  checkboxes: {
+    genderPronouns: {
+      type: Number,
+      required: true
+    },
+    overallScore: {
+      type: Number,
+      required: true
+    },
+    listensAttentively: {
+      type: Boolean
+    },
+    helpsOthers: {
+      type: Boolean
+    },
+    participatesOften: {
+      type: Boolean
+    },
+    asksQuestions: {
+      type: Boolean
+    },
+    oftenAbsent: {
+      type: Boolean
+    },
+    oftenLate: {
+      type: Boolean
+    },
+    distracted: {
+      type: Boolean
+    },
+    rude: {
+      type: Boolean
+    },
+    disruptive: {
+      type: Boolean
+    },
+    homeworkCompletion: {
+      type: Boolean
+    }
+  },
+  categories: {
+    type: Object,
     required: true
   },
-  overallScore: {
-    type: Number,
-    required: true
+  startDate: {
+    type: Date,
+    default: Date.now
   },
-  // behaviorBooleans: {
-  //   type: Object // {listensAttentively: true, helpsOthers: false, oftenAbsent: false}
-  // },
-  // performanceFields :{
-  //   type: Object // {'weekly grammar tests': 4, 'oral reading tests': 3}
-  // },
-  date: {
+  endDate: {
     type: Date,
     default: Date.now
   }
