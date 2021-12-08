@@ -7,6 +7,7 @@ import StudentIndexItem from './student_index_item';
 const SelectableStudentIndex = ({ students, getStudents, toggle }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [selected, setSelected] = useState(false);
 
   useEffect(() => {
     const fetchStudents = async () => {
@@ -27,6 +28,11 @@ const SelectableStudentIndex = ({ students, getStudents, toggle }) => {
     };
   }, [getStudents]);
 
+  const handleClick = (e, studentId) => {
+    toggle(studentId);
+    e.currentTarget.classList.toggle("selected")
+  }
+
   const notEmpty = (array) => array.length > 0;
 
   return (
@@ -43,7 +49,7 @@ const SelectableStudentIndex = ({ students, getStudents, toggle }) => {
       {notEmpty(students) ? (
         <ul className="student-list">
           {students.map((student) => (
-            <li key={student._id} onClick={() => toggle(student._id)}>
+            <li key={student._id} onClick={(e) => handleClick(e, student._id)}>
               <StudentIndexItem student={student} />
             </li>
           ))}
