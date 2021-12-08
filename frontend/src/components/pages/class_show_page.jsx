@@ -50,7 +50,7 @@ const ClassShowPage = ({ klass, classId, getClass }) => {
         <>
           <ClassShowHeader klass={klass} />
           <AddItemButton open={openStudentForm} itemName="student" />
-          {isAddingStudent && <AddStudentsForm /> }
+          {isAddingStudent && <AddStudentsForm klass={klass} /> }
           <FilteredStudentIndexContainer />
         </>
       ) : null}
