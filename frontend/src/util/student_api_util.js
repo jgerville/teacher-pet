@@ -11,9 +11,14 @@ export const showStudent = async (studentId) => {
 };
 
 export const createStudent = async (student) => {
-  const response = await axios.post("api/students", student);
+  const response = await axios.post("api/students", [student]);
   return response.data;
 };
+
+export const createStudents = async (studentsArray) => {
+  const response = await axios.post("api/???", studentsArray);
+  return response.data;
+}
 
 export const editStudent = async (student) => {
   const response = await axios.patch(
