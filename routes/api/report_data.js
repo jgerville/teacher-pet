@@ -42,19 +42,29 @@ router.post('/',
     if (!isValid) {
       return res.status(400).json(errors);
     }
-    const newReportData = new ReportData({
-      user: req.user.id,
-      student: req.body.studentId,
-      genderPronouns: req.body.genderPronouns,
-      overallScore: req.body.overallScore
-    });
+
+    const reportdataObj = {user: req.user.id}
+    Object.keys(req.body).forEach(key => {
+      reportdataObj[key] = req.body[key]
+    })
+
+    console.log(reportdataObj)
+
+    const newReportData = new ReportData(reportdataObj);
+
     const reqBody = req.body
     const reqBodyKeys = Object.keys(req.body)
     const reportContentObj = {}
     reportContentObj['studentId'] = reqBody[reqBodyKeys.shift()]
     reqBodyKeys.forEach(key => {
       let reqBodyValue = reqBody[key]
-      let reportContent = reportDataKeys[key][reqBodyValue]
+      let reportContent 
+      if (reportDataKeys[key] !== 'categories') {
+        reportContent = reportDataKeys[key][reqBodyValue]
+      } else {
+        // get the value from the req body obj categories
+        reportContent = reportDataKeys['category'][reqBodyValue]
+      }
       reportContentObj[key] = reportContent
     })
     newReportData.save().then(reportdata => res.json(reportContentObj));

@@ -31,29 +31,25 @@ const ReportDataSchema = new Schema({
     asksQuestions: {
       type: Boolean
     },
-    oftenAbsent: {
+    goodAttendance: {
       type: Boolean
     },
-    oftenLate: {
+    onTime: {
       type: Boolean
     },
-    distracted: {
+    polite: {
       type: Boolean
     },
-    rude: {
-      type: Boolean
-    },
-    disruptive: {
+    notDisruptive: {
       type: Boolean
     },
     homeworkCompletion: {
       type: Boolean
     },
-  // },
-  // categories: {
-  //   type: Object,
-  //   required: true
-  // },
+  categories: { // categories: [{reactassessment: 1}, {rails assessment: 3}]
+    type: Object,
+    required: true
+  },
   startDate: {
     type: Date,
     default: Date.now
