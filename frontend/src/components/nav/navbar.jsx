@@ -39,7 +39,7 @@ class NavBar extends React.Component {
       <div class="navbar navbar-expand-lg fixed-top">
         <h2 class="nav-header">
           <img id="nav-logo" src={logo} />
-          Teacher's Pet
+          <h3 id="nav-title">Teacher's Pet</h3>
         </h2>
         
         <div >{this.getLinks()}</div>
