@@ -10,7 +10,7 @@ import StudentForm from "../students/form/new_students/student_form";
 import FilteredStudentIndexContainer from "../students/index/filtered_student_index_container";
 
 const ClassShowPage = ({ klass, classId, getClass }) => {
-  const [isCreatingStudent, setIsCreatingStudent] = useState(false);
+  const [isAddingStudent, setIsAddingStudent] = useState(false);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -32,8 +32,8 @@ const ClassShowPage = ({ klass, classId, getClass }) => {
     };
   }, [classId, getClass]);
 
-  const openStudentForm = () => setIsCreatingStudent(true);
-  const closeStudentForm = () => setIsCreatingStudent(false);
+  const openStudentForm = () => setIsAddingStudent(true);
+  const closeStudentForm = () => setIsAddingStudent(false);
 
   return (
     <main className="class-show-page">
@@ -50,7 +50,7 @@ const ClassShowPage = ({ klass, classId, getClass }) => {
         <>
           <ClassShowHeader klass={klass} />
           <AddItemButton open={openStudentForm} itemName="student" />
-          {isCreatingStudent && <StudentForm /> }
+          {isAddingStudent && <StudentForm /> }
           <FilteredStudentIndexContainer />
         </>
       ) : null}
