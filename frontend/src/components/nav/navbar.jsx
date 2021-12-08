@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import logo from '../../images/logo_blue.png'
 import '../../styles/navbar.css'
+import {SocialIcon } from "react-social-icons"
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -26,9 +27,8 @@ class NavBar extends React.Component {
       return (
         <div class="nav-button-container">
           {/* <button class="nav-button" onClick={() => this.props.openModal('signup')}>Sign up</button> */}
+          {/* <SocialIcon className='favicon' url="https://github.com/cjc473" bgColor="#D8D9DB" /> */}
           <button class="nav-button" onClick={() => this.props.openModal('login')}>Sign in</button>
-          {/* <Link to={'/signup'}>Signup</Link>
-          <Link to={'/login'}>Login</Link> */}
         </div>
       );
     }
