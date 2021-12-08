@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-const AddManyForm = ({ createStudents, closeModal }) => {
+const AddManyForm = ({ createStudents, closeModal, students }) => {
   const [inputValue, setInputValue] = useState("");
   const [error, setError] = useState("");
   const errorMessage = "Something went wrong. Please check the list and try again."
@@ -57,6 +57,7 @@ const AddManyForm = ({ createStudents, closeModal }) => {
 };
 
 AddManyForm.propTypes = {
+  students: PropTypes.object.isRequired,
   createStudents: PropTypes.func.isRequired,
   closeModal: PropTypes.func.isRequired,
 };
