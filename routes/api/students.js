@@ -36,21 +36,27 @@ router.get('/:id', passport.authenticate('jwt', { session: false }),
 router.post('/',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    const { errors, isValid } = validateStudentInput(req.body);
-    if (!isValid) {
-      return res.status(400).json(errors);
-    }
-    const note = req.body.note ? req.body.note : ''
-    const newStudent = new Student({
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      user: req.user.id,
-      note
-    });
-
-    newStudent.save()
-      .then(student => res.json(student))
-      .catch(err => res.status(400).send(err))
+    const students = req.body.students
+    students.forEach(student => {
+      let studentNamesArr = student.split(' ')
+      let fname = studentNamesArr[0]
+      let lname = studentNamesArr[1]
+      let nameData = {firstName: fname, lastName: lname}
+      let { errors, isValid } = validateStudentInput(nameData);
+      if (!isValid) {
+        return res.status(400).json(errors);
+      }
+      let note = req.body.note ? req.body.note : ''
+      let newStudent = new Student({
+        firstName: fname,
+        lastName: lname,
+        user: req.user.id,
+        note
+      });
+      newStudent.save()
+        .then(student => res.json(student))
+        .catch(err => res.status(400).send(err))
+    })
   }
 );
 
