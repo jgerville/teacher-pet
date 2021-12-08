@@ -60,9 +60,10 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className="signup-form-container">
+      <div className="session-form">
         <form onSubmit={this.handleSubmit}>
-          <div className="signup-form">
+          <div>
+            <h2>Create an account</h2>
             <br />
             <input type="text"
               value={this.state.firstName}
@@ -94,8 +95,11 @@ class SignupForm extends React.Component {
               placeholder="Confirm Password"
             />
             <br />
-            <input type="submit" value="Submit" />
+            <input className="session-submit" type="submit" value="Submit" />
             {this.renderErrors()}
+          </div>
+          <div className="modal-switch-container">
+            <p>Already have an account?{this.props.otherForm}</p>
           </div>
         </form>
       </div>
