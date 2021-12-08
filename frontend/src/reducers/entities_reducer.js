@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
-import classesReducer from "./entities/classes_reducer";
+import classes from "./entities/classes_reducer";
+import students from "./entities/students_reducer";
 
 const entitiesReducer = combineReducers({
-  classes: classesReducer,
+  classes,
+  students,
 });
 
 export default entitiesReducer;

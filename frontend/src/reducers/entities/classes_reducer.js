@@ -10,10 +10,14 @@ const classesReducer = (state = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_CLASS:
-      nextState[action.klass.id] = action.klass;
+      nextState[action.klass._id] = action.klass;
       return nextState;
     case RECEIVE_CLASSES:
-      return action.classes;
+      const objectForm = {};
+      for (const klass of action.classes) {
+        objectForm[klass._id] = klass;
+      }
+      return objectForm;
     case REMOVE_CLASS:
       delete nextState[action.classId];
       return nextState;

@@ -1,22 +1,48 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import ReactLoading from "react-loading";
+import ClassIndexItem from "./class_index_item";
+import { sortAlphabetically } from "../../../util/array_util";
 
 const ClassIndex = ({ classes, getClasses }) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+
   useEffect(() => {
-    getClasses();
-  }, []);
+    const fetchClasses = async () => {
+      try {
+        setIsLoading(true);
+        setError("");
+        await getClasses();
+        setIsLoading(false);
+      } catch (error) {
+        setIsLoading(false);
+        setError("There was an error finding your classes.");
+      }
+    };
+    fetchClasses();
+    return () => {
+      setError("");
+      setIsLoading(false);
+    };
+  }, [getClasses]);
 
   return (
     <div className="class-index">
-      {classes.length > 0 ? (
+      {error && <p>{error}</p>}
+      {isLoading && (
+        <ReactLoading
+          type={"spinningBubbles"}
+          color={"#808080"}
+          height={50}
+          width={50}
+        />
+      )}
+      {classes ? (
         <ul className="class-list">
-          {classes.map((classObject) => (
-            <li key={classObject.id}>
-              <Link to="">
-                <span>{classObject.title}</span>
-                <i class="fas fa-chevron-right" />
-              </Link>
+          {sortAlphabetically(classes, "name").map((klass) => (
+            <li key={klass._id}>
+              <ClassIndexItem klass={klass} />
             </li>
           ))}
         </ul>
