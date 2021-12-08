@@ -27,6 +27,8 @@ const StudentIndex = ({ students, getStudents, enableLinks }) => {
     };
   }, [getStudents]);
 
+  const notEmpty = (array) => array.length > 0;
+
   return (
     <div className="student-index">
       {error && <p>{error}</p>}
@@ -38,7 +40,7 @@ const StudentIndex = ({ students, getStudents, enableLinks }) => {
           width={50}
         />
       )}
-      {students.length > 0 ? (
+      {notEmpty(students) ? (
         <ul className="student-list">
           {sortAlphabetically(students, "name").map((student) => (
             <li key={student._id}>
