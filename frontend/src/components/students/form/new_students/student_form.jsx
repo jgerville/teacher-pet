@@ -5,11 +5,13 @@ import AddManyForm from "./add_many_form";
 
 const StudentForm = (props) => {
   const [currentTab, setCurrentTab] = useState("addMany");
+
   const switchToMany = () => {
     if (currentTab === "addOne") {
       setCurrentTab("addMany");
     }
   };
+  
   const switchToOne = () => {
     if (currentTab === "addMany") {
       setCurrentTab("addOne");
