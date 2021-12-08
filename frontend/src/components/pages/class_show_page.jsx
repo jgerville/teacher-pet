@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { getClass } from "../../actions/class_actions";
 import AddItemButton from "../reusable/add_item_button";
-import StudentForm from "../students/form/student_form";
+import StudentForm from "../students/form/new_students/student_form";
 
 const ClassShowPage = ({ klass, classId, getClass }) => {
   const [isCreatingStudent, setIsCreatingStudent] = useState(false);
