@@ -21,8 +21,8 @@ router.get('/:id', passport.authenticate('jwt', { session: false }),
     ReportData.find({ user: req.user.id })
       .then(reportdata => {
         const reportdatum = reportdata.filter(reportdatum => reportdatum.id === reportDataId)[0]
-        if (reportdata) {
-          res.json(reportdata)
+        if (reportdatum) {
+          res.json(reportdatum)
         } else {
           res.status(403).json({ noaccess: 'No report data found belonging to the current user with that ID'})
         }
