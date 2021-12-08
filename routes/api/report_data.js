@@ -50,7 +50,6 @@ router.post('/',
 
     // send this up
     const reportContentObj = {}
- 
     
     reqBodyKeys.forEach(key => {
       let reqBodyValue = reqBody[key]

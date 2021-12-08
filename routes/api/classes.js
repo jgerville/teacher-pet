@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 
 const Class = require('../../models/Class');
+const Student = require('../../models/Student')
 const validateClassInput = require('../../validations/classes');
 
 router.get('/', passport.authenticate('jwt', { session: false }), 
@@ -34,6 +35,30 @@ router.get('/:id', passport.authenticate('jwt', { session: false }),
   }
 );
 
+router.get('/:id/students', passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    const classId = (req.params.id)
+    Class.find({ user: req.user.id })
+      .then(klasses => {
+        const klass = klasses.filter(klass => klass.id === classId)[0]
+        if (klass) {
+          let studentsArr = []
+          klass.students.forEach(student => {
+            studentObj = Student.find(student)
+            studentsArr.push(studentObj)
+          })
+          res.json(studentsArr)
+        } else{ 
+          res.status(403).json({ noaccess: 'No class found belonging to the current user with that ID' })
+        }
+      })
+      .catch(err => {
+        res.status(404).json({ noclassfound: 'No class found with that ID' })
+      }
+      );
+  }
+);
+
 router.patch('/:id/students', passport.authenticate('jwt', { session: false }),
   (req, res) => {
     const classId = (req.params.id)
@@ -41,8 +66,13 @@ router.patch('/:id/students', passport.authenticate('jwt', { session: false }),
       .then(klasses => {
         const klass = klasses.filter(klass => klass.id === classId)[0]
         if (klass) {
-          const studentId = req.body.studentId 
-          klass.students.push(studentId)
+          const studentIds = req.body.studentIds
+          studentIds.forEach(studentId => {
+            klass.students.push(studentId)
+            let student = Student.find(studentId)
+            // .then????
+            student.classes.push(klass.id)
+          })
           klass.save()
           res.json(klass.students)
         } else{ 
@@ -55,7 +85,6 @@ router.patch('/:id/students', passport.authenticate('jwt', { session: false }),
       );
   }
 );
-
 
 router.delete('/:id/students', passport.authenticate('jwt', { session: false }),
   (req, res) => {

@@ -2,13 +2,15 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 5000;
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const passport = require('passport');
+const path = require('path');
+
 const users = require('./routes/api/users')
 const classes = require('./routes/api/classes')
 const students = require('./routes/api/students')
 const reportdata = require('./routes/api/report_data')
-const bodyParser = require('body-parser');
-const passport = require('passport');
-const path = require('path');
+const reports = require('./routes/api/report')
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('frontend/build'));
@@ -26,6 +28,7 @@ app.use("/api/users", users);
 app.use("/api/classes", classes);
 app.use("/api/students", students);
 app.use("/api/reportdata", reportdata)
+app.use("/api/reports", reports)
 app.use(passport.initialize());
 require('./config/passport')(passport);
 

@@ -5,6 +5,8 @@ const passport = require('passport');
 
 const Student = require('../../models/Student');
 const validateStudentInput = require('../../validations/students');
+const Report = require('../../models/Report');
+const validateReportInput = require('../../validations/reports');
 
 router.get('/', passport.authenticate('jwt', { session: false }), 
   (req, res) => {
@@ -32,6 +34,8 @@ router.get('/:id', passport.authenticate('jwt', { session: false }),
       );
   }
 );
+
+// router.get('/:id/reports')
 
 router.post('/',
   passport.authenticate('jwt', { session: false }),
@@ -88,5 +92,39 @@ passport.authenticate('jwt', { session: false }),
     })  
   }
 )
+
+router.patch('/:id/reports', passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    const studentId = (req.params.id)
+    Student.find({ user: req.user.id })
+      .then(students => {
+        const student = students.filter(student => student.id === studentId)[0]
+        if (student) {
+          const { errors, isValid } = validateReportInput(req.body);
+          if (!isValid) {
+            return res.status(400).json(errors);
+          }
+          const newReport = new Report({
+            user: req.user.id,
+            student: studentId,
+            body: req.body.body
+          });
+          newReport.save()
+            .then(report => {
+              student.reports.push(report._id)
+              student.save()
+              res.json(report)
+            })
+            .catch(err => res.status(400).json(err))
+        } else{ 
+          res.status(403).json({ noaccess: 'No class found belonging to the current user with that ID' })
+        }
+      })
+      .catch(err => {
+        res.status(404).json({ noclassfound: 'No class found with that ID' })
+      }
+      );
+  }
+);
 
 module.exports = router;
