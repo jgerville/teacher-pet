@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import ClassIndex from "./class_index";
 
 const mapStateToProps = ({ entities: { classes } }, ownProps) => ({
-  classes: Object.keys(classes).map(id => classes[id]),
+  classes: Object.values(classes),
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

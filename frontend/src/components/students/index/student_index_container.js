@@ -3,7 +3,7 @@ import { getStudentsByUser } from "../../../actions/student_actions";
 import StudentIndex from "./student_index"
 
 const mapStateToProps = ({ entities: { students }}) => ({
-  students: Object.keys(students).map(id => students[id]),
+  students: Object.values(students),
 })
 
 const mapDispatchToProps = dispatch => ({
