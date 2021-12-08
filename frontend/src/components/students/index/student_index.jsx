@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import ReactLoading from "react-loading";
 import { sortAlphabetically } from "../../../util/array_util";
 import StudentIndexItem from "./student_index_item";
 
-const StudentIndex = ({ students, getStudents }) => {
+const StudentIndex = ({ students, getStudents, enableLinks }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -38,22 +38,25 @@ const StudentIndex = ({ students, getStudents }) => {
           width={50}
         />
       )}
-      {students ? (
+      {students.length > 0 ? (
         <ul className="student-list">
           {sortAlphabetically(students, "name").map((student) => (
             <li key={student._id}>
-              <StudentIndexItem student={student} />
+              <StudentIndexItem student={student} enableLinks={enableLinks} />
             </li>
           ))}
         </ul>
-      ) : null}
+      ) : (
+        <p>Looks like you don't have any students added yet.</p>
+      )}
     </div>
   );
 };
 
 StudentIndex.propTypes = {
-  students: PropTypes.object,
   getStudents: PropTypes.func.isRequired,
+  students: PropTypes.array,
+  enableLinks: PropTypes.bool,
 };
 
 export default StudentIndex;
