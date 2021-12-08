@@ -75,8 +75,6 @@ router.post('/',
       }
     })
 
-    console.log(reportdataObj)
-
     const newReportData = new ReportData(reportdataObj);
 
     newReportData.save().then(reportdata => res.json(reportContentObj));
