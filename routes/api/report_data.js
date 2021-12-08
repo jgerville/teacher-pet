@@ -44,29 +44,41 @@ router.post('/',
     }
 
     const reportdataObj = {user: req.user.id}
-    Object.keys(req.body).forEach(key => {
-      reportdataObj[key] = req.body[key]
+
+    const reqBody = req.body
+    const reqBodyKeys = Object.keys(req.body)
+
+    // send this up
+    const reportContentObj = {}
+ 
+    
+    reqBodyKeys.forEach(key => {
+      let reqBodyValue = reqBody[key]
+      let reportContent
+
+      if (key !== 'categories' && key !== 'studentId') {
+        reportContent = reportDataKeys[key][reqBodyValue]
+        reportdataObj[key] = req.body[key]
+        reportContentObj[key] = reportContent
+      } else if (key === 'studentId') {
+        reportdataObj[key] = req.body[key]
+        reportContentObj['studentId'] = reqBody['studentId']
+      } else {
+        // set k-v pair to the object to save to db
+        reportdataObj[key] = req.body[key]
+
+        // loop over categories value array to get indiv k-v pairs
+        reqBody[key].forEach(category => {
+          let categoryName = Object.keys(category)[0];
+          reportContentObj[categoryName] = reqBody[key][categoryName];
+        })
+      }
     })
 
     console.log(reportdataObj)
 
     const newReportData = new ReportData(reportdataObj);
 
-    const reqBody = req.body
-    const reqBodyKeys = Object.keys(req.body)
-    const reportContentObj = {}
-    reportContentObj['studentId'] = reqBody[reqBodyKeys.shift()]
-    reqBodyKeys.forEach(key => {
-      let reqBodyValue = reqBody[key]
-      let reportContent 
-      if (reportDataKeys[key] !== 'categories') {
-        reportContent = reportDataKeys[key][reqBodyValue]
-      } else {
-        // get the value from the req body obj categories
-        reportContent = reportDataKeys['category'][reqBodyValue]
-      }
-      reportContentObj[key] = reportContent
-    })
     newReportData.save().then(reportdata => res.json(reportContentObj));
   }
 );
