@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const users = require('./routes/api/users')
 const classes = require('./routes/api/classes')
 const students = require('./routes/api/students')
+const reportdata = require('./routes/api/report_data')
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const path = require('path');
@@ -24,6 +25,7 @@ app.get("/", (req, res) => res.send("Hello World"));
 app.use("/api/users", users);
 app.use("/api/classes", classes);
 app.use("/api/students", students);
+app.use("/api/reportdata", reportdata)
 app.use(passport.initialize());
 require('./config/passport')(passport);
 
