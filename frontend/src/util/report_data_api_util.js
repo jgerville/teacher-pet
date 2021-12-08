@@ -1,26 +1,26 @@
 import axios from "axios";
 
-export const showEvaluation = async (reportId) => {
-  const response = await axios.get(`api/reports/${reportId}`);
+export const showReportData = async (reportDataId) => {
+  const response = await axios.get(`api/reportData/${reportDataId}`);
   return response.data;
 };
 
-export const getAllEvaluations = async () => {
-  const response = await axios.get('api/reports');
+export const getAllReportsData = async () => {
+  const response = await axios.get('api/reportData');
   return response.data;
 };
 
-export const createEvaluation = async (report) => {
-  const response = await axios.post("/api/reports", report);
+export const createReportData = async (reportData) => {
+  const response = await axios.post("/api/reportData", reportData);
   return response.data;
 };
 
-export const updateEvaluation = async (report) => {
-  const response = await axios.patch(`api/reports/${report._id}/edit`, report); 
+export const updateReportData = async (reportData) => {
+  const response = await axios.patch(`api/reportData/${reportData._id}/edit`, reportData); 
   return response.data;
 };
 
-export const deleteEvaluation = async (reportId) => {
-  const response = await axios.delete(`api/reports/${reportId}`);
+export const deleteReportData = async (reportDataId) => {
+  const response = await axios.delete(`api/reportData/${reportDataId}`);
   return response.data;
 };
