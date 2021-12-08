@@ -1,11 +1,12 @@
 .splash {
   position: relative;
+  overflow: hidden;
   background-image: url('../images/background2.jpeg');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
   height: 100vw;
-  width: 100vw;
+  /* width: 100vw; */
 }
 
 .splash::before {

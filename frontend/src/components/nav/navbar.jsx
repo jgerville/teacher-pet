@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import logo from '../../images/logo_blue.png'
 import '../../styles/navbar.css'
 
 class NavBar extends React.Component {
@@ -36,7 +37,11 @@ class NavBar extends React.Component {
   render() {
     return (
       <div class="navbar navbar-expand-lg fixed-top">
-        <h2 class="nav-header">Teacher's Pet</h2>
+        <h2 class="nav-header">
+          <img id="nav-logo" src={logo} />
+          Teacher's Pet
+        </h2>
+        
         <div >{this.getLinks()}</div>
       </div>
     );

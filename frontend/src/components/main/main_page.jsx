@@ -14,6 +14,7 @@ class MainPage extends React.Component {
               <div>
                 <button class="nav-button" id="splash-signup" onClick={() => this.props.openModal('signup')}>Create Account</button>
               </div>
+
             </div>
           </header>
         </div>

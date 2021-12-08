@@ -1,18 +1,26 @@
 .navbar {
   background-color: #FFE652;
+  /* background-color: #009DAE; */
   display: flex;
   justify-content: space-between;
 }
 
 .nav-header {
+  position: relative;
   color: #009DAE;
   margin: 0 2rem;
 }
 
+#nav-logo {
+  max-width: 1.4em;
+  background-size: cover;
+  background-position: center;
+}
+
 .nav-button {
   margin: 0 1rem 0 0;
-  background-color: #009DAE;
-  color: white;
+  background-color: #FFE652;
+  color: #009DAE;
   border: none;
   border-radius: 5px;
 }
@@ -20,3 +28,9 @@
 .nav-button-container {
   margin: 0 1rem 0 0;
 }
+
+.navbar-brand > * {
+  display: inline-block;
+}
+
+
