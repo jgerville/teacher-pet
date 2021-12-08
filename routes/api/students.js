@@ -36,7 +36,8 @@ router.get('/:id', passport.authenticate('jwt', { session: false }),
 router.post('/',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    const students = req.body.students
+    const students = req.body.student ? [req.body.student] : req.body.students
+    // const students = req.body.students
     students.forEach(student => {
       let studentNamesArr = student.split(' ')
       let fname = studentNamesArr[0]

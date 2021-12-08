@@ -10,7 +10,7 @@ const ReportDataSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'students'
   },
-  checkboxes: {
+  // checkboxes: {
     genderPronouns: {
       type: Number,
       required: true
@@ -48,12 +48,12 @@ const ReportDataSchema = new Schema({
     },
     homeworkCompletion: {
       type: Boolean
-    }
-  },
-  categories: {
-    type: Object,
-    required: true
-  },
+    },
+  // },
+  // categories: {
+  //   type: Object,
+  //   required: true
+  // },
   startDate: {
     type: Date,
     default: Date.now

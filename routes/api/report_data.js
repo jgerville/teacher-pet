@@ -5,6 +5,7 @@ const passport = require('passport');
 
 const ReportData = require('../../models/ReportData');
 const validateReportDataInput = require('../../validations/report_data');
+const reportDataKeys = require('../../util/report_data_keys')
 
 router.get('/', passport.authenticate('jwt', { session: false }), 
   (req, res) => {
@@ -48,6 +49,17 @@ router.post('/',
       overallScore: req.body.overallScore
     });
     newReportData.save().then(reportdata => res.json(reportdata));
+    // console.log(req.body) // {studentId: '...', genderPronouns: '1', overallScore: '5'}
+    // const reqBody = req.body
+    // console.log(reqBody)
+    // const reqBodyKeys = req.body.keys
+    // const reportContentArr = []
+    // reqBodyKeys.forEach(key => {
+    //   let reqBodyKey = reqBody[key]
+    //   let reportContent = reportDataKeys[key][reqBodyKey]
+    //   reportContentArr.push(reportContent)
+    // })
+    // console.log(reportContentArr)
   }
 );
 
