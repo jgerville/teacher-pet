@@ -1,26 +1,25 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-class SignupForm extends React.Component {
+class LoginForm extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      firstName: '',
-      lastName: '',
       email: '',
       password: '',
-      password2: '',
       errors: {}
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.clearedErrors = false;
+    this.loginDemoUser = this.loginDemoUser.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
     this.closeModal = this.props.closeModal.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.signedIn === true) {
-      this.props.history.push('/login');
+    if (nextProps.currentUser === true) {
+      this.props.history.push('/'); //need to update to class list
     }
 
     this.setState({ errors: nextProps.errors })
@@ -32,17 +31,27 @@ class SignupForm extends React.Component {
     });
   }
 
+  // switchModal(e) {
+  //   e.preventDefault();
+  //   this.closeModal();
+  // }
+
   handleSubmit(e) {
     e.preventDefault();
+
     let user = {
-      firstName: this.state.firstName,
-      lastName: this.state.lastName,
       email: this.state.email,
-      password: this.state.password,
-      password2: this.state.password2
+      password: this.state.password
     };
 
-    this.props.signup(user, this.props.history);
+    this.props.login(user);
+    this.closeModal();
+  }
+
+  loginDemoUser(e) {
+    e.preventDefault();
+    const demoUser = { email: "chris@chris.com", password: "password123" }
+    this.props.login(demoUser);
     this.closeModal();
   }
 
@@ -60,22 +69,10 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className="signup-form-container">
+      <div className="session-form">
         <form onSubmit={this.handleSubmit}>
-          <div className="signup-form">
-            <br />
-            <input type="text"
-              value={this.state.firstName}
-              onChange={this.update('firstName')}
-              placeholder="First Name"
-            />
-            <br />
-            <input type="text"
-              value={this.state.lastName}
-              onChange={this.update('lastName')}
-              placeholder="Last Name"
-            />
-            <br />
+          <div>
+            <h2>Please sign in</h2>
             <input type="text"
               value={this.state.email}
               onChange={this.update('email')}
@@ -88,19 +85,24 @@ class SignupForm extends React.Component {
               placeholder="Password"
             />
             <br />
-            <input type="password"
-              value={this.state.password2}
-              onChange={this.update('password2')}
-              placeholder="Confirm Password"
-            />
             <br />
-            <input type="submit" value="Submit" />
+            <input className="session-submit" type="submit" value="Submit" />
             {this.renderErrors()}
           </div>
         </form>
+
+        <form onSubmit={this.loginDemoUser}>
+          {this.renderErrors()}
+          <div className="session-form">
+            <input className="session-submit" type="submit" value="Demo Login" />
+          </div>
+        </form>
+        <div className="modal-switch-container">
+          <p>New to Teacher's Pet?{this.props.otherForm}</p>
+        </div>
       </div>
     );
   }
 }
 
-export default withRouter(SignupForm);
+export default withRouter(LoginForm);

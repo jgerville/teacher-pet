@@ -14,8 +14,8 @@ const mapStateToProps = ({errors}) => ({
 const mapDispatchToProps = (dispatch) => ({
   login: user => dispatch(login(user)),
   otherForm: (
-    <button onClick={() => dispatch(openModal('signup'))}>
-      Signup
+    <button className="modal-switch" onClick={() => dispatch(openModal('signup'))}>
+      Create an account.
     </button>
   ),
   closeModal: () => dispatch(closeModal())
