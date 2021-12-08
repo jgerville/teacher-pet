@@ -42,7 +42,7 @@ const StudentIndex = ({ students, getStudents, enableLinks }) => {
       )}
       {notEmpty(students) ? (
         <ul className="student-list">
-          {sortAlphabetically(students, "name").map((student) => (
+          {sortAlphabetically(students, "lastName").map((student) => (
             <li key={student._id}>
               <StudentIndexItem student={student} enableLinks={enableLinks} />
             </li>

@@ -39,17 +39,17 @@ export const createStudent = (student) => (dispatch) =>
     .then((student) => dispatch(receiveStudent(student)))
     .catch((err) => dispatch(receiveErrors(err)));
 
-export const createStudents = (studentsArray) => dispatch =>
+export const createStudents = (studentsArray) => (dispatch) =>
   StudentAPI.createStudents(studentsArray)
     .then((students) => dispatch(receiveStudents(students)))
     .catch((err) => dispatch(receiveErrors(err)));
 
-export const editStudent = (student) => dispatch =>
+export const editStudent = (student) => (dispatch) =>
   StudentAPI.editStudent(student)
     .then((student) => dispatch(receiveStudent(student)))
     .catch((err) => dispatch(receiveErrors(err)));
 
-export const deleteStudent = studentId => dispatch =>
+export const deleteStudent = (studentId) => (dispatch) =>
   StudentAPI.deleteStudent(studentId)
     .then(() => dispatch(removeStudent(studentId)))
     .catch((err) => dispatch(receiveErrors(err)));

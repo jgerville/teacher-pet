@@ -8,7 +8,7 @@ const mapStateToProps = ({ entities: { students }}) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  createStudents: () => dispatch(createStudents()),
+  createStudents: (studentsArray) => dispatch(createStudents(studentsArray)),
   closeModal: () => dispatch(closeModal()),
 })
 
