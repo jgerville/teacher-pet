@@ -5,7 +5,7 @@ const reportDataKeys = {
       3: 'They/Them/Theirs' //how to interpolate gender pronouns in review, an array, obj for subj, obj, poss?
     },
     overallScore: {
-      1: 'Inadequate',
+      1: 'this person has performed horribly',
       2: 'Poor',
       3: 'Fine',
       4: 'Good',

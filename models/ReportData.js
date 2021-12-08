@@ -46,10 +46,9 @@ const ReportDataSchema = new Schema({
     homeworkCompletion: {
       type: Boolean
     },
-  categories: { // { categories: [{reactassessment: 1}, {rails assessment: 3}] }
-    type: Object,
-    // required: true
-  },
+    categories: { // { categories: [{banana: 1}, {rails assessment: 3}] }
+      type: Object,
+    },
   startDate: {
     type: Date,
     default: Date.now
