@@ -1,0 +1,67 @@
+.splash {
+  position: relative;
+  background-image: url('../images/background2.jpeg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  height: 100vw;
+  width: 100vw;
+}
+
+.splash::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(90, 90, 90, 0.78);
+  z-index: 1;
+}
+
+.overlay {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  justify-content: center;
+  margin: 0 3em;
+  transform: translate(0.1em, -1em);
+  /* align-items: center; */
+  min-height: 100%;
+  min-width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  font-size: 48px;
+  font-weight: 700;
+  color: #FFE652;
+}
+
+#splash-welcome {
+  font-size: larger;
+}
+
+#splash-desc {
+  font-size: 0.7em;
+  color: white;
+}
+
+#splash-signup {
+  color: white;
+  mix-blend-mode: multiply;
+  font-size: 0.7em;
+  padding: 0.2em 1.2em;
+}
+
+  /* background-color: #000;
+  color: #fff;
+  mix-blend-mode: multiply;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 16px;
+  border-radius: 8px;
+  font-family: arial;
+  font-size: 3em;
+  margin: 0;
+  opacity: 0.9;
+  box-shadow: 0 0 16px #000, 0 0 32px #000; */

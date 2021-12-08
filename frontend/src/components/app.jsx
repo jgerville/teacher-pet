@@ -4,7 +4,7 @@ import { Redirect } from "react-router";
 import { Route, Switch } from 'react-router-dom';
 import NavBarContainer from './nav/navbar_container';
 
-import MainPage from './main/main_page';
+import MainPageContainer from './main/main_page_container';
 import Modal from './modal/modal';
 import ClassPage from './pages/class_page';
 import ClassShowPage from './pages/class_show_page';
@@ -21,7 +21,7 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignupFormContainer} /> */}
       <Route path="/classes/:classId" component={ClassShowPage} />
       <Route path="/classes" component={ClassPage} />
-      <Route exact path="/" component={MainPage} />
+      <Route exact path="/" component={MainPageContainer} />
       <Redirect to="/" />
     </Switch>
   </div>

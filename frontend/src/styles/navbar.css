@@ -1,15 +1,20 @@
 .navbar {
-  background-color: #FC997C;
+  background-color: #FFE652;
   display: flex;
   justify-content: space-between;
 }
 
 .nav-header {
+  color: #009DAE;
   margin: 0 2rem;
 }
 
 .nav-button {
   margin: 0 1rem 0 0;
+  background-color: #009DAE;
+  color: white;
+  border: none;
+  border-radius: 5px;
 }
 
 .nav-button-container {
