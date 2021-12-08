@@ -29,11 +29,27 @@ export const getStudentsByUser = () => (dispatch) =>
     .then((students) => dispatch(receiveStudents(students)))
     .catch((err) => dispatch(receiveErrors(err)));
 
-export const getStudent = (studentId) => dispatch =>
+export const getStudent = (studentId) => (dispatch) =>
   StudentAPI.showStudent(studentId)
     .then((student) => dispatch(receiveStudent(student)))
     .catch((err) => dispatch(receiveErrors(err)));
 
-export const createStudent = (student) => dispatch =>
+export const createStudent = (student) => (dispatch) =>
   StudentAPI.createStudent(student)
     .then((student) => dispatch(receiveStudent(student)))
+    .catch((err) => dispatch(receiveErrors(err)));
+
+export const createStudents = (studentsArray) => dispatch =>
+  StudentAPI.createStudents(studentsArray)
+    .then((students) => dispatch(receiveStudents(students)))
+    .catch((err) => dispatch(receiveErrors(err)));
+
+export const editStudent = (student) => dispatch =>
+  StudentAPI.editStudent(student)
+    .then((student) => dispatch(receiveStudent(student)))
+    .catch((err) => dispatch(receiveErrors(err)));
+
+export const deleteStudent = studentId => dispatch =>
+  StudentAPI.deleteStudent(studentId)
+    .then(() => dispatch(removeStudent(studentId)))
+    .catch((err) => dispatch(receiveErrors(err)));
