@@ -7,6 +7,7 @@ import { sortAlphabetically } from "../../../util/array_util";
 const ClassIndex = ({ classes, getClasses }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  console.log(classes)
 
   useEffect(() => {
     const fetchClasses = async () => {

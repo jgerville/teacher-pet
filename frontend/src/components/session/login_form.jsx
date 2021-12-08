@@ -19,7 +19,7 @@ class LoginForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser === true) {
-      this.props.history.push('/'); //need to update to class list
+      this.props.history.push('/classes'); //need to update to class list
     }
 
     this.setState({ errors: nextProps.errors })
@@ -44,15 +44,19 @@ class LoginForm extends React.Component {
       password: this.state.password
     };
 
-    this.props.login(user);
-    this.closeModal();
+    this.props.login(user).then(() => {
+      this.closeModal();
+      this.props.history.push("/classes")
+    })
   }
 
   loginDemoUser(e) {
     e.preventDefault();
     const demoUser = { email: "chris@chris.com", password: "password123" }
-    this.props.login(demoUser);
-    this.closeModal();
+    this.props.login(demoUser).then(() => {
+      this.closeModal();
+      this.props.history.push("/classes")
+    })
   }
 
   renderErrors() {
