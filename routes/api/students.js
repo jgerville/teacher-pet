@@ -38,6 +38,7 @@ router.post('/',
   (req, res) => {
     const students = req.body.student ? [req.body.student] : req.body.students
     // const students = req.body.students
+    let studentsArrRes = []
     students.forEach(student => {
       let studentNamesArr = student.split(' ')
       let fname = studentNamesArr[0]
@@ -55,9 +56,11 @@ router.post('/',
         note
       });
       newStudent.save()
-        .then(student => res.json(student))
+        .then(student => studentsArrRes.push(student))
         .catch(err => res.status(400).send(err))
     })
+
+    res.json(studentsArrRes)
   }
 );
 
