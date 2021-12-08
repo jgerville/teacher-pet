@@ -7,12 +7,12 @@ const StudentIndexItem = ({ student, enableLinks }) => {
     <div className="student-index-item">
       {enableLinks ? (
         <Link to={`/????_student_show_page??????`}>
-          <span>{student.firstName}</span>
+          <span>{student.firstName} </span>
           <span>{student.lastName}</span>
         </Link>
       ) : (
         <>
-          <span>{student.firstName}</span>
+          <span>{student.firstName} </span>
           <span>{student.lastName}</span>
         </>
       )}

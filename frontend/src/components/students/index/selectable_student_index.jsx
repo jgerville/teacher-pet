@@ -56,7 +56,8 @@ const SelectableStudentIndex = ({ students, getStudents }) => {
 }
 
 SelectableStudentIndex.propTypes = {
-
+  getStudents: PropTypes.func.isRequired,
+  students: PropTypes.array,
 }
 
 export default SelectableStudentIndex
