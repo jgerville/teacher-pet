@@ -12,6 +12,7 @@ class LoginForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.loginDemoUser = this.loginDemoUser.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.closeModal = this.props.closeModal.bind(this);
   }
@@ -30,6 +31,11 @@ class LoginForm extends React.Component {
     });
   }
 
+  // switchModal(e) {
+  //   e.preventDefault();
+  //   this.closeModal();
+  // }
+
   handleSubmit(e) {
     e.preventDefault();
 
@@ -39,6 +45,13 @@ class LoginForm extends React.Component {
     };
 
     this.props.login(user);
+    this.closeModal();
+  }
+
+  loginDemoUser(e) {
+    e.preventDefault();
+    const demoUser = { email: "chris@chris.com", password: "password123" }
+    this.props.login(demoUser);
     this.closeModal();
   }
 
@@ -56,9 +69,10 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="session-form">
         <form onSubmit={this.handleSubmit}>
           <div>
+            <h2>Please sign in</h2>
             <input type="text"
               value={this.state.email}
               onChange={this.update('email')}
@@ -71,10 +85,21 @@ class LoginForm extends React.Component {
               placeholder="Password"
             />
             <br />
-            <input type="submit" value="Submit" />
+            <br />
+            <input className="session-submit" type="submit" value="Submit" />
             {this.renderErrors()}
           </div>
         </form>
+
+        <form onSubmit={this.loginDemoUser}>
+          {this.renderErrors()}
+          <div className="session-form">
+            <input className="session-submit" type="submit" value="Demo Login" />
+          </div>
+        </form>
+        <div className="modal-switch-container">
+          <p>New to Teacher's Pet?{this.props.otherForm}</p>
+        </div>
       </div>
     );
   }
