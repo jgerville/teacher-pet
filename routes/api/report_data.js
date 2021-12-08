@@ -48,18 +48,16 @@ router.post('/',
       genderPronouns: req.body.genderPronouns,
       overallScore: req.body.overallScore
     });
-    newReportData.save().then(reportdata => res.json(reportdata));
-    // console.log(req.body) // {studentId: '...', genderPronouns: '1', overallScore: '5'}
-    // const reqBody = req.body
-    // console.log(reqBody)
-    // const reqBodyKeys = req.body.keys
-    // const reportContentArr = []
-    // reqBodyKeys.forEach(key => {
-    //   let reqBodyKey = reqBody[key]
-    //   let reportContent = reportDataKeys[key][reqBodyKey]
-    //   reportContentArr.push(reportContent)
-    // })
-    // console.log(reportContentArr)
+    const reqBody = req.body
+    const reqBodyKeys = Object.keys(req.body)
+    const reportContentObj = {}
+    reportContentObj['studentId'] = reqBody[reqBodyKeys.shift()]
+    reqBodyKeys.forEach(key => {
+      let reqBodyValue = reqBody[key]
+      let reportContent = reportDataKeys[key][reqBodyValue]
+      reportContentObj[key] = reportContent
+    })
+    newReportData.save().then(reportdata => res.json(reportContentObj));
   }
 );
 
