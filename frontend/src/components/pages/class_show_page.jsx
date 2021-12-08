@@ -36,7 +36,7 @@ const ClassShowPage = ({ klass, classId, getClass }) => {
   const closeStudentForm = () => setIsCreatingStudent(false);
 
   return (
-    <main>
+    <main className="class-show-page">
       {error && <p>{error}</p>}
       {isLoading && (
         <ReactLoading
