@@ -8,6 +8,7 @@ class LoginForm extends React.Component {
     this.state = {
       email: '',
       password: '',
+      disabled: "disabled",
       errors: {}
     };
 
@@ -26,9 +27,19 @@ class LoginForm extends React.Component {
   }
 
   update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
+    return e => {
+      this.setState({[field]: e.currentTarget.value}, () => {
+        if (this.state.email && this.state.password) {
+          this.setState({
+            disabled: "",
+          })
+        } else {
+          this.setState({
+            disabled: "disabled",
+          })
+        }
+      })
+    }
   }
 
   // switchModal(e) {
@@ -96,7 +107,7 @@ class LoginForm extends React.Component {
             <br />
             <br />
             {this.renderErrors()}
-            <input className="session-submit" type="submit" value="Submit" />
+            <input className={`session-submit btn ${this.state.disabled}`} type="submit" value="Submit" />
 
           </div>
         </form>
