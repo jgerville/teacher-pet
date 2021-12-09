@@ -32,6 +32,22 @@ class SignupForm extends React.Component {
     });
   }
 
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
+  componentDidMount() {
+    this.props.removeSessionErrors();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     let user = {
@@ -96,9 +112,10 @@ class SignupForm extends React.Component {
               onChange={this.update('password2')}
               placeholder="Confirm Password"
             />
+            {this.renderErrors()}
             <br />
             <input className="session-submit" type="submit" value="Submit" />
-            {this.renderErrors()}
+
           </div>
           <div className="modal-switch-container">
             <p>Already have an account?{this.props.otherForm}</p>

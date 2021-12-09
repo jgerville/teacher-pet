@@ -36,6 +36,10 @@ class LoginForm extends React.Component {
   //   this.closeModal();
   // }
 
+  componentDidMount() {
+    this.props.removeSessionErrors();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
 
@@ -53,7 +57,8 @@ class LoginForm extends React.Component {
   loginDemoUser(e) {
     e.preventDefault();
     const demoUser = { email: "chris@chris.com", password: "password123" }
-    this.props.login(demoUser).then(() => {
+    this.props.login(demoUser)
+    .then(() => {
       this.closeModal();
       this.props.history.push("/classes")
     })
@@ -90,13 +95,13 @@ class LoginForm extends React.Component {
             />
             <br />
             <br />
-            <input className="session-submit" type="submit" value="Submit" />
             {this.renderErrors()}
+            <input className="session-submit" type="submit" value="Submit" />
+
           </div>
         </form>
 
         <form onSubmit={this.loginDemoUser}>
-          {this.renderErrors()}
           <div className="session-form">
             <input className="session-submit" type="submit" value="Demo Login" />
           </div>

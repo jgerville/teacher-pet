@@ -47,5 +47,5 @@ export const updateReport = (report) => (dispatch) =>
 
 export const deleteReport = (reportId) => (dispatch) =>
   ReportAPI.deleteReport(reportId)
-    .then(() => dispatch(removeClass(reportId)))
+    .then(() => dispatch(removeReport(reportId)))
     .catch((err) => dispatch(receiveErrors(err)));

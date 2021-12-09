@@ -41,6 +41,7 @@
   padding-top: 30px;
   padding-bottom: 30px;
   transform: translate(-50%, -50%);
+  transition: all ease 1s;
 }
 
 .modal-child h2 {
