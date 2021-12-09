@@ -4,7 +4,7 @@ import StudentFormHeader from "./student_form_header";
 import AddManyFormContainer from "./add_many_form_container";
 import StudentIndexContainer from "../../index/student_index_container";
 
-const StudentForm = (props) => {
+const StudentForm = ({ close }) => {
   const [currentTab, setCurrentTab] = useState("addMany");
 
   const switchToMany = () => {
@@ -13,12 +13,6 @@ const StudentForm = (props) => {
     }
   };
 
-  // const switchToOne = () => {
-  //   if (currentTab !== "addOne") {
-  //     setCurrentTab("addOne");
-  //   }
-  // };
-
   const switchToStudents = () => {
     if (currentTab !== "students") {
       setCurrentTab("students");
@@ -26,18 +20,25 @@ const StudentForm = (props) => {
   };
 
   return (
-    <div className="student-form-container">
-      <StudentFormHeader
-        addMany={switchToMany}
-        // addOne={switchToOne}
-        viewStudents={switchToStudents}
-      />
-      {currentTab === "addMany" && <AddManyFormContainer />}
-      {currentTab === "students" && <StudentIndexContainer />}
-    </div>
+    <>
+      <div className="modal-background" onClick={close}/>
+      <div className="modal-child">
+        <div className="student-form-container">
+          <i className="fas fa-times" onClick={close} />
+          <StudentFormHeader
+            addMany={switchToMany}
+            viewStudents={switchToStudents}
+          />
+          {currentTab === "addMany" && <AddManyFormContainer />}
+          {currentTab === "students" && <StudentIndexContainer />}
+        </div>
+      </div>
+    </>
   );
 };
 
-StudentForm.propTypes = {};
+StudentForm.propTypes = {
+  close: PropTypes.func.isRequired,
+};
 
 export default StudentForm;

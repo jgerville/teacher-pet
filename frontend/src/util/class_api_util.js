@@ -20,6 +20,11 @@ export const updateClass = async (klass) => {
   return response.data;
 };
 
+export const addStudentsToClass = async (classId, studentIds) => {
+  const response = await axios.patch(`api/classes/${classId}/students`, { studentIds });
+  return response.data;
+}
+
 export const deleteClass = async (classId) => {
   const response = await axios.delete(`api/classes/${classId}`);
   return response.data;
