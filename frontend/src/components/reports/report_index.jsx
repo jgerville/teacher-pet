@@ -29,7 +29,7 @@ const ReportIndex = ({ reports, getReports }) => {
 
   return (
     <div className="report-index">
-      {error && <p>{error}</p>}
+      {error && <p className="error-text">{error}</p>}
       {isLoading && (
         <ReactLoading
           type={"spinningBubbles"}

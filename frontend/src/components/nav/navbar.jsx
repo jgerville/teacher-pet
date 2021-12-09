@@ -37,10 +37,12 @@ class NavBar extends React.Component {
   render() {
     return (
       <div class="navbar navbar-expand-lg fixed-top">
+          {/* <Link to="/"> */}
         <h2 class="nav-header">
-          <img id="nav-logo" src={logo} />
-          <h3 id="nav-title">Teacher's Pet</h3>
+            <img id="nav-logo" src={logo} />
+            <h3 id="nav-title">Teacher's Pet</h3>
         </h2>
+          {/* </Link> */}
         
         <div >{this.getLinks()}</div>
       </div>

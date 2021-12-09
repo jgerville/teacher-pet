@@ -31,7 +31,7 @@ const StudentIndex = ({ students, getStudents, enableLinks }) => {
 
   return (
     <div className="student-index">
-      {error && <p>{error}</p>}
+      {error && <p className="error-text">{error}</p>}
       {isLoading && (
         <ReactLoading
           type={"spinningBubbles"}

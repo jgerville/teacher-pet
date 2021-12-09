@@ -7,7 +7,6 @@ import { sortAlphabetically } from "../../../util/array_util";
 const ClassIndex = ({ classes, getClasses }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  console.log(classes)
 
   useEffect(() => {
     const fetchClasses = async () => {
@@ -30,7 +29,7 @@ const ClassIndex = ({ classes, getClasses }) => {
 
   return (
     <div className="class-index">
-      {error && <p>{error}</p>}
+      {error && <p className="error-text">{error}</p>}
       {isLoading && (
         <ReactLoading
           type={"spinningBubbles"}
