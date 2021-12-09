@@ -59,21 +59,22 @@ class LoginForm extends React.Component {
       password: this.state.password
     };
 
-    this.props.login(user).then(() => {
-      this.closeModal();
-      this.props.history.push("/classes")
+    this.props.login(user).then((res) => {
+      console.log(res);
+      if (true) {
+        this.closeModal();
+        this.props.history.push("/classes")
+      }
     })
   }
 
   loginDemoUser(e) {
     e.preventDefault();
     const demoUser = { email: "chris@chris.com", password: "password123" }
-    this.props.login(demoUser).then((res) => {
-      console.log(res);
-      if (res.type !== "RECEIVE_SESSION_ERRORS") {
-        this.closeModal();
-        this.props.history.push("/classes")
-      }
+    this.props.login(demoUser)
+    .then(() => {
+      this.closeModal();
+      this.props.history.push("/classes")
     })
   }
 

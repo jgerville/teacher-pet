@@ -68,7 +68,7 @@
   /* background-color: #C2FFF9; */
 }
 
-/* .session-form div ul {
+.session-form div ul {
   margin-top: 10px;
   display: flex;
   padding: 0;
@@ -77,7 +77,7 @@
   align-items: center;
   list-style-type: none;
   color: red;
-} */
+}
 
 .session-submit {
   transition: 0.3s ease-out;
