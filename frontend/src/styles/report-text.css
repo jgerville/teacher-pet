@@ -1,0 +1,54 @@
+.report-text-page {
+  display: flex;
+  padding-top: 20px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.report-text-page h1 {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.report-text-page button.btn {
+  margin: 10px;
+  width: 240px;
+  color: white;
+  background-color: #009DAE;
+  border-color: #009DAE;
+  transition: 0.3s ease-out;
+}
+
+.report-text-page button.btn:hover {
+  background-color: #017987;
+  border-color: #017987;
+}
+
+/* for the EditReport component*/
+.report-text-page .report-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.report-text-page .report-input textarea {
+  resize: none;
+  width: 500px;
+  padding: 5px;
+  border: 1px solid #009DAE;
+  border-radius: 8px;
+  outline: none;
+}
+
+.report-text-page .report-input button {
+  width: 500px;
+}
+
+
+/* for the DisplayReport component */
+.report-text-page .report-display {
+  width: 500px;
+  padding: 5px;
+  border: 1px solid #009DAE;
+  border-radius: 8px;
+}
