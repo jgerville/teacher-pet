@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import DisplayReport from './display_report';
 import EditReport from './edit_report';
+import "../../styles/report-text.css"
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
+import { showReport, updateReport } from '../../actions/report_actions';
 
 const ReportTextHandler = ({ report, reportId, edit }) => {
   const [isEditing, setIsEditing] = useState(false);
-  const [body, setBody] = useState("");
+  const [body, setBody] = useState(report);
   const [error, setError] = useState("");
 
   const handleChange = (e) => setBody(e.target.value)
@@ -15,9 +17,9 @@ const ReportTextHandler = ({ report, reportId, edit }) => {
   const startEditing = () => setIsEditing(true);
   const stopEditing = () => setIsEditing(false);
 
-  useEffect(() => {
+  // useEffect(() => {
 
-  }, )
+  // }, [reportId])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,15 +34,15 @@ const ReportTextHandler = ({ report, reportId, edit }) => {
   }
   
   return (
-    <div>
+    <div className="report-text-page">
       {isEditing ? (
-        <EditReport body={body} handleChange={handleChange} />
+        <EditReport body={body} close={stopEditing} handleChange={handleChange} />
       ) : (
         <>
           <DisplayReport body={body} />
           <div className="button-holder">
-            <button onClick={startEditing}>Edit</button>
-            <button onClick={handleSubmit}>Save</button>
+            <button className="btn" onClick={startEditing}>Edit</button>
+            <button className="btn" onClick={handleSubmit}>Save</button>
           </div>
         </>
       )}
@@ -49,17 +51,19 @@ const ReportTextHandler = ({ report, reportId, edit }) => {
 }
 
 ReportTextHandler.propTypes = {
-  report: PropTypes.string.isRequired,
+  report: PropTypes.object.isRequired,
   reportId: PropTypes.string.isRequired,
   edit: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = (state, ownProps) => ({
   reportId: ownProps.match.params.reportId,
+  report: "Oh hey here's a sample",
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   edit: (report) => dispatch(updateReport(report)),
+  getReport: () => dispatch(showReport(ownProps.match.params.reportId))
 })
 
-export default withRouter(connect(null, mapDispatchToProps)(ReportTextHandler));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ReportTextHandler));

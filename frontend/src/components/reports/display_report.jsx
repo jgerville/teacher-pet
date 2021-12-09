@@ -3,9 +3,12 @@ import PropTypes from 'prop-types'
 
 const DisplayReport = ({ body }) => {
   return (
-    <div>
-      <p>{body}</p>
-    </div>
+    <>
+      <h1>Your Report</h1>
+      <div className="report-display">
+        <p>{body}</p>
+      </div>
+    </>
   )
 }
 

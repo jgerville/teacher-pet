@@ -1,25 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import TextareaAutosize from "react-textarea-autosize";
 
-const EditReport = ({ report, body, handleChange }) => {
+const EditReport = ({ body, handleChange, close }) => {
 
   return (
-    <div className="report-input">
-      <TextareaAutosize
-        cacheMeasurements
-        onChange={handleChange}
-        placeholder="You can press ctrl-z or cmd-z to get the text back!"
-        value={body}
-      />
-      <button className="btn">Save</button>
-    </div>
+    <>
+      <h1>Editing Your Report</h1>
+      <div className="report-input">
+        <TextareaAutosize
+          cacheMeasurements
+          onChange={handleChange}
+          placeholder="You can press ctrl-z or cmd-z to get the text back!"
+          value={body}
+        />
+        <button onClick={close} className="btn">Done Editing</button>
+      </div>
+    </>
   );
 };
 
 EditReport.propTypes = {
-  report: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
+  close: PropTypes.func.isRequired,
 };
 
 export default EditReport;
