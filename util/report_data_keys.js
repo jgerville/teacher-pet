@@ -59,7 +59,7 @@ const reportDataKeys = {
 module.exports = reportDataKeys
 
 
-// Legend
+// LEGEND
 // [%subject pronoun%] => He, She, They
 // [%fname%] => first name of student
 // [%subject%] => subject category of class, i.e. math or history
