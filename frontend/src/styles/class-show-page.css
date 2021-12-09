@@ -16,6 +16,7 @@
   background-color: #009DAE;
   border-color: #009DAE;
   color: white;
+  transition: 0.3s ease-out;
 }
 
 .class-show-page button.btn:hover {
@@ -90,6 +91,16 @@
 .class-show-page .student-form-container h2 {
   display: flex;
   justify-content: center;
+}
+
+.class-show-page .student-form-container .student-index {
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+.class-show-page .student-form-container .student-index p {
+  color: red;
 }
 
 .class-show-page .student-form-container .student-list {

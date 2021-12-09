@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import ReactLoading from "react-loading";
 import SelectableStudentIndexContainer from "../../index/selectable_index_container";
@@ -9,6 +9,15 @@ const AddStudentsForm = ({ klass, allStudents, addStudents, close }) => {
   const [studentIds, setStudentIds] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [disabled, setDisabled] = useState("disabled");
+
+  useEffect(() => {
+    if (Object.values(studentIds).length === 0) {
+      setDisabled("disabled");
+    } else {
+      setDisabled("");
+    }
+  }, [studentIds])
 
   const addOrRemoveStudent = (studentId) => {
     setStudentIds((oldIds) => {
@@ -54,7 +63,7 @@ const AddStudentsForm = ({ klass, allStudents, addStudents, close }) => {
               width={50}
             />
           ) : (
-            <button className="btn" onClick={handleSubmit}>Add to {klass.name}</button>
+            <button className={`btn ${disabled}`} onClick={handleSubmit}>Add to {klass.name}</button>
           )}
         </div>
       </div>

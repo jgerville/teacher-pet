@@ -11,6 +11,7 @@
   color: white;
   background-color: #009DAE;
   border-color: #009DAE;
+  transition: 0.3s ease-out;
 }
 
 .class-page button.btn:hover {

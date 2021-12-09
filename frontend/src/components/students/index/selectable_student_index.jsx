@@ -36,7 +36,7 @@ const SelectableStudentIndex = ({ students, getStudents, toggle }) => {
   return (
     <div className="student-index">
       {error && <p className="error-text">{error}</p>}
-      {isLoading && (
+      {true && (
         <ReactLoading
           type={"spinningBubbles"}
           color={"#808080"}
@@ -53,7 +53,7 @@ const SelectableStudentIndex = ({ students, getStudents, toggle }) => {
           ))}
         </ul>
       ) : (
-        <p>Looks like you don't have any students added yet.</p>
+        <p>In order to add students to a class, first add them to your account by going to the previous page.</p>
       )}
     </div>
   );
