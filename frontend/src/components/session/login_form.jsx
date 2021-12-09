@@ -68,10 +68,12 @@ class LoginForm extends React.Component {
   loginDemoUser(e) {
     e.preventDefault();
     const demoUser = { email: "chris@chris.com", password: "password123" }
-    this.props.login(demoUser)
-    .then(() => {
-      this.closeModal();
-      this.props.history.push("/classes")
+    this.props.login(demoUser).then((res) => {
+      console.log(res);
+      if (res.type !== "RECEIVE_SESSION_ERRORS") {
+        this.closeModal();
+        this.props.history.push("/classes")
+      }
     })
   }
 

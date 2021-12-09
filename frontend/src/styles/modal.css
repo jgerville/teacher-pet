@@ -68,6 +68,17 @@
   /* background-color: #C2FFF9; */
 }
 
+/* .session-form div ul {
+  margin-top: 10px;
+  display: flex;
+  padding: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  color: red;
+} */
+
 .session-submit {
   transition: 0.3s ease-out;
   text-align: center;
