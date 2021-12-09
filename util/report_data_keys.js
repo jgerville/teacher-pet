@@ -21,11 +21,11 @@ const reportDataKeys = {
       false: ['[%subject pronoun%] [is/are] not inclined to work with others.', '[%subject pronoun%] [finds/find] it difficult to constructively collaborate in a group-setting.', '[%subject pronoun%] [is/are] disruptive and have challenges with group work.']
     },
     participatesOften: {
-      true: ['[%subject pronoun%] [is/are] an active participant', '[%subject pronoun%] constructively [participates/participate] during classtime--both during lectures and group work', '[%subject pronoun%] [shows/show] knowledge of the subject through [%possessive pronoun%] participation in class.'],
-      false: ['[%subject pronoun%] [is/are] not active in class.', 'It may lend well to understanding the subject better if [%fname%] participates more often during classtime.', '[%subject pronoun%] should improve [%possessive pronoun%] participation in class.']
+      true: ['[%subject pronoun%] [is/are] an active participant.', '[%subject pronoun%] constructively [participates/participate] during classtime.', '[%subject pronoun%] [shows/show] knowledge of the subject through [%possessive pronoun%] participation in class.'],
+      false: ['[%subject pronoun%] [is/are] not active in class.', 'It may lend well to understanding the subject better if [%fname%] participated more often during classtime.', '[%subject pronoun%] should be more active in class.']
     },
     asksQuestions: {
-      true: ['[%subject pronoun%] [is/are] comfortable asking questions.', '[%subject pronoun%] [asks/ask] relevant questions that lend to a good class discussion.', 'I am happy that [%fname%] is not shy about asking questions about complex concepts that [%subject pronoun% [does/do] not understand. It pushes the acacemic performance in the classroom to an overall higher level.'],
+      true: ['[%subject pronoun%] [is/are] comfortable asking questions.', '[%subject pronoun%] [asks/ask] relevant questions that lend to a good class discussion.', 'I am happy that [%fname%] is not shy about asking questions about concepts that [%subject pronoun%] [does/do] not fully understand.'],
       false: ['[%subject pronoun%] [does/do] not ask questions, which would help to better [%possessive pronoun%] understanding of the subject.', 'It would furhter classroom collaboration and dialogue if [%fname%] would participate more in class.', '[%subject pronoun%] needs to raise [%possessive pronoun%] participation grade in my class.']
     },
     goodAttendance: {
@@ -34,19 +34,19 @@ const reportDataKeys = {
     },
     onTime: {
       true: ['[%subject pronoun%] [is/are] very punctual.', '[%subject pronoun%] [has/have] never been late without giving notice beforehand.'],
-      false: ['[%subject pronoun%] [is/are] often tardy.', '[%subject pronoun%] [is/are] late too often, which makes me question [%possessive pronoun%] academic seriousness.']
+      false: ['[%subject pronoun%] [is/are] often tardy.', '[%subject pronoun%] [is/are] late too often, which needs to be addressed.']
     },
     polite: {
-      true: ['[%subject pronoun%] [is/are] very polite and respectful', '[%subject pronoun%] [is/are] respectful to teachers and fellow students.', 'I have enjoyed teaching [%fname%]. [%subject pronoun%] [is/are] very respectful and self-aware.'],
-      false: ['[%subject pronoun%] [is/are] often rude', '[%subject pronoun%] [is/are] disrespectful to teachers and fellow students. I am constantly having to send [%object pronoun%] to the principal.', 'I have not enjoyed teaching [%fname%]. [%subject pronoun%] [needs/need] to acquire more respect and self-awareness for thos around [%object pronoun%].']
+      true: ['[%subject pronoun%] [is/are] very polite and respectful.', '[%subject pronoun%] [is/are] respectful to teachers and fellow students.', 'I have enjoyed teaching [%fname%]. [%subject pronoun%] [is/are] very respectful and self-aware.'],
+      false: ['[%subject pronoun%] [is/are] often rude.', '[%subject pronoun%] [is/are] disrespectful to teachers and fellow students.', '[%subject pronoun%] [needs/need] to have more respect and self-awareness for those around [%object pronoun%].']
     },
     notDisruptive: {
       true: ['[%subject pronoun%] [is/are] respectful of classtime.', '[%subject pronoun%] [is/are] not disruptive during classtime.'],
-      false: ['[%subject pronoun%] [distracts/distract] the flow of class.', '[%subject pronoun%] [is/are] disruptive in class.']
+      false: ['[%subject pronoun%] often [distracts/distract] the flow of class.', '[%subject pronoun%] [is/are] often disruptive in class.']
     },
     homeworkCompletion: {
       true: ['[%subject pronoun%] [completes/complete] homework adequately.', '[%subject pronoun%] always [fulfill/fulfills] homework assignments.'],
-      false: ['[%subject pronoun%] [has/have] incomplete homework more often than not.', 'homework completion could be better for this student.']
+      false: ['[%subject pronoun%] [has/have] incomplete homework more often than not.', 'Homework completion needs to improve for [%fname%].']
     },
     category: {
       1: ['This [%category%] has been hard for [%fname%].', '[%fname%] has performed poorly in [%category%].', '[%fname%] urgently needs to improve in [%category%].'],
