@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import StudentIndexContainer from '../../index/student_index_container'
 import ReactLoading from "react-loading";
 import SelectableStudentIndexContainer from '../../index/selectable_index_container';
 import { addStudentsToClass } from '../../../../actions/class_actions';
@@ -41,7 +40,7 @@ const AddStudentsForm = ({ klass, allStudents, addStudents }) => {
     <div className="student-form-container">
       <h2>Select the students you want to add</h2>
       <SelectableStudentIndexContainer toggle={addOrRemoveStudent} />
-      {error && <p>{error}</p>}
+      {error && <p className="error-text">{error}</p>}
       {isLoading ? (
         <ReactLoading
           type={"spinningBubbles"}

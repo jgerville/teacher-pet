@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import ReactLoading from "react-loading";
-import { sortAlphabetically } from '../../../util/array_util';
 import StudentIndexItem from './student_index_item';
 
 const SelectableStudentIndex = ({ students, getStudents, toggle }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  const [selected, setSelected] = useState(false);
 
   useEffect(() => {
     const fetchStudents = async () => {
@@ -37,7 +35,7 @@ const SelectableStudentIndex = ({ students, getStudents, toggle }) => {
 
   return (
     <div className="student-index">
-      {error && <p>{error}</p>}
+      {error && <p className="error-text">{error}</p>}
       {isLoading && (
         <ReactLoading
           type={"spinningBubbles"}

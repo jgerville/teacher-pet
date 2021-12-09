@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import ClassShowHeader from "../classes/show/class_show_header";
 import ReactLoading from "react-loading";
+import "../../styles/class-show-page.css";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { getClass } from "../../actions/class_actions";
@@ -37,7 +38,7 @@ const ClassShowPage = ({ klass, classId, getClass }) => {
 
   return (
     <main className="class-show-page">
-      {error && <p>{error}</p>}
+      {error && <p className="error-text">{error}</p>}
       {isLoading && (
         <ReactLoading
           type={"spinningBubbles"}
