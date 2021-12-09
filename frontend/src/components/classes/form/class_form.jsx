@@ -26,7 +26,6 @@ const ClassForm = ({ errors, createClass, close }) => {
       await createClass(klass);
       close();
     } catch (error) {
-      console.log(`class form error: ${error}`);
       return;
     }
   };
