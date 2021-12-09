@@ -9,6 +9,7 @@ import Modal from './modal/modal';
 import ClassPage from './pages/class_page';
 import ClassShowPage from './pages/class_show_page';
 import StudentShowPage from './pages/student_show_page';
+import ReportTextHandler from './reports/report_text_handler';
 
 // import LoginFormContainer from './session/login_form_container';
 // import SignupFormContainer from './session/signup_form_container';
@@ -20,6 +21,7 @@ const App = () => (
     <Switch>
       {/* <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} /> */}
+      <ProtectedRoute path="/reports/" component={ReportTextHandler} />
       <ProtectedRoute path="/students/:studentId" component={StudentShowPage} />
       <ProtectedRoute path="/classes/:classId" component={ClassShowPage} />
       <ProtectedRoute path="/classes" component={ClassPage} />
