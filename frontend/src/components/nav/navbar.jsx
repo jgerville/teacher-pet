@@ -20,15 +20,15 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       return (
         <div>
-          <button class="nav-button" onClick={this.logoutUser}>Logout</button>
+          <button className="nav-button" onClick={this.logoutUser}>Logout</button>
         </div>
       );
     } else {
       return (
-        <div class="nav-button-container">
+        <div className="nav-button-container">
           {/* <button class="nav-button" onClick={() => this.props.openModal('signup')}>Sign up</button> */}
           {/* <SocialIcon className='favicon' url="https://github.com/cjc473" bgColor="#D8D9DB" /> */}
-          <button class="nav-button" onClick={() => this.props.openModal('login')}>Sign in</button>
+          <button className="nav-button" onClick={() => this.props.openModal('login')}>Sign in</button>
         </div>
       );
     }
@@ -36,13 +36,13 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div class="navbar navbar-expand-lg fixed-top">
-          {/* <Link to="/"> */}
-        <h2 class="nav-header">
-            <img id="nav-logo" src={logo} />
-            <h3 id="nav-title">Teacher's Pet</h3>
+      <div className="navbar navbar-expand-lg fixed-top">
+        <h2 className="nav-header">
+          <Link to="/">
+            <img id="nav-logo" alt="nav-logo" src={logo} />
+          </Link>
+            <span id="nav-title">Teacher's Pet</span>
         </h2>
-          {/* </Link> */}
         
         <div >{this.getLinks()}</div>
       </div>

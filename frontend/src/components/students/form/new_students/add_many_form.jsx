@@ -1,11 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 const AddManyForm = ({ createStudents, closeModal, students }) => {
   const [inputValue, setInputValue] = useState("");
   const [error, setError] = useState("");
+  const [disabled, setDisabled] = useState("disabled");
   const errorMessage = "Something went wrong. Please check the list and try again."
   const emptyMessage = "Remember to put students' names in the form!"
+
+  useEffect(() => {
+    if (formatStudents(inputValue).length > 0) {
+      setDisabled("");
+    } else {
+      setDisabled("disabled");
+    }
+  }, [inputValue])
 
   const handleChange = (e) => {
     if (error) {
@@ -15,14 +24,15 @@ const AddManyForm = ({ createStudents, closeModal, students }) => {
   }
 
   const formatStudents = (text) => {
-    // currently, this returns an array of full names.
-    // for each full name, they'll need to split(" ") and extract fname/lname
     const splitText = text.split(",");
     const trimmed = splitText.map(name => name.trim());
     return trimmed.filter(name => name.split(" ").length === 2);
     // rejects anything other than 2 words
   }
-  
+
+  const newStudentCount = () => formatStudents(inputValue).length;
+  const buttonText = newStudentCount() === 1 ? `Save ${newStudentCount()} new student` : `Save ${newStudentCount()} new students`
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!inputValue) {
@@ -34,7 +44,6 @@ const AddManyForm = ({ createStudents, closeModal, students }) => {
       await createStudents(names);
       closeModal();
     } catch (error) {
-      console.log(`Error in addManyForm:`, error);
       setError(errorMessage);
     }
   }
@@ -49,7 +58,7 @@ const AddManyForm = ({ createStudents, closeModal, students }) => {
       </header>
       <form>
         <textarea placeholder="Chris Cheasty, Emily Bell, Matt Lese, Julian Erville, …" onChange={handleChange} value={inputValue} />
-        <button className="btn" onClick={handleSubmit}>Save</button>
+        <button className={`btn ${disabled}`} onClick={handleSubmit}>{buttonText}</button>
         {error && <p className="error-text">{error}</p>}
       </form>
     </div>

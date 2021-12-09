@@ -50,13 +50,14 @@ router.post('/',
 
     // send this up
     const reportContentObj = {}
-    
+    const randomSample = array => array[Math.floor(Math.random() * array.length)]
+
     reqBodyKeys.forEach(key => {
       let reqBodyValue = reqBody[key]
       let reportContent
 
       if (key !== 'categories' && key !== 'studentId') {
-        reportContent = reportDataKeys[key][reqBodyValue]
+        reportContent = randomSample(reportDataKeys[key][reqBodyValue])
         reportdataObj[key] = req.body[key]
         reportContentObj[key] = reportContent
       } else if (key === 'studentId') {
@@ -69,7 +70,7 @@ router.post('/',
         // loop over categories value array to get indiv k-v pairs
         reqBody[key].forEach(category => {
           let categoryName = Object.keys(category)[0];
-          reportContentObj[categoryName] = reqBody[key][categoryName];
+          reportContentObj[categoryName] = randomSample(reqBody[key][categoryName]);
         })
       }
     })

@@ -4,7 +4,7 @@ import ReactLoading from "react-loading";
 import { sortAlphabetically } from "../../../util/array_util";
 import StudentIndexItem from "./student_index_item";
 
-const StudentIndex = ({ students, getStudents, enableLinks }) => {
+const StudentIndex = ({ students, getStudents, enableLinks, classes }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -25,7 +25,7 @@ const StudentIndex = ({ students, getStudents, enableLinks }) => {
       setError("");
       setIsLoading(false);
     };
-  }, [getStudents]);
+  }, [getStudents, classes]);
 
   const notEmpty = (array) => array.length > 0;
 
