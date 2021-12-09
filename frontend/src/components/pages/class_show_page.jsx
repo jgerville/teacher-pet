@@ -67,11 +67,13 @@ ClassShowPage.propTypes = {
   }),
   getClass: PropTypes.func.isRequired,
   classId: PropTypes.string.isRequired,
+  modal: PropTypes.string,
 };
 
-const mapStateToProps = ({ entities: { classes } }, ownProps) => ({
+const mapStateToProps = ({ entities: { classes }, ui: { modal } }, ownProps) => ({
   klass: classes[ownProps.match.params.classId],
   classId: ownProps.match.params.classId,
+  modal,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

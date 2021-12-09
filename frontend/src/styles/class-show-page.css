@@ -6,6 +6,10 @@
   justify-content: center;
 }
 
+.class-show-page header {
+  text-align: center;
+}
+
 .class-show-page button.btn {
   margin-bottom: 10px;
   width: 300px;

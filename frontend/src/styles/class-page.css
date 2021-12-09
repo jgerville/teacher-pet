@@ -17,6 +17,12 @@
   border-color: #017987;
 }
 
+.class-page .class-index {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .class-page .class-index .class-list {
   list-style-type: none;
   display: flex;
