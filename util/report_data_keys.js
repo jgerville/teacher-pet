@@ -85,3 +85,29 @@ module.exports = reportDataKeys
 // [needs/need]
 
 
+// const replacement = (whateverStr, someVar) => {
+//   str.replace(whateverStr, someVar)
+// }
+// const reportStr = 'a long string for a review'
+// const verbsRegular = ['complete', 'fulfill', 'distract', 'lack', 'show', 'miss', 'need', 'participate']
+// let verbsObj = {}
+// if (genderPronouns[0] !== 'they') {
+//   verbsObj['be'] = 'is'
+//   verbsObj['have'] = 'has'
+//   verbsObj['do'] = 'does'
+//   verbsRegular.forEach(verb => {
+//     if (verb[verb.length - 1] !== 's') {
+//       verbsObj[verb] = verb + 's'
+//     } else if (verb[verb.length - 1] === 's') {
+//       verbsObj[verb] = verb + 'es'
+//     }
+//   })
+// } else {
+//   verbsObj['be'] = 'are'
+//   verbsObj['have'] = 'have'
+//   verbsObj['do'] = 'do'
+//   verbsRegular.forEach(verb => {
+//       verbsObj[verb] = verb
+//   })
+// }
+// // Now we have key value pairs for verbs. we should change the report_data_keys to correspond to the keys in the verbsObj.
