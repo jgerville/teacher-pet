@@ -29,7 +29,9 @@
   margin-top: 30px;
   width: 70%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 /* the message that shows up if they don't have any students yet */

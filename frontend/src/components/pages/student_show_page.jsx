@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import StudentShowHeader from "../students/show/student_show_header";
 import AddItemButton from '../reusable/add_item_button';
+import ReactLoading from "react-loading";
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { getStudent } from '../../actions/student_actions';
+import "../../styles/student-show-page.css"
 
 const StudentShowPage = ({ student, getStudent, studentId }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -19,7 +21,7 @@ const StudentShowPage = ({ student, getStudent, studentId }) => {
         setIsLoading(false);
       } catch (error) {
         setIsLoading(false);
-        setError("There was an error finding your classes.");
+        setError("There was an error finding this student.");
       }
     };
     fetchStudent();
@@ -31,6 +33,15 @@ const StudentShowPage = ({ student, getStudent, studentId }) => {
   
   return (
     <main className="student-show-page">
+      {error && <p className="error-text">{error}</p>}
+      {isLoading && (
+        <ReactLoading
+          type={"spinningBubbles"}
+          color={"#808080"}
+          height={50}
+          width={50}
+        />
+      )}
       {student && (
         <>
           <StudentShowHeader student={student} />

@@ -1,0 +1,19 @@
+.student-show-page {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.student-show-page button.btn {
+  margin-bottom: 10px;
+  width: 300px;
+  color: white;
+  background-color: #009DAE;
+  border-color: #009DAE;
+}
+
+.student-show-page button.btn:hover {
+  background-color: #017987;
+  border-color: #017987;
+}
