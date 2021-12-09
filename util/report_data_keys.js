@@ -13,8 +13,8 @@ const reportDataKeys = {
       5: ['It is with great pleasure to report that [%fname%] has performed outstandingly well in my class and has been a joy to teach.', 'It has been a joy not only to teach [%fname%] this year, but also see [%object pronoun%] grow tremendously in [%possessive pronoun%] grasp of the complex subject of [%subject%]. [%fname%]\'s grades are outstanding, and I see no immediate suggestions for improvement.', 'I have loved having [%fname%] in my classroom. [%subject pronoun%] [is/are] not only academically inclined in [%subject%] but also [is/are] respectful to other students in the classroom.'],
     },
     listensAttentively: {
-      true: ['[%subject pronoun%] [is/are] very attentive', '[%subject pronoun%] actively [listens/listen] to presentations and lectures as well as other students.', '[%possessive pronoun%] strongsuit is listening actively to presentations and lectures.'],
-      false: ['[%subject pronoun%] [lacks/lack] focus', '[%subject pronoun%] [is/are] not attentive and needs work in order to do well in this class.','[%subject pronoun%] is easily distracted and needs work on listening to the teacher and fellow students during classtime.'],
+      true: ['[%subject pronoun%] [is/are] very attentive.', '[%subject pronoun%] actively [listens/listen] to presentations and lectures as well as other students.', '[%possessive pronoun%] strongsuit is listening actively to presentations and lectures.'],
+      false: ['[%subject pronoun%] [lacks/lack] focus.', '[%subject pronoun%] [is/are] not attentive and needs work in order to do well in this class.','[%subject pronoun%] is easily distracted and needs work on listening to the teacher and fellow students during classtime.'],
     },
     helpsOthers: {
       true: ['[%subject pronoun%] [is/are] collaborative and helpful.', 'Students look to [%fname%] for help with [%subject%] who is always ready and able to help [%possessive pronoun%] fellow students.', '[%subject pronoun%] [is/are] a kind student who [collaborates/collaborate] with students with pleasure.'],
