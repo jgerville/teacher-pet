@@ -9,9 +9,9 @@ import { getClass } from "../../actions/class_actions";
 import AddItemButton from "../reusable/add_item_button";
 import FilteredStudentIndexContainer from "../students/index/filtered_student_index_container";
 import AddStudentsForm from "../students/form/add_to_class/add_students_form";
+import { closeModal, openModal } from "../../actions/modal_actions";
 
-const ClassShowPage = ({ klass, classId, getClass }) => {
-  const [isAddingStudent, setIsAddingStudent] = useState(false);
+const ClassShowPage = ({ klass, classId, getClass, modal, openModal, closeModal }) => {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -33,9 +33,6 @@ const ClassShowPage = ({ klass, classId, getClass }) => {
     };
   }, [classId, getClass]);
 
-  const openStudentForm = () => setIsAddingStudent(true);
-  const closeStudentForm = () => setIsAddingStudent(false);
-
   return (
     <main className="class-show-page">
       {error && <p className="error-text">{error}</p>}
@@ -50,8 +47,8 @@ const ClassShowPage = ({ klass, classId, getClass }) => {
       {klass ? (
         <>
           <ClassShowHeader klass={klass} />
-          <AddItemButton open={openStudentForm} itemName="student" />
-          {isAddingStudent && <AddStudentsForm klass={klass} /> }
+          <AddItemButton open={openModal} itemName="student" />
+          {modal === "addStudents" && <AddStudentsForm klass={klass} close={closeModal} /> }
           <FilteredStudentIndexContainer />
         </>
       ) : null}
@@ -78,6 +75,8 @@ const mapStateToProps = ({ entities: { classes }, ui: { modal } }, ownProps) => 
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   getClass: () => dispatch(getClass(ownProps.match.params.classId)),
+  openModal: () => dispatch(openModal("addStudents")),
+  closeModal: () => dispatch(closeModal()),
 });
 
 export default withRouter(
