@@ -11,7 +11,7 @@ const StudentFormHeader = ({ addMany, addOne, viewStudents }) => {
         <span>Add one</span>
       </div> */}
       <div className="add-one-tab" onClick={viewStudents}>
-        <span>View students</span>
+        <span>View all students</span>
       </div>
     </div>
   );
