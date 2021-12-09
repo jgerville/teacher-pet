@@ -120,6 +120,10 @@
   cursor: pointer;
 }
 
+.class-page .student-form-container .add-many p {
+  text-align: left;
+}
+
 .class-page .student-form-container textarea {
   padding: 8px;
   width: 100%;
