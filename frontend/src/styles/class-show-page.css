@@ -16,6 +16,7 @@
   background-color: #009DAE;
   border-color: #009DAE;
   color: white;
+  transition: 0.3s ease-out;
 }
 
 .class-show-page button.btn:hover {
@@ -25,7 +26,7 @@
 
 /******************************************/
 /* for the grid showing students in the class */
-.class-show-page .add-something-button-holder + .student-index {
+.class-show-page .add-something-button-holder + .student-index, .modal-child + .student-index {
   margin-top: 30px;
   width: 70%;
   display: flex;
@@ -35,13 +36,13 @@
 }
 
 /* the message that shows up if they don't have any students yet */
-.class-show-page .add-something-button-holder + .student-index p {
+.class-show-page .add-something-button-holder + .student-index p, .modal-child + .student-index p {
   padding: 5px;
   border-radius: 8px;
   color: red;
 }
 
-.class-show-page .add-something-button-holder + .student-index .student-list {
+.class-show-page .add-something-button-holder + .student-index .student-list, .modal-child + .student-index .student-list {
   width: 100%;
   list-style-type: none;
   display: grid;
@@ -52,7 +53,7 @@
 }
 
 /* the actual student links in the grid */
-.class-show-page .add-something-button-holder + .student-index .student-list a {
+.class-show-page .add-something-button-holder + .student-index .student-list a, .modal-child + .student-index .student-list a {
   display: block;
   text-decoration: none;
   padding: 5px;
@@ -62,7 +63,7 @@
   transition: 0.3s ease-out;
 }
 
-.class-show-page .add-something-button-holder + .student-index .student-list a:hover {
+.class-show-page .add-something-button-holder + .student-index .student-list a:hover, .modal-child + .student-index .student-list a:hover {
   background-color: tomato;
 }
 
@@ -90,6 +91,17 @@
 .class-show-page .student-form-container h2 {
   display: flex;
   justify-content: center;
+}
+
+.class-show-page .student-form-container .student-index {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.class-show-page .student-form-container .student-index p {
+  color: red;
 }
 
 .class-show-page .student-form-container .student-list {
