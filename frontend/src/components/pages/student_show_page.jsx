@@ -45,7 +45,7 @@ const StudentShowPage = ({ student, getStudent, studentId }) => {
       {student && (
         <>
           <StudentShowHeader student={student} />
-          <Link className="btn" to="/">Create a new report</Link>
+          <Link className="btn" to={`/students/${studentId}/reports`}>Create a new report</Link>
         </>
       )}
     </main>

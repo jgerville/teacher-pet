@@ -10,6 +10,7 @@ class SignupForm extends React.Component {
       email: '',
       password: '',
       password2: '',
+      disabled: "disabled",
       errors: {}
     };
 
@@ -27,9 +28,19 @@ class SignupForm extends React.Component {
   }
 
   update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
+    return e => {
+      this.setState({[field]: e.currentTarget.value}, () => {
+        if (this.state.firstName && this.state.lastName && this.state.email && this.state.password && this.state.password2) {
+          this.setState({
+            disabled: "",
+          })
+        } else {
+          this.setState({
+            disabled: "disabled",
+          })
+        }
+      })
+    }
   }
 
   renderErrors() {
@@ -87,34 +98,39 @@ class SignupForm extends React.Component {
               value={this.state.firstName}
               onChange={this.update('firstName')}
               placeholder="First Name"
+              required
             />
             <br />
             <input type="text"
               value={this.state.lastName}
               onChange={this.update('lastName')}
               placeholder="Last Name"
+              required
             />
             <br />
             <input type="text"
               value={this.state.email}
               onChange={this.update('email')}
               placeholder="Email"
+              required
             />
             <br />
             <input type="password"
               value={this.state.password}
               onChange={this.update('password')}
               placeholder="Password"
+              required
             />
             <br />
             <input type="password"
               value={this.state.password2}
               onChange={this.update('password2')}
               placeholder="Confirm Password"
+              required
             />
             {this.renderErrors()}
             <br />
-            <input className="session-submit" type="submit" value="Submit" />
+            <input className={`session-submit btn ${this.state.disabled}`} type="submit" value="Submit" />
 
           </div>
           <div className="modal-switch-container">
