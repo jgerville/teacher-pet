@@ -30,6 +30,7 @@ const AddStudentsForm = ({ klass, allStudents, addStudents, close }) => {
       setError("");
       await addStudents(klass._id, Object.values(studentIds));
       setIsLoading(false);
+      close();
     } catch (error) {
       setIsLoading(false);
       setError("There was an error updating your class. Please try again.");
@@ -41,6 +42,7 @@ const AddStudentsForm = ({ klass, allStudents, addStudents, close }) => {
       <div className="modal-background" onClick={close} />
       <div className="modal-child">
         <div className="student-form-container">
+          <i className="fas fa-times" onClick={close} />
           <h2>Select the students you want to add</h2>
           <SelectableStudentIndexContainer toggle={addOrRemoveStudent} />
           {error && <p className="error-text">{error}</p>}
@@ -52,7 +54,7 @@ const AddStudentsForm = ({ klass, allStudents, addStudents, close }) => {
               width={50}
             />
           ) : (
-            <button onClick={handleSubmit}>Add to {klass.name}</button>
+            <button className="btn" onClick={handleSubmit}>Add to {klass.name}</button>
           )}
         </div>
       </div>

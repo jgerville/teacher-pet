@@ -8,6 +8,7 @@
 .class-page button.btn {
   margin-bottom: 10px;
   width: 300px;
+  color: white;
   background-color: #009DAE;
   border-color: #009DAE;
 }
@@ -136,10 +137,6 @@
   /* grid-template-columns: repeat(4, 1fr); */
   grid-gap: 10px;
   padding: 0;
-}
-
-.class-page .student-form-container .student-index ul li {
-  /* margin-top: 5px; */
 }
 
 .class-page .separator {
