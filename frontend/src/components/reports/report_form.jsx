@@ -12,7 +12,7 @@ class ReportForm extends React.Component {
   }
 
   componentDidMount() {
-    this.props.showReport(this.props.reportForm.id) // _id?
+    this.props.showReport(this.props.reportForm._id)
   }
 
   // may need to edit this.props.reportForm
