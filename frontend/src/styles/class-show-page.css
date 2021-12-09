@@ -95,7 +95,8 @@
 
 .class-show-page .student-form-container .student-index {
   display: flex;
-  /* align-items: center; */
+  flex-direction: column;
+  align-items: center;
   /* justify-content: center; */
 }
 

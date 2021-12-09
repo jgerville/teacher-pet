@@ -36,7 +36,7 @@ const SelectableStudentIndex = ({ students, getStudents, toggle }) => {
   return (
     <div className="student-index">
       {error && <p className="error-text">{error}</p>}
-      {true && (
+      {isLoading && (
         <ReactLoading
           type={"spinningBubbles"}
           color={"#808080"}
