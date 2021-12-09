@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import StudentShowHeader from "../students/show/student_show_header";
-import AddItemButton from '../reusable/add_item_button';
+import { Link } from 'react-router-dom';
 import ReactLoading from "react-loading";
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
@@ -45,7 +45,7 @@ const StudentShowPage = ({ student, getStudent, studentId }) => {
       {student && (
         <>
           <StudentShowHeader student={student} />
-          <AddItemButton open={"???"} itemName="report" />
+          <Link className="btn" to="/">Create a new report</Link>
         </>
       )}
     </main>

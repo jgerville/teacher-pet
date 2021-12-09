@@ -5,7 +5,7 @@
   align-items: center;
 }
 
-.student-show-page button.btn {
+.student-show-page .btn {
   margin-bottom: 10px;
   width: 300px;
   color: white;
@@ -14,7 +14,7 @@
   transition: 0.3s ease-out;
 }
 
-.student-show-page button.btn:hover {
+.student-show-page .btn:hover {
   background-color: #017987;
   border-color: #017987;
 }
