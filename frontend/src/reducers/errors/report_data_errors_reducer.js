@@ -10,6 +10,7 @@ const reportDataErrorsReducer = (state = [], action) => {
 
   switch (action.type) {
     case RECEIVE_REPORT_DATA_ERRORS:
+      // debugger
       return action.errors;
     case RECEIVE_REPORT_DATA:
       return [];

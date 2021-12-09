@@ -1,0 +1,33 @@
+input[type=radio] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: white;
+  margin: 1;
+  font: inherit;
+  width: 1.2em;
+  height: 1.2em;
+  border: 0.15em solid currentColor;
+  border-radius: 25%;
+  transform: translateY(-0.1em);
+  display: grid;
+  place-content: center;
+  transition: opacity 0.1s;
+}
+
+input[type=radio]::before {
+  content: "";
+  width: 0.8em;
+  height: 0.8em;
+  border-radius: 25%;
+  transform: scale(0);
+  transition: 140ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--radio-filter-color);
+}
+
+input[type=radio]:checked::before {
+  transform: scale(1);
+}
+
+:root {
+  --radio-filter-color: purple;
+}

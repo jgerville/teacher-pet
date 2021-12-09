@@ -25,27 +25,27 @@ const receiveErrors = (errors) => ({
   errors
 });
 
-export const showReportData = (reportDataId) => (dispatch) =>
-  ReportDataAPI.showReportData(reportDataId)
-    .then((reportData) => dispatch(receiveReportData(reportData)))
-    .catch((err) => dispatch(receiveErrors(err)));
+// export const showReportData = (reportDataId) => (dispatch) =>
+//   ReportDataAPI.showReportData(reportDataId)
+//     .then((reportData) => dispatch(receiveReportData(reportData)))
+//     .catch((err) => dispatch(receiveErrors(err)));
 
-export const getAllReportsData = () => (dispatch) =>
-  ReportDataAPI.getAllReportsData()
-    .then((reportsData) => dispatch(receiveReportsData(reportsData)))
-    .catch((err) => receiveErrors(err));
+// export const getAllReportsData = () => (dispatch) =>
+//   ReportDataAPI.getAllReportsData()
+//     .then((reportsData) => dispatch(receiveReportsData(reportsData)))
+//     .catch((err) => receiveErrors(err));
 
 export const createReportData = (reportData) => (dispatch) =>
   ReportDataAPI.createReportData(reportData)
     .then((newReportData) => dispatch(receiveReportData(newReportData)))
     .catch((err) => dispatch(receiveErrors(err)));
 
-export const updateReportData = (reportData) => (dispatch) =>
-  ReportDataAPI.updateReportData(reportData)
-    .then((updatedReportData) => dispatch(receiveReportData(updatedReportData)))
-    .catch((err) => dispatch(receiveErrors(err)));
+// export const updateReportData = (reportData) => (dispatch) =>
+//   ReportDataAPI.updateReportData(reportData)
+//     .then((updatedReportData) => dispatch(receiveReportData(updatedReportData)))
+//     .catch((err) => dispatch(receiveErrors(err)));
 
-export const deleteReportData = (reportDataId) => (dispatch) =>
-  ReportDataAPI.deleteReportData(reportDataId)
-    .then(() => dispatch(removeReportData(reportDataId)))
-    .catch((err) => dispatch(receiveErrors(err)));
+// export const deleteReportData = (reportDataId) => (dispatch) =>
+//   ReportDataAPI.deleteReportData(reportDataId)
+//     .then(() => dispatch(removeReportData(reportDataId)))
+//     .catch((err) => dispatch(receiveErrors(err)));
