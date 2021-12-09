@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 const ClassShowHeader = ({ klass }) => (
   <header>
     <h1>{klass.name}</h1>
-    <p>Subject: {klass.subject}</p>
-    <p className="note">Note: {klass.note}</p>
+    {klass.subject && <p>Subject: {klass.subject}</p>}
+    {klass.note && <p className="note">Note: {klass.note}</p>}
   </header>
 );
 

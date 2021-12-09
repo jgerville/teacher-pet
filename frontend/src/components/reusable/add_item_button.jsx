@@ -5,7 +5,7 @@ const AddItemButton = ({ open, itemName }) => {
   
   return (
     <div className="add-something-button-holder">
-      <button onClick={open}>Add a new {itemName}</button>
+      <button className="btn btn-primary" onClick={open}>Add a new {itemName}</button>
     </div>
   );
 };
