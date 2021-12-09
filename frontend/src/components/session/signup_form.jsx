@@ -70,7 +70,7 @@ class SignupForm extends React.Component {
     };
 
     this.props.signup(user, this.props.history).then((res) => {
-      if (res.type !== "RECEIVE_SESSION_ERRORS") {
+      if ((res && res.type !== "RECEIVE_SESSION_ERRORS") || !res) {
         this.props.history.push("/classes")
         this.closeModal();
       }
