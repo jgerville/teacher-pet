@@ -31,11 +31,13 @@
   justify-content: left; 
   position: absolute;
   background: #FFF;
+  z-index: 11;
   top: 50%;
   left: 50%;
   width: 600px;
   border-radius: 5px;
   padding-left: 30px;
+  padding-right: 30px;
   padding-top: 30px;
   padding-bottom: 30px;
   transform: translate(-50%, -50%);

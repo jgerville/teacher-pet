@@ -41,7 +41,12 @@ export const createClass = (klass) => (dispatch) =>
 
 export const updateClass = (klass) => (dispatch) =>
   ClassAPI.updateClass(klass)
-    .then((updatedKlass) => dispatch(receiveClass(updatedKlass)))
+    .then((updatedClass) => dispatch(receiveClass(updatedClass)))
+    .catch((err) => dispatch(receiveErrors(err)));
+
+export const addStudentsToClass = (classId, studentIds) => (dispatch) =>
+  ClassAPI.addStudentsToClass(classId, studentIds)
+    .then((updatedClass) => dispatch(receiveClass(updatedClass)))
     .catch((err) => dispatch(receiveErrors(err)));
 
 export const deleteClass = (classId) => (dispatch) =>

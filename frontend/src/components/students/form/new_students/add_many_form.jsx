@@ -40,7 +40,7 @@ const AddManyForm = ({ createStudents, closeModal, students }) => {
   }
 
   return (
-    <div className="add-many-tab">
+    <div className="add-many">
       <header>
         <p>
           Enter each student's first and last name, with commas in between each
@@ -48,9 +48,9 @@ const AddManyForm = ({ createStudents, closeModal, students }) => {
         </p>
       </header>
       <form>
-        <textarea placeholder="" onChange={handleChange} value={inputValue} />
-        <button onClick={handleSubmit}>Save</button>
-        {error && <p>{error}</p>}
+        <textarea placeholder="Chris Cheasty, Emily Bell, Matt Lese, Julian Erville, …" onChange={handleChange} value={inputValue} />
+        <button className="btn" onClick={handleSubmit}>Save</button>
+        {error && <p className="error-text">{error}</p>}
       </form>
     </div>
   );

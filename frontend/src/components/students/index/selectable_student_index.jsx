@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import ReactLoading from "react-loading";
-import { sortAlphabetically } from '../../../util/array_util';
 import StudentIndexItem from './student_index_item';
 
 const SelectableStudentIndex = ({ students, getStudents, toggle }) => {
@@ -27,11 +26,16 @@ const SelectableStudentIndex = ({ students, getStudents, toggle }) => {
     };
   }, [getStudents]);
 
+  const handleClick = (e, studentId) => {
+    toggle(studentId);
+    e.currentTarget.classList.toggle("selected")
+  }
+
   const notEmpty = (array) => array.length > 0;
 
   return (
     <div className="student-index">
-      {error && <p>{error}</p>}
+      {error && <p className="error-text">{error}</p>}
       {isLoading && (
         <ReactLoading
           type={"spinningBubbles"}
@@ -43,7 +47,7 @@ const SelectableStudentIndex = ({ students, getStudents, toggle }) => {
       {notEmpty(students) ? (
         <ul className="student-list">
           {students.map((student) => (
-            <li key={student._id} onClick={() => toggle(student._id)}>
+            <li key={student._id} onClick={(e) => handleClick(e, student._id)}>
               <StudentIndexItem student={student} />
             </li>
           ))}
