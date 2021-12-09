@@ -1,10 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 const ClassForm = ({ errors, createClass, close }) => {
   const [name, setName] = useState("");
   const [subject, setSubject] = useState("");
   const [note, setNote] = useState("");
+  const [disabled, setDisabled] = useState("disabled");
+
+  useEffect(() => {
+    if (name && subject) {
+      setDisabled("");
+    } else {
+      setDisabled("disabled");
+    }
+  }, [name, subject])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,6 +40,7 @@ const ClassForm = ({ errors, createClass, close }) => {
           {/* map errors if we have any */}
           <input
             autoFocus
+            required
             type="text"
             id="name"
             placeholder="Class name"
@@ -38,6 +48,7 @@ const ClassForm = ({ errors, createClass, close }) => {
             value={name}
           />
           <input
+            required
             type="text"
             id="subject"
             placeholder="Subject"
@@ -52,7 +63,7 @@ const ClassForm = ({ errors, createClass, close }) => {
             value={note}
           />
           {errors ? errors.map((error, idx) => <p key={idx}>{error}</p>) : null}
-          <button className="btn" onClick={handleSubmit}>Add Class</button>
+          <button className={`btn ${disabled}`} onClick={handleSubmit}>Add Class</button>
         </form>
       </div>
     </>
