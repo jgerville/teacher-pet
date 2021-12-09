@@ -148,10 +148,10 @@ router.patch('/:id/edit',
   }
 )
 
-router.delete('/', 
+router.delete('/:classId', 
 passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    const classId = req.body.id
+    const classId = req.params.classId
     Class.findById(classId)
       .then(klass => {
         if (klass) {

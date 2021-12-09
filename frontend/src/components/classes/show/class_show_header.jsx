@@ -6,7 +6,7 @@ const ClassShowHeader = ({ klass }) => (
   <header>
     <div className="top-line">
       <h1>{klass.name}</h1>
-      <DotButtons klass={klass} />
+      <DotButtons entity={klass} kind="class" />
     </div>
     {klass.subject && <p>Subject: {klass.subject}</p>}
     {klass.note && <p className="note">Note: {klass.note}</p>}

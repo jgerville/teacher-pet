@@ -3,14 +3,27 @@ import PropTypes from 'prop-types'
 import { deleteClass } from '../../../actions/class_actions';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
+import { deleteStudent } from '../../../actions/student_actions';
 
-const DotButtons = ({ klass, deleteClass, history }) => {
+const DotButtons = ({ entity, deleteClass, deleteStudent, history, kind }) => {
   const [showPanel, setShowPanel] = useState(false);
   const togglePanel = () => setShowPanel(prev => !prev);
 
-  const handleDelete = async () => {
-    await deleteClass(klass._id);
+  const handleDeleteClass = async () => {
+    await deleteClass(entity._id);
     history.push("/classes")
+  }
+
+  const handleDeleteStudent = async () => {
+    await deleteStudent(entity._id);
+  }
+
+  const handleDelete = () => {
+    if (kind === "class") {
+      return handleDeleteClass;
+    } else if (kind === "student") {
+      return handleDeleteStudent;
+    }
   }
   
   return (
@@ -27,13 +40,16 @@ const DotButtons = ({ klass, deleteClass, history }) => {
 }
 
 DotButtons.propTypes = {
-  klass: PropTypes.object.isRequired,
+  entity: PropTypes.object.isRequired,
   deleteClass: PropTypes.func.isRequired,
+  deleteStudent: PropTypes.func.isRequired,
   history: PropTypes.object.isRequired,
+  kind: PropTypes.string.isRequired,
 }
 
 const mapDispatchToProps = (dispatch) => ({
   deleteClass: (classId) => dispatch(deleteClass(classId)),
+  deleteStudent: (studentId) => dispatch(deleteStudent(studentId)),
 })
 
 export default withRouter(connect(null, mapDispatchToProps)(DotButtons));
