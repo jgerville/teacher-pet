@@ -151,9 +151,18 @@ router.patch('/:id/edit',
 router.delete('/', 
 passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    Class.findById(req.body.id)
+    const classId = req.body.id
+    Class.findById(classId)
       .then(klass => {
         if (klass) {
+          klass.students.forEach(studentId => {
+            Student.findById(studentId)
+              .then(student => {
+                const index = student.classes.indexOf(classId)
+                student.classes.splice(index, 1)
+                student.save()
+              })
+          })
           klass.delete()
           res.json('Class deleted successfully.')
         } else {
