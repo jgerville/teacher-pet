@@ -1,12 +1,13 @@
+
 const reportDataKeys = {
     genderPronouns: {
-      1: 'He/Him/His',
-      2: 'She/Her/Hers',
-      3: 'They/Them/Theirs' 
+      1: ['He/Him/His'],
+      2: ['She/Her/Hers'],
+      3: ['They/Them/Theirs'] 
     },
     overallScore: {
       1: ['[%fname%] has performed very unsatisfactorily in class and needs quick improvement to not only pass this class but proceed onto next level coursework in [%subject%].', 'Unfortunately, I do not write this report with great pleasure. [%fname] has failed to perform adequately in [%class name%] and must urgently show improvement before the next review period.', '[%fname%] has been a difficult student bot behaviorly and acedamically, and must seek immediate improvement before the next review period.'],
-      2: ['Academically, [%fname%] has performed unsatisfactorily in [%class name%] and [%possessive pronoun%] behaviour shows a need for more awareness of [%possessive pronoun%] peers and teachers.', 'Although [%class name%] is a nuanced subject that few are able to grasp immediately, [%fname%] does need to show improvement in [%possessive pronoun%] grades and comprehension of [%subject%].', 'Unforntately, [%fname%] has fallen behind in [%subject%] and needs to spend more time outside of class grapsing the subject.'],
+      2: ['Academically, [%fname%] has performed unsatisfactorily in [%class name%] and [%possessive pronoun%] behaviour shows a need for more awareness of [%possessive pronoun%] peers and teachers.', 'Although [%class name%] is a nuanced subject that few are able to grasp immediately, [%fname%] does need to show improvement in [%possessive pronoun%] grades and comprehension of [%subject%].', 'Unfortunately, [%fname%] has fallen behind in [%subject%] and needs to spend more time outside of class grapsing the subject.'],
       3: ['[%fname%] has performed satisfactorily in [%class name%] and is generally respectful to other students. Slight improvement in grasping concepts are still needed to continue to perform well on tests', '[%fname%] has an average grade in [%class name%]. I would recomend further attention to homework outside of class.', '[$fname$] has performed on average well enough to proceed in [%possessive pronoun%] academic career, although more attention to detail is needed to truly grasp [%subject%] well.'],
       4: ['I am happy to report that [%fname%] has performed well in [%class name%]. [%possessive pronoun%] understanding of [%subject%] has shown through in class through [%possessive pronoun%] participation and helping others on tough-to-grasp topics.', '[%fname%] has performed well in [%class name%] and it has been a pleasure having [%object pronoun%] in my classroom.', 'I have enjoyed [%fname%]\'s participation in my classroom and [%posessive pronoun%] understanding of [%subject%] shines through on tests and projects.'],
       5: ['It is with great pleasure to report that [%fname%] has performed outstanding in my class and has been a joy to teach.', '[%fname%] has not only been a joy to teach this year, but also see grow tremendously in grasping the complext subject of [%subject%]. [%possessive pronoun%] grades are outstanding and see no immediate suggestions for improvement.', 'I have loved having [%fname%] in my classroom. [%subject pronoun%] [is/are] not only academically inclined in [%subject%] but also [is/are] respectful to other students in the classroom.'],
@@ -29,32 +30,33 @@ const reportDataKeys = {
     },
     goodAttendance: {
       true: ['[%subject pronoun%] [has/have] excellent attendance.', '[%subject pronoun%] [has/have] perfect attendance.'],
-      false: ['[%subject pronoun%] [misses/miss] class too often', '[%subject pronoun%] [has/have] poor attendance, which calls for immediate improvement.']
+      false: ['[%subject pronoun%] [misses/miss] class too often.', '[%subject pronoun%] [has/have] poor attendance, which calls for immediate improvement.']
     },
     onTime: {
-      true: ['[%subject pronoun%] [is/are] very punctual', '[%subject pronoun%] [has/have] never been late without giving notice beforehand'],
-      false: ['[%subject pronoun%] [is/are] often tardy', '[%subject pronoun%] [is/are] late too often, which makes me question [%possessive pronoun%] academic seriousness']
+      true: ['[%subject pronoun%] [is/are] very punctual.', '[%subject pronoun%] [has/have] never been late without giving notice beforehand.'],
+      false: ['[%subject pronoun%] [is/are] often tardy.', '[%subject pronoun%] [is/are] late too often, which makes me question [%possessive pronoun%] academic seriousness.']
     },
     polite: {
       true: ['[%subject pronoun%] [is/are] very polite and respectful', '[%subject pronoun%] [is/are] respectful to teachers and fellow students.', 'I have enjoyed teaching [%fname%]. [%subject pronoun%] [is/are] very respectful and self-aware.'],
       false: ['[%subject pronoun%] [is/are] often rude', '[%subject pronoun%] [is/are] disrespectful to teachers and fellow students. I am constantly having to send [%object pronoun%] to the principal.', 'I have not enjoyed teaching [%fname%]. [%subject pronoun%] [needs/need] to acquire more respect and self-awareness for thos around [%object pronoun%].']
     },
     notDisruptive: {
-      true: ['[%subject pronoun%] [is/are] respectful of classtime', '[%subject pronoun%] [is/are] not disruptive during classtime.'],
-      false: ['[%subject pronoun%] [distracts/distract] the flow of class', '[%subject pronoun%] [is/are] disruptive in class']
+      true: ['[%subject pronoun%] [is/are] respectful of classtime.', '[%subject pronoun%] [is/are] not disruptive during classtime.'],
+      false: ['[%subject pronoun%] [distracts/distract] the flow of class.', '[%subject pronoun%] [is/are] disruptive in class.']
     },
     homeworkCompletion: {
-      true: ['[%subject pronoun%] [completes/complete] homework adequately', '[%subject pronoun%] always [fulfill/fulfills] homework assignments'],
-      false: ['[%subject pronoun%] [has/have] incomplete homework more often than not', 'homework completion could be better for this student.']
+      true: ['[%subject pronoun%] [completes/complete] homework adequately.', '[%subject pronoun%] always [fulfill/fulfills] homework assignments.'],
+      false: ['[%subject pronoun%] [has/have] incomplete homework more often than not.', 'homework completion could be better for this student.']
     },
     category: {
-      1: 'this [%category%] has been hard for [%fname%]',
-      2: 'Poor',
-      3: 'Fine',
-      4: 'Good',
-      5: 'Excellent',
+      1: ['This [%category%] has been hard for [%fname%].', '[%fname%] has performed poorly in [%category%].', '[%fname%] urgently needs to improve in [%category%].'],
+      2: ['Although [%category%] is challenging, [%fname%] needs to improve performance.', '[%fname%] is falling behind in [%category%].', 'If no improvement is shown, [%fname%] may need to retake [%category%].'],
+      3: ['[%fname%] has performed satisfactorily in [%category%].', '[%fname%] is performing on par with the class average in [%category%].', 'Although performing satisfactorily, there is room for improvement in [%category%].'],
+      4: ['[%fname%] has done well in [%category%].', '[%fname%] is showing promise in [%category%].'],
+      5: ['I\'m impressed with [%fname%]\'s grasp of [%category%].', '[%fname%] has shown [%possessive pronoun%] academic prowess in [%category%].', '[%fname%] has continued to excel in [%category%].'],
     }
 }
+
 
 module.exports = reportDataKeys
 
