@@ -35,8 +35,6 @@ router.get('/:id', passport.authenticate('jwt', { session: false }),
   }
 );
 
-// router.get('/:id/reports')
-
 router.post('/',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
@@ -110,11 +108,7 @@ router.patch('/:id/reports', passport.authenticate('jwt', { session: false }),
             body: req.body.body
           });
           newReport.save()
-            .then(report => {
-              student.reports.push(report._id)
-              student.save()
-              res.json(report)
-            })
+            .then(report => res.json(report))
             .catch(err => res.status(400).json(err))
         } else{ 
           res.status(403).json({ noaccess: 'No class found belonging to the current user with that ID' })
@@ -124,6 +118,17 @@ router.patch('/:id/reports', passport.authenticate('jwt', { session: false }),
         res.status(404).json({ noclassfound: 'No class found with that ID' })
       }
       );
+  }
+);
+
+router.get('/:id/reports', passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    const studentId = (req.params.id)
+    Report.find({ student: studentId })
+      .then(reports => {
+        res.json(reports)
+      })
+      .catch(err => res.status(404).json({ noreportsfound: 'No reports found.' }))
   }
 );
 

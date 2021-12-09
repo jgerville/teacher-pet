@@ -25,4 +25,30 @@ router.get('/:id', passport.authenticate('jwt', { session: false }),
   }
 );
 
+
+router.patch('/:id/edit',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    const { errors, isValid } = validateReportInput(req.body);
+    Report.findByIdAndUpdate(req.params.id,
+      req.body,
+      {new: true, useFindAndModify: false},
+      (err, report) => {
+        if (err) return res.status(500).send(err);
+        return res.json(report);
+      }
+    )
+  }
+)
+
+router.delete('/', 
+passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    Report.findByIdAndRemove(req.body.reportId, (err, report) => {
+      if (err) return res.status(500).send(err);
+      return res.status(200).json(`Report successfully deleted.`);
+    })  
+  }
+)
+
 module.exports = router

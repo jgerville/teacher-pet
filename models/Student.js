@@ -19,9 +19,6 @@ const StudentSchema = new Schema({
   },
   classes: {
     type: Array
-  },
-  reports: {
-    type: Array
   }
 });
 
