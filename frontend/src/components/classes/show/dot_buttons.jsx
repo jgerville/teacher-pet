@@ -18,8 +18,8 @@ const DotButtons = ({ klass, deleteClass, history }) => {
       <i className="fas fa-ellipsis-h"/>
       {showPanel && (
         <div className="panel">
-          <button>Edit</button>
-          <button onClick={handleDelete}>Delete</button>
+          {/* <button className="btn">Edit</button> */}
+          <button className="btn" onClick={handleDelete}>Delete</button>
         </div>
       )}
     </div>

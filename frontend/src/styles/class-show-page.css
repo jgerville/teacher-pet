@@ -10,6 +10,28 @@
   text-align: center;
 }
 
+.class-show-page header .top-line {
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.top-line .dots {
+  position: relative;
+}
+
+.top-line .dots .panel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: -10px;
+  right: -70px;
+}
+
+
+
 .class-show-page button.btn {
   margin-bottom: 10px;
   width: 300px;
@@ -22,6 +44,24 @@
 .class-show-page button.btn:hover {
   background-color: #017987;
   border-color: #017987;
+}
+
+.top-line .dots .panel button {
+  background-color: #FFE652;
+  color: #009DAE;
+  display: flex;
+  justify-content: center;
+  width: 65px;
+  margin: 2px;
+}
+
+.top-line .dots .panel button:hover {
+  background-color: #FFCCCC;
+  color: #009DAE;
+  display: flex;
+  justify-content: center;
+  width: 65px;
+  margin: 2px;
 }
 
 /******************************************/
