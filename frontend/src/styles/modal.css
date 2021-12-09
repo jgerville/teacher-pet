@@ -68,22 +68,35 @@
   /* background-color: #C2FFF9; */
 }
 
+.session-form div ul {
+  margin-top: 10px;
+  display: flex;
+  padding: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  color: red;
+}
+
 .session-submit {
+  transition: 0.3s ease-out;
   text-align: center;
   font-size: 16px;
   background-color: #009DAE;
   border: 1px solid rgb(184, 34, 45);
-  color: #FFF
+  color: #FFF;
 }
 
 .session-submit:hover {
   background-color: #017987;
+  color: #FFF;
 }
 
 .modal-switch-container {
   display: flex;
   width: 530px;
-  /* justify-content: center; */
+  justify-content: center;
   margin: 1.5em 0 0 0;
 }
 
