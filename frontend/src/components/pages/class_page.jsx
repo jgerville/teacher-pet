@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from 'prop-types'
 import AddItemButton from "../reusable/add_item_button";
 import ClassFormContainer from "../classes/form/class_form_container";
@@ -9,14 +9,6 @@ import { closeModal, openModal } from "../../actions/modal_actions";
 import { connect } from "react-redux";
 
 const ClassPage = ({ openClass, openStudent, modal, closeModal }) => {
-  // const [isCreatingClass, setIsCreatingClass] = useState(false);
-  // const [isCreatingStudent, setIsCreatingStudent] = useState(false);
-
-  // const openClassCreator = () => setIsCreatingClass(true);
-  // const closeClassCreator = () => setIsCreatingClass(false);
-  // const openStudentForm = () => setIsCreatingStudent(true);
-  // const closeStudentForm = () => setIsCreatingStudent(false);
-
   return (
     <main className="class-page">
       <AddItemButton open={openClass} itemName="class" />
@@ -43,7 +35,7 @@ const mapDispatchToProps = (dispatch) => ({
 ClassPage.propTypes = {
   openClass: PropTypes.func.isRequired,
   openStudent: PropTypes.func.isRequired,
-  modal: PropTypes.string.isRequired,
+  modal: PropTypes.string,
   closeModal: PropTypes.func.isRequired,
 }
 

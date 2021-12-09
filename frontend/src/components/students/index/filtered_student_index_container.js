@@ -3,10 +3,11 @@ import { withRouter } from "react-router";
 import { getStudentsByUser } from "../../../actions/student_actions";
 import StudentIndex from "./student_index"
 
-const mapStateToProps = ({ entities: { students }}, ownProps) => ({
+const mapStateToProps = ({ entities: { students, classes }}, ownProps) => ({
   students: Object.values(students).filter(student => (
-    student.classes.some(klass => klass._id === ownProps.match.params.classId)
+    student.classes.some(classId => classId === ownProps.match.params.classId)
   )),
+  classes,
   enableLinks: true,
 })
 

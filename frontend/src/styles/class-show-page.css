@@ -6,11 +6,16 @@
   justify-content: center;
 }
 
+.class-show-page header {
+  text-align: center;
+}
+
 .class-show-page button.btn {
   margin-bottom: 10px;
   width: 300px;
   background-color: #009DAE;
   border-color: #009DAE;
+  color: white;
 }
 
 .class-show-page button.btn:hover {
@@ -18,10 +23,73 @@
   border-color: #017987;
 }
 
+/******************************************/
+/* for the grid showing students in the class */
+.class-show-page .add-something-button-holder + .student-index {
+  margin-top: 30px;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* the message that shows up if they don't have any students yet */
+.class-show-page .add-something-button-holder + .student-index p {
+  padding: 5px;
+  border-radius: 8px;
+  color: red;
+}
+
+.class-show-page .add-something-button-holder + .student-index .student-list {
+  width: 100%;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto 1fr auto;
+  grid-gap: 6px;
+  padding: 0;
+}
+
+/* the actual student links in the grid */
+.class-show-page .add-something-button-holder + .student-index .student-list a {
+  display: block;
+  text-decoration: none;
+  padding: 5px;
+  background-color: violet;
+  border-radius: 8px;
+  color: white;
+  transition: 0.3s ease-out;
+}
+
+.class-show-page .add-something-button-holder + .student-index .student-list a:hover {
+  background-color: tomato;
+}
+
+/******************************************/
+/* for the add-students-to-class modal: */
 .class-show-page .student-form-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+}
+
+.class-show-page .student-form-container i {
+  padding: 5px;
+  position: absolute;
+  font-size: 20px;
+  top: 3px;
+  right: 5px;
+}
+
+.class-show-page .student-form-container i:hover {
+  cursor: pointer;
+} 
+
+.class-show-page .student-form-container h2 {
+  display: flex;
+  justify-content: center;
 }
 
 .class-show-page .student-form-container .student-list {
@@ -29,10 +97,11 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  grid-gap: 5px;
+  grid-gap: 6px;
   padding: 0;
 }
 
+/* these are each grid item (student names) that we can select */
 .class-show-page .student-form-container .student-list li {
   display: flex;
   justify-content: flex-start;
@@ -44,10 +113,11 @@
 
 .class-show-page .student-form-container .student-list li:hover {
   cursor: pointer;
+  background-color: #C2FFF9;
 }
 
 .class-show-page .student-form-container .selected {
-  background-color: #C2FFF9;
+  background-color: #71DFE7;
 }
 
 .error-text {

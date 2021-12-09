@@ -13,12 +13,6 @@ const StudentForm = ({ close }) => {
     }
   };
 
-  // const switchToOne = () => {
-  //   if (currentTab !== "addOne") {
-  //     setCurrentTab("addOne");
-  //   }
-  // };
-
   const switchToStudents = () => {
     if (currentTab !== "students") {
       setCurrentTab("students");
@@ -33,7 +27,6 @@ const StudentForm = ({ close }) => {
           <i className="fas fa-times" onClick={close} />
           <StudentFormHeader
             addMany={switchToMany}
-            // addOne={switchToOne}
             viewStudents={switchToStudents}
           />
           {currentTab === "addMany" && <AddManyFormContainer />}

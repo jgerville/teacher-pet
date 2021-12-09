@@ -21,7 +21,7 @@ export const updateClass = async (klass) => {
 };
 
 export const addStudentsToClass = async (classId, studentIds) => {
-  const response = await axios.patch(`api/classes/${classId}/students`, studentIds);
+  const response = await axios.patch(`api/classes/${classId}/students`, { studentIds });
   return response.data;
 }
 
