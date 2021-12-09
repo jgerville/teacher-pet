@@ -9,6 +9,7 @@ const EditReport = ({ body, handleChange, close }) => {
       <h1>Editing Your Report</h1>
       <div className="report-input">
         <TextareaAutosize
+          autoFocus
           cacheMeasurements
           onChange={handleChange}
           placeholder="You can press ctrl-z or cmd-z to get the text back!"
