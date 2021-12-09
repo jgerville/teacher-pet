@@ -1,4 +1,5 @@
 import React from "react";
+import '../../styles/report-data.css'
 
 class ReportForm extends React.Component {
   constructor(props) {

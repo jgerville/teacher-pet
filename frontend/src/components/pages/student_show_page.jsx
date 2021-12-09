@@ -6,6 +6,7 @@ import ReactLoading from "react-loading";
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { getStudent } from '../../actions/student_actions';
+import { Link } from 'react-router-dom';
 import "../../styles/student-show-page.css"
 
 const StudentShowPage = ({ student, getStudent, studentId }) => {
@@ -45,7 +46,7 @@ const StudentShowPage = ({ student, getStudent, studentId }) => {
       {student && (
         <>
           <StudentShowHeader student={student} />
-          <AddItemButton open={"???"} itemName="report" />
+          <Link className="btn" to={`/students/${studentId}/reports`}>Create a new report</Link>
         </>
       )}
     </main>

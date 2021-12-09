@@ -5,7 +5,7 @@ class ReportForm extends React.Component {
     super(props)
     this.state = {
       user: null, //need to update
-      student: this.props.student.id,
+      studentId: this.props.student._id,
       genderPronouns: null,
       overallScore: null,
       listensAttentively: null,
@@ -29,10 +29,20 @@ class ReportForm extends React.Component {
       cat4Val: null,
       cat5Val: null,
       cat6Val: null,
-      categories: [{ cat1: cat1Val }, { cat2: cat2Val }, { cat3: cat3Val }, { cat4: cat4Val }, { cat5: cat5Val }, { cat6: cat6Val }]
+      categories: []
     }
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  setCategories() {
+    let keys = [this.state.cat1, this.state.cat2, this.state.cat3, this.state.cat4, this.state.cat5, this.state.cat6];
+    let vals = [this.state.cat1Val, this.state.cat2Val, this.state.cat3Val, this.state.cat4Val, this.state.cat5Val, this.state.cat6Val]
+    this.state.categories.forEach((category, i) => {
+      if (keys[i] && vals[i]) {
+        this.state.categories.push({ [keys[i]]: vals[i] });
+      }
+    })
   }
 
   update(field) {
@@ -43,14 +53,16 @@ class ReportForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createReportData(this.state)
+    this.props.createReportData(this.state).then((res) => {
+      console.log(res)
+    })
   }
 
   render() {
     return (
-      <div>
-        evaluation form placeholder
-        <form className="" action="">
+      <div className="report-form-container">
+        <h2>Report Data Form</h2>
+        <form className="report-form" onSubmit={this.handleSubmit}>
           <div>Pronouns
             <input type="radio" name="pronoun" value="1" onChange={this.update("genderPronouns")}/>He/Him/His
             <input type="radio" name="pronoun" value="2" onChange={this.update("genderPronouns")}/>She/Her/Hers
@@ -161,7 +173,7 @@ class ReportForm extends React.Component {
               </div>
             </div>
           </div>
-
+          <input type="submit" value="Submit" />
         </form>
       </div>
     )
