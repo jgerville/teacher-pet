@@ -44,9 +44,13 @@ router.patch('/:id/edit',
 router.delete('/', 
 passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    Report.findByIdAndRemove(req.body.reportId, (err, report) => {
+    Report.findByIdAndRemove(req.body.reportId, {useFindAndModify: false}, (err, report) => {
+      ReportData.findByIdAndRemove(report.reportdata, {useFindAndModify: false}, (err, reportdata) => {
+        if (err) return res.status(500).send(err);
+        return res.status(200).json(`Report and report data successfully deleted.`);
+      })
       if (err) return res.status(500).send(err);
-      return res.status(200).json(`Report successfully deleted.`);
+      // return res.status(200).json(`Report successfully deleted.`);
     })  
   }
 )

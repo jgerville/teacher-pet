@@ -10,10 +10,11 @@ const ReportSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'students'
   },
-  // reportdata: {
-  //   type: Schema.Types.ObjectId,
-  //   ref: 'reportdata'
-  // },
+  reportdata: {
+    type: Schema.Types.ObjectId,
+    ref: 'reportdata',
+    required: true
+  },
   body: {
     type: String,
     required: true

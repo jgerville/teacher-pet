@@ -105,7 +105,8 @@ router.patch('/:id/reports', passport.authenticate('jwt', { session: false }),
           const newReport = new Report({
             user: req.user.id,
             student: studentId,
-            body: req.body.body
+            body: req.body.body,
+            reportdata: req.body.reportdata
           });
           newReport.save()
             .then(report => res.json(report))
