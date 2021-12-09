@@ -68,13 +68,16 @@ router.patch('/:id/students', passport.authenticate('jwt', { session: false }),
         if (klass) {
           const studentIds = req.body.studentIds
           studentIds.forEach(studentId => {
-            klass.students.push(studentId)
-            let student = Student.find(studentId)
-            // .then????
-            student.classes.push(klass.id)
+            if (!klass.students.includes(studentId)) {
+              klass.students.push(studentId)
+              Student.find({ _id: studentId}).then((studentArr) => {
+                studentArr[0].classes.push(klass.id)
+                studentArr[0].save()
+              })
+            }
           })
           klass.save()
-          res.json(klass.students)
+          res.json(klass)
         } else{ 
           res.status(403).json({ noaccess: 'No class found belonging to the current user with that ID' })
         }
