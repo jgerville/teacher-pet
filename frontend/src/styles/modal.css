@@ -96,7 +96,7 @@
 .modal-switch-container {
   display: flex;
   width: 530px;
-  /* justify-content: center; */
+  justify-content: center;
   margin: 1.5em 0 0 0;
 }
 
