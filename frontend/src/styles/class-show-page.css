@@ -29,13 +29,21 @@
   margin-top: 30px;
   width: 70%;
   display: flex;
+  justify-content: center;
+}
+
+/* the message that shows up if they don't have any students yet */
+.class-show-page .add-something-button-holder + .student-index p {
+  padding: 5px;
+  border-radius: 8px;
+  color: red;
 }
 
 .class-show-page .add-something-button-holder + .student-index .student-list {
   width: 100%;
   list-style-type: none;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: auto 1fr auto;
   grid-gap: 6px;
   padding: 0;
@@ -49,6 +57,7 @@
   background-color: violet;
   border-radius: 8px;
   color: white;
+  transition: 0.3s ease-out;
 }
 
 .class-show-page .add-something-button-holder + .student-index .student-list a:hover {
@@ -90,6 +99,7 @@
   padding: 0;
 }
 
+/* these are each grid item (student names) that we can select */
 .class-show-page .student-form-container .student-list li {
   display: flex;
   justify-content: flex-start;
@@ -101,10 +111,11 @@
 
 .class-show-page .student-form-container .student-list li:hover {
   cursor: pointer;
+  background-color: #C2FFF9;
 }
 
 .class-show-page .student-form-container .selected {
-  background-color: #C2FFF9;
+  background-color: #71DFE7;
 }
 
 .error-text {
