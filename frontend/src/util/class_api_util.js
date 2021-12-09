@@ -26,6 +26,6 @@ export const addStudentsToClass = async (classId, studentIds) => {
 }
 
 export const deleteClass = async (classId) => {
-  const response = await axios.delete(`api/classes/${classId}`);
+  const response = await axios.delete(`api/classes/`, { id: classId });
   return response.data;
 };
