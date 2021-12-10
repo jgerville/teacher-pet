@@ -1,4 +1,6 @@
 import React from "react";
+import ReportDataInstructions from "./report_data_instructions";
+import { BsQuestionCircleFill } from 'react-icons/bs'
 import '../../styles/report-data.css'
 
 class ReportForm extends React.Component {
@@ -82,15 +84,14 @@ class ReportForm extends React.Component {
     }
   }
 
-
-
   render() {
     return (
       <div className="report-form-container">
         <div className="report-form-title">
           <div id="report-student-name">
-            Student Name
+            <div onClick={() => this.props.openModal()}>Student Name&nbsp;&nbsp;&nbsp;&nbsp;<BsQuestionCircleFill color="#017987" /></div>
           </div>
+          {this.props.modal === 'instructions' ? <ReportDataInstructions /> : null}
         </div>
         <form className="report-form" onSubmit={this.handleSubmit}>
           {/* <div className="report-form-memo">

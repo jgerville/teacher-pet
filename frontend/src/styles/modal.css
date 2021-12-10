@@ -108,3 +108,13 @@
   background-color: transparent;
   border: none;
 }
+
+.instructions-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.instructions-body {
+  margin-top: 1em;
+}
