@@ -19,10 +19,17 @@
 }
 
 .report-form-bottom {
+  display: flex;
+  flex-direction: column;
   background-color: #71DFE7;
   padding: 1em;
   margin: 1em 6em;
   border-radius: 8px;
+}
+
+#all-cat-container {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* .report-form-memo {
@@ -43,6 +50,13 @@
   display: flex;
   margin: 0 2em 0 2em;
   align-items: center;
+}
+
+.cat-text {
+  margin: 1em 0 0.5em 0;
+  text-align: center;
+  border-radius: 15px;
+  border: 0.1em solid #009DAE;
 }
 
 /* h5 {
@@ -80,6 +94,10 @@
 
 .boolean-radio {
   margin: 0.15em;
+}
+
+#report-submit-container {
+  
 }
 
 
