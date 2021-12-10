@@ -1,27 +1,53 @@
 .report-form-container {
-  display: flex;
-  justify-content: space-between;
+  /* display: flex; */
+  /* justify-content: space-between; */
 }
 
 .report-form {
+  min-width: 50em;
+  border-radius: 8px;
+  background-color: #C2FFF9;
+}
+
+.report-form-top {
   margin: 3em;
   padding: 3em;
   display: flex;
   justify-content: space-between;
   min-width: 50em;
-  /* flex-direction: column; */
-  /* border: 1px #009DAE solid; */
   border-radius: 8px;
   background-color: #C2FFF9;
+}
+
+/* .report-form-memo {
+  width: 16em;
+  margin: 0 3em 0 0;
+  background-color: #71DFE7;
+  padding: 1em;
+  border-radius: 8px;
+} */
+
+.multi-radio-container {
+  background-color: #71DFE7;
+  padding: 1em;
+  border-radius: 8px;
 }
 
 .report-radio {
   display: flex;
   margin: 0 2em 0 2em;
+  align-items: center;
 }
+
+/* h5 {
+  color: white;
+} */
 
 .boolean-radio-container {
   display: flex;
+  background-color: #71DFE7;
+  padding: 1em;
+  border-radius: 8px;
 }
 
 .boolean-values {
