@@ -1,17 +1,18 @@
-import React, { useState, useEffect } from 'react'
-import PropTypes from 'prop-types'
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import StudentShowHeader from "../students/show/student_show_header";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import ReactLoading from "react-loading";
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
-import { getStudent } from '../../actions/student_actions';
-import "../../styles/student-show-page.css"
+import { connect } from "react-redux";
+import { withRouter } from "react-router";
+import { getStudent } from "../../actions/student_actions";
+import "../../styles/student-show-page.css";
+import ReportIndex from "../reports/report_index";
 
 const StudentShowPage = ({ student, getStudent, studentId }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  
+
   useEffect(() => {
     const fetchStudent = async () => {
       try {
@@ -29,8 +30,8 @@ const StudentShowPage = ({ student, getStudent, studentId }) => {
       setError("");
       setIsLoading(false);
     };
-  }, [getStudent, studentId])
-  
+  }, [getStudent, studentId]);
+
   return (
     <main className="student-show-page">
       {error && <p className="error-text">{error}</p>}
@@ -45,12 +46,15 @@ const StudentShowPage = ({ student, getStudent, studentId }) => {
       {student && (
         <>
           <StudentShowHeader student={student} />
-          <Link className="btn" to={`/students/${studentId}/reports`}>Create a new report</Link>
+          <Link className="btn" to={`/students/${studentId}/reports`}>
+            Create a new report
+          </Link>
+          <ReportIndex studentId={studentId} />
         </>
       )}
     </main>
-  )
-}
+  );
+};
 
 StudentShowPage.propTypes = {
   student: PropTypes.shape({
@@ -61,15 +65,17 @@ StudentShowPage.propTypes = {
     reports: PropTypes.array,
   }),
   getStudent: PropTypes.func.isRequired,
-}
+};
 
-const mapStateToProps = ({ entities: { students }}, ownProps) => ({
+const mapStateToProps = ({ entities: { students } }, ownProps) => ({
   student: students[ownProps.match.params.studentId],
   studentId: ownProps.match.params.studentId,
-})
+});
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   getStudent: () => dispatch(getStudent(ownProps.match.params.studentId)),
-})
+});
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(StudentShowPage));
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(StudentShowPage)
+);

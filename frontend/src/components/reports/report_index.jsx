@@ -15,7 +15,7 @@ const ReportIndex = ({ studentId, reports, getReports }) => {
       try {
         setIsLoading(true);
         setError("");
-        await getReports();
+        await getReports(studentId);
         setIsLoading(false);
       } catch (error) {
         setIsLoading(false);
@@ -56,7 +56,7 @@ const ReportIndex = ({ studentId, reports, getReports }) => {
 
 ReportIndex.propTypes = {
   studentId: PropTypes.string.isRequired,
-  reports: PropTypes.array.isRequired,
+  reports: PropTypes.array,
   getReports: PropTypes.func.isRequired,
 };
 
