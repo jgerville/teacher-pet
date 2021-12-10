@@ -35,6 +35,11 @@ export const getAllReports = () => (dispatch) =>
     .then((reportsData) => dispatch(receiveReports(reportsData)))
     .catch((err) => receiveErrors(err));
 
+export const getReportsByStudentId = (studentId) => (dispatch) =>
+  ReportAPI.getReportsByStudentId(studentId)
+    .then((reportsData) => dispatch(receiveReports(reportsData)))
+    .catch((err) => receiveErrors(err));
+
 export const createReport = (studentId, report) => (dispatch) =>
   ReportAPI.createReport(studentId, report)
     .then((newReport) => dispatch(receiveReport(newReport)))

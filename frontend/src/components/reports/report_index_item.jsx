@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 const ReportIndexItem = ({ report }) => {
   return (
     <div className="report-index-item">
-      edit this 
+      
     </div>
   )
 }

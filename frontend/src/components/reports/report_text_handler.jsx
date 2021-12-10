@@ -8,7 +8,7 @@ import { withRouter } from 'react-router';
 import { createReport, updateReport } from '../../actions/report_actions';
 import { showReportData } from '../../actions/report_data_actions';
 
-const ReportTextHandler = ({ report, reportData, getReport, reportDataId, createReport }) => {
+const ReportTextHandler = ({ reportData, reportDataId, createReport }) => {
   const [isEditing, setIsEditing] = useState(false);
   
   // const [pronouns, setPronouns] = useState("");
@@ -68,9 +68,8 @@ const ReportTextHandler = ({ report, reportData, getReport, reportDataId, create
 }
 
 ReportTextHandler.propTypes = {
-  report: PropTypes.object.isRequired,
-  reportId: PropTypes.string.isRequired,
-  edit: PropTypes.func.isRequired,
+  reportData: PropTypes.object.isRequired,
+  reportDataId: PropTypes.string.isRequired,
   createReport: PropTypes.func.isRequired,
 }
 
@@ -80,8 +79,7 @@ const mapStateToProps = ({ entities: { reportData }, entities, }, ownProps) => (
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  edit: (report) => dispatch(updateReport(report)),
-  getReport: () => dispatch(showReportData(ownProps.match.params.reportDataId)),
+  // getReport: () => dispatch(showReportData(ownProps.match.params.reportDataId)),
   createReport: (studentId, report) => dispatch(createReport(studentId, report)),
 })
 

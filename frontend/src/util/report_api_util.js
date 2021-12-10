@@ -10,6 +10,11 @@ export const getAllReports = async () => {
   return response.data;
 }; //may delete later
 
+export const getReportsByStudentId = async (studentId) => {
+  const response = await axios.get(`api/students/${studentId}/reports`);
+  return response.data;
+}
+
 export const createReport = async (studentId, report) => {
   const response = await axios.patch(`/api/students/${studentId}/reports`, report);
   return response.data;
