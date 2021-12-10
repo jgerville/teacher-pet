@@ -1,4 +1,5 @@
 import React from "react";
+import '../../styles/report-data.css'
 
 class ReportForm extends React.Component {
   constructor(props) {
@@ -80,56 +81,79 @@ class ReportForm extends React.Component {
   render() {
     return (
       <div className="report-form-container">
-        <h2>Report Data Form</h2>
+        <h2>How is STUDENT doing?</h2>
+        <p>Select from the options below to fill out a new report. To help us draft your report, only gender pronouns and overall performance are required - the rest may be selected only as applicable. For ratings covering a specific subject or assignment, enter up to six items in the custom category fields below.</p>
         <form className="report-form" onSubmit={this.handleSubmit}>
-          <div>Pronouns
-            <input type="radio" name="pronoun" value="1" onChange={this.update("genderPronouns")}/>He/Him/His
-            <input type="radio" name="pronoun" value="2" onChange={this.update("genderPronouns")}/>She/Her/Hers
-            <input type="radio" name="pronoun" value="3" onChange={this.update("genderPronouns")}/>They/Them/Theirs
+          <div className="multi-radio-container">
+            <div> <h5>Pronouns</h5>
+              <label class="report-radio">
+                <input type="radio" name="pronoun" value="1" onChange={this.update("genderPronouns")} />He/Him/His
+              </label>
+              <label class="report-radio">
+                <input type="radio" name="pronoun" value="2" onChange={this.update("genderPronouns")} />She/Her/Hers
+              </label>
+              <label class="report-radio">
+                <input type="radio" name="pronoun" value="3" onChange={this.update("genderPronouns")} />They/Them/Theirs
+              </label>
+            </div>
+            <div> <h5>Overall Performance</h5>
+              <label class="report-radio">
+                <input type="radio" name="overall-score" value="1" onChange={this.update("overallScore")} />Poor
+              </label>
+              <label class="report-radio">
+                <input type="radio" name="overall-score" value="2" onChange={this.update("overallScore")} />Below Expectations
+              </label>
+              <label class="report-radio">
+                <input type="radio" name="overall-score" value="3" onChange={this.update("overallScore")} />Fair
+              </label>
+              <label class="report-radio">
+                <input type="radio" name="overall-score" value="4" onChange={this.update("overallScore")} />Good
+              </label>
+              <label class="report-radio">
+                <input type="radio" name="overall-score" value="5" onChange={this.update("overallScore")} />Excellent
+              </label>
+            </div>
           </div>
-          <div>Overall Performance
-            <input type="radio" name="overall-score" value="1" onChange={this.update("overallScore")}/>Poor
-            <input type="radio" name="overall-score" value="2" onChange={this.update("overallScore")}/>Below Expectations
-            <input type="radio" name="overall-score" value="3" onChange={this.update("overallScore")}/>Fair
-            <input type="radio" name="overall-score" value="4" onChange={this.update("overallScore")}/>Good
-            <input type="radio" name="overall-score" value="5" onChange={this.update("overallScore")}/>Excellent
+          <div className="boolean-radio-container">
+            <div className="boolean-labels">
+              <div className="boolean-category">Listens attentively</div>
+              <div className="boolean-category">Helps others</div>
+              <div className="boolean-category">Participates often</div>
+              <div className="boolean-category">Asks questions</div>
+              <div className="boolean-category">Good attendance</div>
+              <div className="boolean-category">On time</div>
+              <div className="boolean-category">Polite</div>
+              <div className="boolean-category">Well behaved</div>
+              <div className="boolean-category">Completes homework</div>
+            </div>
+            <div className="boolean-values">
+              <div className="true-container">
+                <h6>True</h6>
+                <input type="radio" name="listen-score" value="true" className="boolean-radio" onChange={this.update("listensAttentively")} />
+                <input type="radio" name="help-score" value="true" className="boolean-radio" onChange={this.update("helpsOthers")} />
+                <input type="radio" name="participate-score" value="true" className="boolean-radio" onChange={this.update("participatesOften")} />
+                <input type="radio" name="question-score" value="true" className="boolean-radio" onChange={this.update("asksQuestions")} />
+                <input type="radio" name="attendance-score" value="true" onChange={this.update("goodAttendance")} />
+                <input type="radio" name="time-score" value="true" onChange={this.update("onTime")} />
+                <input type="radio" name="polite-score" value="true" onChange={this.update("polite")} />
+                <input type="radio" name="disruptive-score" value="true" onChange={this.update("notDisruptive")} />
+                <input type="radio" name="homework-score" value="true" onChange={this.update("homeworkCompletion")} />
+              </div>
+              <div className="false-container">
+                <h6>False</h6>
+                <input type="radio" name="listen-score" value="false" className="boolean-radio" onChange={this.update("listensAttentively")} />
+                <input type="radio" name="help-score" value="false" className="boolean-radio" onChange={this.update("helpsOthers")} />
+                <input type="radio" name="participate-score" value="false" className="boolean-radio" onChange={this.update("participatesOften")} />
+                <input type="radio" name="question-score" value="false" className="boolean-radio" onChange={this.update("asksQuestions")} />
+                <input type="radio" name="attendance-score" value="false" onChange={this.update("goodAttendance")} />
+                <input type="radio" name="time-score" value="false" onChange={this.update("onTime")} />
+                <input type="radio" name="polite-score" value="false" onChange={this.update("polite")} />
+                <input type="radio" name="disruptive-score" value="false" onChange={this.update("notDisruptive")} />
+                <input type="radio" name="homework-score" value="false" onChange={this.update("homeworkCompletion")} />
+              </div>
+            </div>
           </div>
-          <div>listens attentively
-            <input type="radio" name="listen-score" value="true" onChange={this.update("listensAttentively")}/>True
-            <input type="radio" name="listen-score" value="false" onChange={this.update("listensAttentively")}/>False
-          </div>
-          <div>Helps others
-            <input type="radio" name="help-score" value="true" onChange={this.update("helpsOthers")}/>True
-            <input type="radio" name="help-score" value="false" onChange={this.update("helpsOthers")}/>False
-          </div>
-          <div>Participates often
-            <input type="radio" name="participate-score" value="true" onChange={this.update("participatesOften")}/>True
-            <input type="radio" name="participate-score" value="false" onChange={this.update("participatesOften")}/>False
-          </div>
-          <div>Asks questions
-            <input type="radio" name="question-score" value="true" onChange={this.update("asksQuestions")}/>True
-            <input type="radio" name="question-score" value="false" onChange={this.update("asksQuestions")}/>False
-          </div>
-          <div>Good attendance
-            <input type="radio" name="attendance-score" value="true" onChange={this.update("goodAttendance")}/>True
-            <input type="radio" name="attendance-score" value="false" onChange={this.update("goodAttendance")}/>False
-          </div>
-          <div>On time
-            <input type="radio" name="time-score" value="true" onChange={this.update("onTime")}/>True
-            <input type="radio" name="time-score" value="false" onChange={this.update("onTime")}/>False
-          </div>
-          <div>Polite
-            <input type="radio" name="polite-score" value="true" onChange={this.update("polite")}/>True
-            <input type="radio" name="polite-score" value="false" onChange={this.update("polite")}/>False
-          </div>
-          <div>Not disruptive
-            <input type="radio" name="disruptive-score" value="true" onChange={this.update("notDisruptive")}/>True
-            <input type="radio" name="disruptive-score" value="false" onChange={this.update("notDisruptive")}/>False
-          </div>
-          <div>Homework completion
-            <input type="radio" name="homework-score" value="true" onChange={this.update("homeworkCompletion")}/>True
-            <input type="radio" name="homework-score" value="false" onChange={this.update("homeworkCompletion")}/>False
-          </div>
+
           <div>Additional categories
             <div>Category One
               <input type="text" onChange={this.updateCategory("cat1")} />
@@ -191,7 +215,7 @@ class ReportForm extends React.Component {
                 <input type="radio" name="cat-6" value="5" onChange={this.updateCategory("cat6Val")}/>Excellent
               </div>
             </div>
-          </div>
+          </div> 
           <input type="submit" value="Submit" />
         </form>
       </div>

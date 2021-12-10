@@ -1,3 +1,61 @@
+.report-form-container {
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+}
+
+.report-form {
+  margin: 3em;
+  padding: 3em;
+  display: flex;
+  /* flex-direction: column; */
+  border: 1px #009DAE solid;
+  border-radius: 8px;
+  background-color: #C2FFF9;
+}
+
+.report-radio {
+  display: flex;
+  margin: 0 2em 0 2em;
+}
+
+.boolean-radio-container {
+  display: flex;
+}
+
+.boolean-radio {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.boolean-radio > input {
+  margin: 0 3em 0 0;
+}
+
+.boolean-values {
+  display: flex;
+  padding: 0 2em;
+  min-width: 10em;
+  justify-content: space-around
+}
+
+.boolean-radio {
+  margin: 2.0em 1em;
+}
+
+.boolean-values h6 {
+  margin: 0 0 1.5em 0;
+}
+
+.boolean-labels {
+  margin: 2em 0 0 0;
+}
+
+.boolean-category {
+  padding: 1em;
+  margin: 0em 1em;
+}
+
 input[type=radio] {
   -webkit-appearance: none;
   appearance: none;
@@ -6,7 +64,7 @@ input[type=radio] {
   font: inherit;
   width: 1.2em;
   height: 1.2em;
-  border: 0.15em solid currentColor;
+  border: 0.1em solid #009DAE;
   border-radius: 25%;
   transform: translateY(-0.1em);
   display: grid;
@@ -29,5 +87,5 @@ input[type=radio]:checked::before {
 }
 
 :root {
-  --radio-filter-color: purple;
+  --radio-filter-color: #009DAE;
 }
