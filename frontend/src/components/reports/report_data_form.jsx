@@ -81,8 +81,11 @@ class ReportForm extends React.Component {
   render() {
     return (
       <div className="report-form-container">
-        <div className="report-form-title">Student Name</div>
-        <p></p>
+        <div className="report-form-title">
+          <div id="report-student-name">
+            Student Name
+          </div>
+        </div>
         <form className="report-form" onSubmit={this.handleSubmit}>
           {/* <div className="report-form-memo">
             Select from the options below to fill out a new report. To help us draft your report, only gender pronouns and overall performance are required - the rest may be selected only as applicable. For ratings covering a specific subject or assignment, enter up to six items in the custom category fields below.
@@ -130,17 +133,6 @@ class ReportForm extends React.Component {
                 <div className="boolean-category">Polite</div>
                 <div className="boolean-category">Well behaved</div>
                 <div className="boolean-category">Completes homework</div>
-                {/* <ul>
-                <li><div className="boolean-category">Listens attentively</div></li>
-                <li><div className="boolean-category">Helps others</div></li>
-                <li><div className="boolean-category">Participates often</div></li>
-                <li><div className="boolean-category">Asks questions</div></li>
-                <li><div className="boolean-category">Good attendance</div></li>
-                <li><div className="boolean-category">On time</div></li>
-                <li><div className="boolean-category">Polite</div></li>
-                <li><div className="boolean-category">Well behaved</div></li>
-                <li><div className="boolean-category">Completes homework</div></li>
-              </ul> */}
               </div>
               <div className="boolean-values">
                 <div className="true-container">
@@ -177,37 +169,37 @@ class ReportForm extends React.Component {
                 <div id="category-1" className="cat-container">
                   <input type="text" placeholder="Subject #1" className="cat-text" onChange={this.updateCategory("cat1")} />
                   <label className="report-radio">
-                    <input type="radio" name="cat-1" value="5" onChange={this.updateCategory("cat1Val")} />Excellent
+                    <input type="radio" name="cat-1" value="5" onChange={this.updateCategory("cat1Val")} />&nbsp;Excellent
                   </label>
                   <label className="report-radio">
-                    <input type="radio" name="cat-1" value="4" onChange={this.updateCategory("cat1Val")} />Good
+                    <input type="radio" name="cat-1" value="4" onChange={this.updateCategory("cat1Val")} />&nbsp;Good
                   </label>
                   <label className="report-radio">
-                    <input type="radio" name="cat-1" value="3" onChange={this.updateCategory("cat1Val")} />Fair
+                    <input type="radio" name="cat-1" value="3" onChange={this.updateCategory("cat1Val")} />&nbsp;Fair
                   </label>
                   <label className="report-radio">
-                    <input type="radio" name="cat-1" value="2" onChange={this.updateCategory("cat1Val")} />Below Expectations
+                    <input type="radio" name="cat-1" value="2" onChange={this.updateCategory("cat1Val")} />&nbsp;Below Expectations
                   </label>
                   <label className="report-radio">
-                    <input type="radio" name="cat-1" value="1" onChange={this.updateCategory("cat1Val")} />Poor
+                    <input type="radio" name="cat-1" value="1" onChange={this.updateCategory("cat1Val")} />&nbsp;Poor
                   </label>
                 </div>
                 <div id="category-2" className="cat-container">
                   <input type="text" placeholder="Subject #2" className="cat-text" onChange={this.updateCategory("cat2")} />
                   <label className="report-radio">
-                    <input type="radio" name="cat-2" value="5" onChange={this.updateCategory("cat2Val")} />Excellent
+                    <input type="radio" name="cat-2" value="5" onChange={this.updateCategory("cat2Val")} />&nbsp;Excellent
                   </label>
                   <label className="report-radio">
-                    <input type="radio" name="cat-2" value="4" onChange={this.updateCategory("cat2Val")} />Good
+                    <input type="radio" name="cat-2" value="4" onChange={this.updateCategory("cat2Val")} />&nbsp;Good
                   </label>
                   <label className="report-radio">
-                    <input type="radio" name="cat-2" value="3" onChange={this.updateCategory("cat2Val")} />Fair
+                    <input type="radio" name="cat-2" value="3" onChange={this.updateCategory("cat2Val")} />&nbsp;Fair
                   </label>
                   <label className="report-radio">
-                    <input type="radio" name="cat-2" value="2" onChange={this.updateCategory("cat2Val")} />Below Expectations
+                    <input type="radio" name="cat-2" value="2" onChange={this.updateCategory("cat2Val")} />&nbsp;Below Expectations
                   </label>
                   <label className="report-radio">
-                    <input type="radio" name="cat-2" value="1" onChange={this.updateCategory("cat2Val")} />Poor
+                    <input type="radio" name="cat-2" value="1" onChange={this.updateCategory("cat2Val")} />&nbsp;Poor
                   </label>
                 </div>
               </div>
@@ -215,37 +207,37 @@ class ReportForm extends React.Component {
                 <div id="category-3" className="cat-container">
                   <input type="text" placeholder="Subject #3" className="cat-text" onChange={this.updateCategory("cat3")} />
                   <label className="report-radio">
-                    <input type="radio" name="cat-3" value="5" onChange={this.updateCategory("cat3Val")} />Excellent
+                    <input type="radio" name="cat-3" value="5" onChange={this.updateCategory("cat3Val")} />&nbsp;Excellent
                   </label>
                   <label className="report-radio">
-                    <input type="radio" name="cat-3" value="4" onChange={this.updateCategory("cat3Val")} />Good
+                    <input type="radio" name="cat-3" value="4" onChange={this.updateCategory("cat3Val")} />&nbsp;Good
                   </label>
                   <label className="report-radio">
-                    <input type="radio" name="cat-3" value="3" onChange={this.updateCategory("cat3Val")} />Fair
+                    <input type="radio" name="cat-3" value="3" onChange={this.updateCategory("cat3Val")} />&nbsp;Fair
                   </label>
                   <label className="report-radio">
-                    <input type="radio" name="cat-3" value="2" onChange={this.updateCategory("cat3Val")} />Below Expectations
+                    <input type="radio" name="cat-3" value="2" onChange={this.updateCategory("cat3Val")} />&nbsp;Below Expectations
                   </label>
                   <label className="report-radio">
-                    <input type="radio" name="cat-3" value="1" onChange={this.updateCategory("cat3Val")} />Poor
+                    <input type="radio" name="cat-3" value="1" onChange={this.updateCategory("cat3Val")} />&nbsp;Poor
                   </label>
                 </div>
                 <div id="category-4" className="cat-container">
                   <input type="text" placeholder="Subject #4" className="cat-text" onChange={this.updateCategory("cat4")} />
                   <label className="report-radio">
-                    <input type="radio" name="cat-4" value="5" onChange={this.updateCategory("cat4Val")} />Excellent
+                    <input type="radio" name="cat-4" value="5" onChange={this.updateCategory("cat4Val")} />&nbsp;Excellent
                   </label>
                   <label className="report-radio">
-                    <input type="radio" name="cat-4" value="4" onChange={this.updateCategory("cat4Val")} />Good
+                    <input type="radio" name="cat-4" value="4" onChange={this.updateCategory("cat4Val")} />&nbsp;Good
                   </label>
                   <label className="report-radio">
-                    <input type="radio" name="cat-4" value="3" onChange={this.updateCategory("cat4Val")} />Fair
+                    <input type="radio" name="cat-4" value="3" onChange={this.updateCategory("cat4Val")} />&nbsp;Fair
                   </label>
                   <label className="report-radio">
-                    <input type="radio" name="cat-4" value="2" onChange={this.updateCategory("cat4Val")} />Below Expectations
+                    <input type="radio" name="cat-4" value="2" onChange={this.updateCategory("cat4Val")} />&nbsp;Below Expectations
                   </label>
                   <label className="report-radio">
-                    <input type="radio" name="cat-4" value="1" onChange={this.updateCategory("cat4Val")} />Poor
+                    <input type="radio" name="cat-4" value="1" onChange={this.updateCategory("cat4Val")} />&nbsp;Poor
                   </label>
                 </div>
               </div>
@@ -253,44 +245,44 @@ class ReportForm extends React.Component {
                 <div id="category-5" className="cat-container">
                   <input type="text" placeholder="Subject #5" className="cat-text" onChange={this.updateCategory("cat5")} />
                   <label className="report-radio">
-                    <input type="radio" name="cat-5" value="5" onChange={this.updateCategory("cat5Val")} />Excellent
+                    <input type="radio" name="cat-5" value="5" onChange={this.updateCategory("cat5Val")} />&nbsp;Excellent
                   </label>
                   <label className="report-radio">
-                    <input type="radio" name="cat-5" value="4" onChange={this.updateCategory("cat5Val")} />Good
+                    <input type="radio" name="cat-5" value="4" onChange={this.updateCategory("cat5Val")} />&nbsp;Good
                   </label>
                   <label className="report-radio">
-                    <input type="radio" name="cat-5" value="3" onChange={this.updateCategory("cat5Val")} />Fair
+                    <input type="radio" name="cat-5" value="3" onChange={this.updateCategory("cat5Val")} />&nbsp;Fair
                   </label>
                   <label className="report-radio">
-                    <input type="radio" name="cat-5" value="2" onChange={this.updateCategory("cat5Val")} />Below Expectations
+                    <input type="radio" name="cat-5" value="2" onChange={this.updateCategory("cat5Val")} />&nbsp;Below Expectations
                   </label>
                   <label className="report-radio">
-                    <input type="radio" name="cat-5" value="1" onChange={this.updateCategory("cat5Val")} />Poor
+                    <input type="radio" name="cat-5" value="1" onChange={this.updateCategory("cat5Val")} />&nbsp;Poor
                   </label>
                 </div>
                 <div id="category-6" className="cat-container">
                   <input type="text" placeholder="Subject #6" className="cat-text" onChange={this.updateCategory("cat6")} />
                   <label className="report-radio">
-                    <input type="radio" name="cat-6" value="5" onChange={this.updateCategory("cat6Val")} />Excellent
+                    <input type="radio" name="cat-6" value="5" onChange={this.updateCategory("cat6Val")} />&nbsp;Excellent
                   </label>
                   <label className="report-radio">
-                    <input type="radio" name="cat-6" value="4" onChange={this.updateCategory("cat6Val")} />Good
+                    <input type="radio" name="cat-6" value="4" onChange={this.updateCategory("cat6Val")} />&nbsp;Good
                   </label>
                   <label className="report-radio">
-                    <input type="radio" name="cat-6" value="3" onChange={this.updateCategory("cat6Val")} />Fair
+                    <input type="radio" name="cat-6" value="3" onChange={this.updateCategory("cat6Val")} />&nbsp;Fair
                   </label>
                   <label className="report-radio">
-                    <input type="radio" name="cat-6" value="2" onChange={this.updateCategory("cat6Val")} />Below Expectations
+                    <input type="radio" name="cat-6" value="2" onChange={this.updateCategory("cat6Val")} />&nbsp;Below Expectations
                   </label>
                   <label className="report-radio">
-                    <input type="radio" name="cat-6" value="1" onChange={this.updateCategory("cat6Val")} />Poor
+                    <input type="radio" name="cat-6" value="1" onChange={this.updateCategory("cat6Val")} />&nbsp;Poor
                   </label>
                 </div>
               </div>
             </div>
           </div>
           <div id="report-submit-container">
-            <input type="submit" value="Submit" />
+            <input type="submit" id="report-data-submit" value="Submit" />
           </div>
         </form>
       </div>

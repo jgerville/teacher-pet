@@ -97,7 +97,37 @@
 }
 
 #report-submit-container {
-  
+  margin: 3em;
+  padding-bottom: 2em;
+  display: flex;
+  justify-content: center;
+}
+
+.report-form-title {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#report-student-name {
+  margin: 2em 4em 0 0;
+  align-items: center;
+  font-size: 24px;
+}
+
+#report-data-submit {
+  background-color: #009DAE;
+  color: white;
+  border: none;
+  font-size: 18px;
+  /* font-weight: 500; */
+  border-radius: 5px;
+  padding: 12px;
+  width: 20em;
+}
+
+#report-data-submit:hover {
+  background-color: #017987;
 }
 
 
