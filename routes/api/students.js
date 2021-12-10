@@ -81,10 +81,10 @@ router.patch('/:id/edit',
   }
 )
 
-router.delete('/', 
+router.delete('/:studentId', 
 passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    Student.findByIdAndRemove(req.body.id, (err, student) => {
+    Student.findByIdAndRemove(req.params.studentId, (err, student) => {
       if (err) return res.status(500).send(err);
       return res.status(200).json(`${student.firstName} ${student.lastName} successfully deleted.`);
     })  
