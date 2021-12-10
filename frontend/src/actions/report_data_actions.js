@@ -25,10 +25,10 @@ const receiveErrors = (errors) => ({
   errors
 });
 
-// export const showReportData = (reportDataId) => (dispatch) =>
-//   ReportDataAPI.showReportData(reportDataId)
-//     .then((reportData) => dispatch(receiveReportData(reportData)))
-//     .catch((err) => dispatch(receiveErrors(err)));
+export const showReportData = (reportDataId) => (dispatch) =>
+  ReportDataAPI.showReportData(reportDataId)
+    .then((reportData) => dispatch(receiveReportData(reportData)))
+    .catch((err) => dispatch(receiveErrors(err)));
 
 // export const getAllReportsData = () => (dispatch) =>
 //   ReportDataAPI.getAllReportsData()

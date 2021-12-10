@@ -10,8 +10,8 @@ export const getAllReports = async () => {
   return response.data;
 }; //may delete later
 
-export const createReport = async (report) => {
-  const response = await axios.post("/api/report", report);
+export const createReport = async (studentId, report) => {
+  const response = await axios.patch(`/api/students/${studentId}/reports`, report);
   return response.data;
 };
 

@@ -1,9 +1,9 @@
 import axios from "axios";
 
-// export const showReportData = async (reportDataId) => {
-//   const response = await axios.get(`api/reportdata/${reportDataId}`);
-//   return response.data;
-// };
+export const showReportData = async (reportDataId) => {
+  const response = await axios.get(`api/reportdata/${reportDataId}`);
+  return response.data;
+};
 
 // export const getAllReportsData = async () => {
 //   const response = await axios.get('api/reportdata');
