@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { createReport, updateReport } from '../../actions/report_actions';
 import { showReportData } from '../../actions/report_data_actions';
+import { verbReplacement } from '../../util/report_string_util';
 
 const ReportTextHandler = ({ reportData, reportDataId, createReport, history, students, klass }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -37,7 +38,7 @@ const ReportTextHandler = ({ reportData, reportDataId, createReport, history, st
     let classSubject = klass.subject;
     
     console.log(fName, lName, className, classSubject, pronouns)
-
+    
     let textArray = Object.values(nextObject);
     let objectKeys = Object.keys(nextObject);
     let bodyString = "";
@@ -45,15 +46,18 @@ const ReportTextHandler = ({ reportData, reportDataId, createReport, history, st
     for (let i = 0; i < objectKeys.length; i++) {
       if (!notCategories.includes(objectKeys[i])) {
         currString = textArray[i].replaceAll('%category%', objectKeys[i]);
-        bodyString += (currString);
+        bodyString += (currString) + " ";
       } else {
-        bodyString += (textArray[i]);
+        bodyString += (textArray[i]) + " ";
       }
     }
+
+    let replacedBody = verbReplacement(pronouns, fName, className, classSubject, bodyString)
     console.log("bodystring:", bodyString)
+    console.log("replaced:", replacedBody)
     // insert util function that replaces placeholders here
     // e.g. replacePlaceholders(textArray.join(" "))
-    return bodyString;
+    return replacedBody;
   }
   
   const [body, setBody] = useState(convertToText(reportData[reportDataId]));

@@ -1,10 +1,10 @@
-const { genderPronouns } = require("../../../util/report_data_keys")
+// const { genderPronouns } = require("../../../util/report_data_keys")
 
-const subjectPronoun = genderPronouns[0];
-const objectPronoun = genderPronouns[1];
-const possessivePronoun = genderPronouns[2];
+// const subjectPronoun = genderPronouns[0];
+// const objectPronoun = genderPronouns[1];
+// const possessivePronoun = genderPronouns[2];
 
-verbReplacement = (genderPronouns, fname, className, subject, body) => {
+export const verbReplacement = (genderPronouns, fname, className, subject, body) => {
   const verbsRegular = ['complete', 'fulfill', 'distract', 'lack', 'show', 'miss', 'need', 'participate']
   let verbsObj = {}
   if (genderPronouns[0] !== 'They') {
@@ -33,6 +33,7 @@ verbReplacement = (genderPronouns, fname, className, subject, body) => {
     body = body.replaceAll(concatKey, concatObj[concatKey])
   })
 
+  return body;
   // console.log(body)
 }
 
