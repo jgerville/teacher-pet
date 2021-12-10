@@ -1,11 +1,17 @@
 import * as ClassAPI from "../util/class_api_util";
 export const RECEIVE_CLASS = "RECEIVE_CLASS";
+export const CLEAR_AND_RECEIVE_CLASS = 'CLEAR_AND_RECEIVE_CLASS'
 export const RECEIVE_CLASSES = "RECEIVE_CLASSES";
 export const REMOVE_CLASS = "REMOVE_CLASS";
 export const RECEIVE_CLASS_ERRORS = "RECEIVE_CLASS_ERRORS";
 
 const receiveClass = (klass) => ({
   type: RECEIVE_CLASS,
+  klass,
+});
+
+const clearAndReceiveClass = (klass) => ({
+  type: CLEAR_AND_RECEIVE_CLASS,
   klass,
 });
 
@@ -26,7 +32,7 @@ const receiveErrors = (errors) => ({
 
 export const getClass = (classId) => (dispatch) =>
   ClassAPI.showClass(classId)
-    .then((klass) => dispatch(receiveClass(klass)))
+    .then((klass) => dispatch(clearAndReceiveClass(klass)))
     .catch((err) => dispatch(receiveErrors(err)));
 
 export const getClassesForOneTeacher = () => (dispatch) =>

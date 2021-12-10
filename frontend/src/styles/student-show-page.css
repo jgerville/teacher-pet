@@ -18,3 +18,89 @@
   background-color: #017987;
   border-color: #017987;
 }
+
+.report-index {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.report-index ul {
+  list-style-type: none;
+  width: 70%;
+}
+
+.student-show-page .separator {
+  height: 10px;
+  width: 80%;
+  margin-top: 15px;
+  border-bottom: 1px solid #C2FFF9;
+}
+
+.report-index-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.report-index-item .report-index-header {
+  align-self: flex-start;
+  /* margin-left: 10%; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.report-index-item .report-index-header h2 {
+  margin: 15px 0;
+}
+
+.report-index-item .report-index-header i {
+  position: relative;
+  /* margin-left: 3px; */
+  color: #009DAE;
+  transition: 0.3s ease-out;
+}
+
+.report-index-item .report-index-header i:hover {
+  color: #71DFE7;
+}
+
+.report-index-item .report-index-header .dots {
+  margin-left: 15px;
+}
+
+.report-index-item .report-index-header .dots {
+  display: flex;
+  align-items: center;
+}
+
+.report-index-item .report-index-header .dots:hover {
+  cursor: pointer;
+}
+
+.report-index-item .report-index-header .dots .panel {
+  display: flex;
+  align-items: center;
+}
+
+.report-index-item .report-index-header .panel button {
+  font-size: 12px;
+  width: 100px;
+  margin: 5px;
+  padding: 1px;
+  background-color: #FFE652;
+  color: #009DAE;
+}
+
+.report-index-item .report-index-header .panel button:hover {
+  background-color: #FFCCCC;
+  color: #009DAE;
+}
+
+.report-index-item p {
+  background-color: #C2FFF9;
+  padding: 1em;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}

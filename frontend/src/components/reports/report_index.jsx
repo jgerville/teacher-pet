@@ -3,8 +3,10 @@ import PropTypes from "prop-types";
 import ReactLoading from "react-loading";
 import { sortByDate } from "../../util/array_util";
 import ReportIndexItem from "./report_index_item";
+import { getReportsByStudentId } from "../../actions/report_actions";
+import { connect } from "react-redux";
 
-const ReportIndex = ({ reports, getReports }) => {
+const ReportIndex = ({ studentId, reports, getReports }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -13,7 +15,7 @@ const ReportIndex = ({ reports, getReports }) => {
       try {
         setIsLoading(true);
         setError("");
-        await getReports();
+        await getReports(studentId);
         setIsLoading(false);
       } catch (error) {
         setIsLoading(false);
@@ -25,7 +27,7 @@ const ReportIndex = ({ reports, getReports }) => {
       setError("");
       setIsLoading(false);
     };
-  }, [getReports]);
+  }, [getReports, studentId]);
 
   return (
     <div className="report-index">
@@ -41,7 +43,7 @@ const ReportIndex = ({ reports, getReports }) => {
       {reports ? (
         <ul className="report-list">
           {/* todo: might need to change 'time' below to something else depending on what reports look like */}
-          {sortByDate(reports, "time").map((report) => (
+          {reports.map((report) => (
             <li key={report._id}>
               <ReportIndexItem report={report} />
             </li>
@@ -53,8 +55,17 @@ const ReportIndex = ({ reports, getReports }) => {
 };
 
 ReportIndex.propTypes = {
-  reports: PropTypes.array.isRequired,
+  studentId: PropTypes.string.isRequired,
+  reports: PropTypes.array,
   getReports: PropTypes.func.isRequired,
 };
 
-export default ReportIndex;
+const mapStateToProps = ({ entities: { reports }}) => ({
+  reports: sortByDate(Object.values(reports), "date"),
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  getReports: (studentId) => dispatch(getReportsByStudentId(studentId)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(ReportIndex);

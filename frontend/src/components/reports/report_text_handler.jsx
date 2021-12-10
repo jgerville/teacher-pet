@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import DisplayReport from './display_report';
 import EditReport from './edit_report';
@@ -8,9 +8,10 @@ import { withRouter } from 'react-router';
 import { createReport, updateReport } from '../../actions/report_actions';
 import { showReportData } from '../../actions/report_data_actions';
 
-const ReportTextHandler = ({ report, reportData, getReport, reportDataId, createReport }) => {
+const ReportTextHandler = ({ reportData, reportDataId, createReport, history, students, klass }) => {
   const [isEditing, setIsEditing] = useState(false);
-  
+  const [copyButtonText, setCopyButtonText] = useState("Copy to clipboard")
+  const [disabled, setDisabled] = useState("");
   // const [pronouns, setPronouns] = useState("");
   const [error, setError] = useState("");
 
@@ -27,14 +28,46 @@ const ReportTextHandler = ({ report, reportData, getReport, reportDataId, create
     delete nextObject["genderPronouns"];
     delete nextObject["reportDataId"];
     delete nextObject["studentId"];
+
+    let notCategories = ['genderPronouns', 'overallScore', 'listensAttentively', 'helpsOthers', 'participatesOften', 'asksQuestions', 'goodAttendance', 'onTime', 'polite', 'notDisruptive', 'homeworkCompletion']
+    let studentId = reportData[reportDataId]["studentId"];
+    let fName = students[studentId].firstName;
+    let lName = students[studentId].lastName;
+    let className = klass.name;
+    let classSubject = klass.subject;
+    
+    console.log(fName, lName, className, classSubject, pronouns)
+
     let textArray = Object.values(nextObject);
-    return textArray.join(" ");
+    let objectKeys = Object.keys(nextObject);
+    let bodyString = "";
+    let currString;
+    for (let i = 0; i < objectKeys.length; i++) {
+      if (!notCategories.includes(objectKeys[i])) {
+        currString = textArray[i].replaceAll('%category%', objectKeys[i]);
+        bodyString += (currString);
+      } else {
+        bodyString += (textArray[i]);
+      }
+    }
+    console.log("bodystring:", bodyString)
     // insert util function that replaces placeholders here
     // e.g. replacePlaceholders(textArray.join(" "))
+    return bodyString;
   }
   
   const [body, setBody] = useState(convertToText(reportData[reportDataId]));
 
+  const copyToClipboard = async (e) => {
+    setDisabled("disabled");
+    await navigator.clipboard.writeText(body)
+    setCopyButtonText("Copied!")
+    setTimeout(() => {
+      setCopyButtonText("Copy to clipboard");
+      setDisabled("");
+    }, 1500)
+  };
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     // let editedReport = Object.assign({}, report);
@@ -45,6 +78,7 @@ const ReportTextHandler = ({ report, reportData, getReport, reportDataId, create
     try {
       setError("");
       await createReport(studentId, editedReport);
+      history.push(`/students/${studentId}`);
     } catch (error) {
       setError("Something went wrong. Please try again!")
     }
@@ -58,6 +92,7 @@ const ReportTextHandler = ({ report, reportData, getReport, reportDataId, create
         <>
           <DisplayReport body={body} />
           <div className="button-holder">
+            <button className={`btn ${disabled}`} onClick={copyToClipboard}>{copyButtonText}</button>
             <button className="btn" onClick={startEditing}>Edit</button>
             <button className="btn" onClick={handleSubmit}>Save</button>
           </div>
@@ -68,20 +103,22 @@ const ReportTextHandler = ({ report, reportData, getReport, reportDataId, create
 }
 
 ReportTextHandler.propTypes = {
-  report: PropTypes.object.isRequired,
-  reportId: PropTypes.string.isRequired,
-  edit: PropTypes.func.isRequired,
+  reportData: PropTypes.object.isRequired,
+  reportDataId: PropTypes.string.isRequired,
   createReport: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired,
+  klass: PropTypes.object.isRequired,
 }
 
-const mapStateToProps = ({ entities: { reportData }, entities, }, ownProps) => ({
+const mapStateToProps = ({ entities: { reportData, students, classes }, entities, }, ownProps) => ({
   reportDataId: ownProps.match.params.reportDataId,
   reportData,
+  students,
+  klass: Object.values(classes)[0],
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  edit: (report) => dispatch(updateReport(report)),
-  getReport: () => dispatch(showReportData(ownProps.match.params.reportDataId)),
+  // getReport: () => dispatch(showReportData(ownProps.match.params.reportDataId)),
   createReport: (studentId, report) => dispatch(createReport(studentId, report)),
 })
 
