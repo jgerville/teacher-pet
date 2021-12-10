@@ -42,10 +42,12 @@ const subjectPronoun = genderPronouns[0];
 const objectPronoun = genderPronouns[1];
 const possessivePronoun = genderPronouns[2];
 
+// search fname
+// search subject type of class
+// search className
+// search category
 
-
-verbReplacement = (genderPronouns, body) => {
-  // const reportStr = 'a long string for a review'
+verbReplacement = (genderPronouns, fname, className, subject, body) => {
   const verbsRegular = ['complete', 'fulfill', 'distract', 'lack', 'show', 'miss', 'need', 'participate']
   let verbsObj = {}
   if (genderPronouns[0] !== 'They') {
@@ -67,15 +69,19 @@ verbReplacement = (genderPronouns, body) => {
       verbsObj['&' + verb + '&'] = verb
     })
   }
-  // return verbsObj // works!
-  Object.keys(verbsObj).forEach(verbKey => {
-    body = body.replace(/verbKey/g, verbsObj[verbKey])
+  let parametersObj = { '%fname%': fname, '%className%': className, '%subject%': subject, '%subjectPronoun%': genderPronouns[0], '%objectPronoun%': genderPronouns[1], '%possessivePronoun%': genderPronouns[2] }
+  let concatObj = Object.assign(verbsObj, parametersObj)
+
+  Object.keys(concatObj).forEach(concatKey => {
+    body = body.replaceAll(concatKey, concatObj[concatKey])
   })
 
   console.log(body)
 }
 
 let pronouns = ['She','Her','Her']
-let body = '%fname% has performed very unsatisfactorily in class and needs quick improvement to not only pass this class but proceed onto next level coursework in %subject%.  %subjectPronoun% &be& an active participant.  %subjectPronoun% &have& excellent attendance.'
-
+let body = '%fname% has performed very unsatisfactorily in class and needs quick improvement to not only pass this class but proceed onto next level coursework in %subject%.  %subjectPronoun% &be& an active participant.  %subjectPronoun% &have& excellent attendance. %subjectPronoun% &be& very punctual.'
+let fname = 'Matt'
+let className = 'American History'
+let subject = 'History'
 console.log(verbReplacement(pronouns, body))
