@@ -1,4 +1,5 @@
 import React from 'react'
+import "../../styles/meet-the-team.css";
 
 const MeetTheTeam = () => (
   <div className="meet-the-team">

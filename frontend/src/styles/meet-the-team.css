@@ -1,0 +1,16 @@
+.meet-the-team {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.team-list-container ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.team-list-container img {
+  width: 200px;
+  height: 200px;
+}
