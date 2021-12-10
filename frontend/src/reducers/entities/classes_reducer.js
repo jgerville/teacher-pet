@@ -1,4 +1,5 @@
 import {
+  CLEAR_AND_RECEIVE_CLASS,
   RECEIVE_CLASS,
   RECEIVE_CLASSES,
   REMOVE_CLASS,
@@ -12,6 +13,10 @@ const classesReducer = (state = {}, action) => {
     case RECEIVE_CLASS:
       nextState[action.klass._id] = action.klass;
       return nextState;
+    case CLEAR_AND_RECEIVE_CLASS:
+      const newState = {};
+      newState[action.klass._id] = action.klass;
+      return newState;
     case RECEIVE_CLASSES:
       const objectForm = {};
       for (const klass of action.classes) {

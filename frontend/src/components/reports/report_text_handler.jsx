@@ -8,7 +8,7 @@ import { withRouter } from 'react-router';
 import { createReport, updateReport } from '../../actions/report_actions';
 import { showReportData } from '../../actions/report_data_actions';
 
-const ReportTextHandler = ({ reportData, reportDataId, createReport, history }) => {
+const ReportTextHandler = ({ reportData, reportDataId, createReport, history, students, klass }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [copyButtonText, setCopyButtonText] = useState("Copy")
   const [disabled, setDisabled] = useState("");
@@ -28,6 +28,14 @@ const ReportTextHandler = ({ reportData, reportDataId, createReport, history }) 
     delete nextObject["genderPronouns"];
     delete nextObject["reportDataId"];
     delete nextObject["studentId"];
+
+    // we need fName and lName for the replacement util function
+    let studentId = reportData[reportDataId]["studentId"];
+    let fName = students[studentId].firstName;
+    let lName = students[studentId].lastName;
+    let className = klass.name;
+    let classSubject = klass.subject;
+    console.log(fName, lName, className, classSubject, pronouns)
     let textArray = Object.values(nextObject);
     return textArray.join(" ");
     // insert util function that replaces placeholders here
@@ -85,11 +93,14 @@ ReportTextHandler.propTypes = {
   reportDataId: PropTypes.string.isRequired,
   createReport: PropTypes.func.isRequired,
   history: PropTypes.object.isRequired,
+  klass: PropTypes.object.isRequired,
 }
 
-const mapStateToProps = ({ entities: { reportData }, entities, }, ownProps) => ({
+const mapStateToProps = ({ entities: { reportData, students, classes }, entities, }, ownProps) => ({
   reportDataId: ownProps.match.params.reportDataId,
   reportData,
+  students,
+  klass: Object.values(classes)[0],
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
