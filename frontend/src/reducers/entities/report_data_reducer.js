@@ -10,8 +10,8 @@ const reportReducer = (state = {}, action) => {
   
   switch (action.type) {
     case RECEIVE_REPORT_DATA:
-      debugger;
-      nextState[action.reportData._id] = action.report;
+      // debugger;
+      nextState[action.reportData.reportDataId] = action.reportData;
       return nextState;
     case RECEIVE_REPORTS_DATA:
       const objectForm = {};

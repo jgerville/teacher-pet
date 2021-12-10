@@ -4,7 +4,6 @@ class ReportForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      // user: this.props.userId,
       studentId: this.props.studentId,
       genderPronouns: null,
       overallScore: null,
@@ -65,7 +64,15 @@ class ReportForm extends React.Component {
     console.log(this.state);
     console.log(this.props);
     this.setCategories();
-    this.props.createReportData(this.state).then((res) => 
+    let reportDataArray = Object.keys(this.state)
+    let reportData = {}
+    reportDataArray.forEach( key => {
+      if ((this.state[key] !== null) && (this.state[key] !== [])) {
+        reportData[key] = this.state[key]
+      }
+    })
+    console.log(reportData)
+    this.props.createReportData(reportData).then((res) => 
       console.log(res)
       )
   }
