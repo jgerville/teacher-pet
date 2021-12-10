@@ -12,6 +12,7 @@ import StudentShowPage from './pages/student_show_page';
 import ReportTextHandler from './reports/report_text_handler';
 import ReportDataFormContainer from './reports/report_data_form_container'
 import ReportFormContainer from './reports/report_form_container'
+import MeetTheTeam from './pages/meet_the_team';
 
 
 
@@ -23,6 +24,7 @@ const App = () => (
       {/* <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} /> */}
 
+      <ProtectedRoute path="/about/" component={MeetTheTeam} />
       <ProtectedRoute path="/reports/:reportDataId" component={ReportTextHandler} />
       <ProtectedRoute path="/students/:studentId/reports/:reportDataId" component={ReportFormContainer} />
       <ProtectedRoute path="/students/:studentId/reports" component={ReportDataFormContainer} />
