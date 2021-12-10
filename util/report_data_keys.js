@@ -13,7 +13,7 @@ const reportDataKeys = {
       5: ['It is with great pleasure to report that %fname% has performed outstandingly well in my class and has been a joy to teach.', 'It has been a joy not only to teach %fname% this year, but also see %objectPronoun% grow tremendously in %possessivePronoun% grasp of the complex subject of %subject%. %fname%\'s grades are outstanding, and I see no immediate suggestions for improvement.', 'I have loved having %fname% in my classroom. %SubjectPronoun% &be& not only academically inclined in %subject% but also &be& respectful to other students in the classroom.'],
     },
     listensAttentively: {
-      true: ['%SubjectPronoun% &be& very attentive.', '%SubjectPronoun% actively &listens/listen& to presentations and lectures as well as other students.', '%PossessivePronoun% strongsuit is listening actively to presentations and lectures.'],
+      true: ['%SubjectPronoun% &be& very attentive.', '%SubjectPronoun% actively &listen& to presentations and lectures as well as other students.', '%PossessivePronoun% strongsuit is listening actively to presentations and lectures.'],
       false: ['%SubjectPronoun% &lack& focus.', '%SubjectPronoun% &be& not attentive and needs work in order to do well in this class.','%SubjectPronoun% is easily distracted and needs work on listening to the teacher and fellow students during classtime.'],
     },
     helpsOthers: {
