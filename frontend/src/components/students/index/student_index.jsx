@@ -46,7 +46,7 @@ const StudentIndex = ({ students, getStudents, enableLinks, classes, showDelete 
           {sortAlphabetically(students, "lastName").map((student) => (
             <li key={student._id}>
               <StudentIndexItem student={student} enableLinks={enableLinks} />
-              {showDelete && <DotButtons entity={student} />}
+              {showDelete && <DotButtons entity={student} kind="student" />}
             </li>
           ))}
         </ul>
@@ -58,7 +58,7 @@ const StudentIndex = ({ students, getStudents, enableLinks, classes, showDelete 
 };
 
 StudentIndex.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object,
   getStudents: PropTypes.func.isRequired,
   students: PropTypes.array,
   enableLinks: PropTypes.bool,

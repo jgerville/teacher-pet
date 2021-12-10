@@ -32,7 +32,7 @@ const DotButtons = ({ entity, deleteClass, deleteStudent, history, kind }) => {
       {showPanel && (
         <div className="panel">
           {/* <button className="btn">Edit</button> */}
-          <button className="btn" onClick={handleDelete}>Delete</button>
+          <button className="btn" onClick={handleDeleteClass}>Delete</button>
         </div>
       )}
     </div>

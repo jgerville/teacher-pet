@@ -155,14 +155,16 @@ passport.authenticate('jwt', { session: false }),
     Class.findById(classId)
       .then(klass => {
         if (klass) {
-          klass.students.forEach(studentId => {
-            Student.findById(studentId)
-              .then(student => {
-                const index = student.classes.indexOf(classId)
-                student.classes.splice(index, 1)
-                student.save()
-              })
-          })
+          if (klass.students.length > 0) {
+            klass.students.forEach(studentId => {
+              Student.findById(studentId)
+                .then(student => {
+                  const index = student.classes.indexOf(classId)
+                  student.classes.splice(index, 1)
+                  student.save()
+                })
+            })
+          }
           klass.delete()
           res.json('Class deleted successfully.')
         } else {
