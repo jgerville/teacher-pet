@@ -42,8 +42,10 @@ const subjectPronoun = genderPronouns[0];
 const objectPronoun = genderPronouns[1];
 const possessivePronoun = genderPronouns[2];
 
+
+
 verbReplacement = (genderPronouns, body) => {
-  const reportStr = 'a long string for a review'
+  // const reportStr = 'a long string for a review'
   const verbsRegular = ['complete', 'fulfill', 'distract', 'lack', 'show', 'miss', 'need', 'participate']
   let verbsObj = {}
   if (genderPronouns[0] !== 'They') {
@@ -65,6 +67,15 @@ verbReplacement = (genderPronouns, body) => {
       verbsObj['&' + verb + '&'] = verb
     })
   }
+  // return verbsObj // works!
+  Object.keys(verbsObj).forEach(verbKey => {
+    body = body.replace(/verbKey/g, verbsObj[verbKey])
+  })
 
-  return verbsObj
+  console.log(body)
 }
+
+let pronouns = ['She','Her','Her']
+let body = '%fname% has performed very unsatisfactorily in class and needs quick improvement to not only pass this class but proceed onto next level coursework in %subject%.  %subjectPronoun% &be& an active participant.  %subjectPronoun% &have& excellent attendance.'
+
+console.log(verbReplacement(pronouns, body))
