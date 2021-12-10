@@ -18,7 +18,7 @@ const reportDataKeys = {
     },
     helpsOthers: {
       true: ['%SubjectPronoun% &be& collaborative and helpful.', 'Students look to %fname% for help with %subject% who is always ready and able to help %possessivePronoun% fellow students.', '%SubjectPronoun% &be& a kind student who &collaborates/collaborate& with students with pleasure.'],
-      false: ['%SubjectPronoun% &be& not inclined to work with others.', '%SubjectPronoun% &finds/find& it difficult to constructively collaborate in a group-setting.', '%SubjectPronoun% &be& disruptive and have challenges with group work.']
+      false: ['%SubjectPronoun% &be& not inclined to work with others.', '%SubjectPronoun% &find& it difficult to constructively collaborate in a group-setting.', '%SubjectPronoun% &be& disruptive and have challenges with group work.']
     },
     participatesOften: {
       true: ['%SubjectPronoun% &be& an active participant.', '%SubjectPronoun% constructively &participate& during classtime.', '%SubjectPronoun% &show& knowledge of the subject through %possessivePronoun% participation in class.'],
