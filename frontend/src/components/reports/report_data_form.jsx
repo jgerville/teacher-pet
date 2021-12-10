@@ -4,7 +4,6 @@ class ReportForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      // user: this.props.userId,
       studentId: this.props.studentId,
       genderPronouns: null,
       overallScore: null,
@@ -17,36 +16,36 @@ class ReportForm extends React.Component {
       polite: null,
       notDisruptive: null,
       homeworkCompletion: null,
-    //   categories: []
+      categories: []
     }
-    // this.cats = {
-    //   cat1: null,
-    //   cat2: null,
-    //   cat3: null,
-    //   cat4: null,
-    //   cat5: null,
-    //   cat6: null,
-    //   cat1Val: null,
-    //   cat2Val: null,
-    //   cat3Val: null,
-    //   cat4Val: null,
-    //   cat5Val: null,
-    //   cat6Val: null,
-    // }
+    this.cats = {
+      cat1: null,
+      cat2: null,
+      cat3: null,
+      cat4: null,
+      cat5: null,
+      cat6: null,
+      cat1Val: null,
+      cat2Val: null,
+      cat3Val: null,
+      cat4Val: null,
+      cat5Val: null,
+      cat6Val: null,
+    }
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.setCategories = this.setCategories.bind(this);
+    this.setCategories = this.setCategories.bind(this);
   }
 
-  // setCategories() {
-  //   let keys = [this.cats.cat1, this.cats.cat2, this.cats.cat3, this.cats.cat4, this.cats.cat5, this.cats.cat6];
-  //   let vals = [this.cats.cat1Val, this.cats.cat2Val, this.cats.cat3Val, this.cats.cat4Val, this.cats.cat5Val, this.cats.cat6Val]
-  //   for (let i = 0; i < 6; i++) {
-  //     if (keys[i] && vals[i]) {
-  //       this.state.categories.push({ [keys[i]]: vals[i] });
-  //     }
-  //   }
-  // }
+  setCategories() {
+    let keys = [this.cats.cat1, this.cats.cat2, this.cats.cat3, this.cats.cat4, this.cats.cat5, this.cats.cat6];
+    let vals = [this.cats.cat1Val, this.cats.cat2Val, this.cats.cat3Val, this.cats.cat4Val, this.cats.cat5Val, this.cats.cat6Val]
+    for (let i = 0; i < 6; i++) {
+      if (keys[i] && vals[i]) {
+        this.state.categories.push({ [keys[i]]: vals[i] });
+      }
+    }
+  }
 
   update(field) {
     return e => (
@@ -54,18 +53,26 @@ class ReportForm extends React.Component {
     )
   }
 
-  // updateCategory(field) {
-  //   return e => (
-  //     this.cats[field] = e.target.value
-  //   )
-  // }
+  updateCategory(field) {
+    return e => (
+      this.cats[field] = e.target.value
+    )
+  }
 
   handleSubmit(e) {
     e.preventDefault();
     console.log(this.state);
     console.log(this.props);
-    // this.setCategories();
-    this.props.createReportData(this.state).then((res) => 
+    this.setCategories();
+    let reportDataArray = Object.keys(this.state)
+    let reportData = {}
+    reportDataArray.forEach( key => {
+      if ((this.state[key] !== null) && (this.state[key] !== [])) {
+        reportData[key] = this.state[key]
+      }
+    })
+    console.log(reportData)
+    this.props.createReportData(reportData).then((res) => 
       console.log(res)
       )
   }
@@ -123,7 +130,7 @@ class ReportForm extends React.Component {
             <input type="radio" name="homework-score" value="true" onChange={this.update("homeworkCompletion")}/>True
             <input type="radio" name="homework-score" value="false" onChange={this.update("homeworkCompletion")}/>False
           </div>
-          {/* <div>Additional categories
+          <div>Additional categories
             <div>Category One
               <input type="text" onChange={this.updateCategory("cat1")} />
               <div>Score
@@ -184,7 +191,7 @@ class ReportForm extends React.Component {
                 <input type="radio" name="cat-6" value="5" onChange={this.updateCategory("cat6Val")}/>Excellent
               </div>
             </div>
-          </div> */}
+          </div>
           <input type="submit" value="Submit" />
         </form>
       </div>
