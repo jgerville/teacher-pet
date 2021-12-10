@@ -1,9 +1,9 @@
 
 const reportDataKeys = {
     genderPronouns: {
-      1: [['He','Him','His']],
-      2: [['She','Her','Her']],
-      3: [['They','Them','Their']] 
+      1: [['He','him','His']],
+      2: [['She','her','Her']],
+      3: [['They','them','Their']] 
     },
     overallScore: {
       1: ['%fname% has performed very unsatisfactorily in class and needs quick improvement to not only pass this class but proceed onto next level coursework in %subject%.', 'Unfortunately, I do not write this report with great pleasure. %fname% has failed to perform adequately in %className% and must urgently show improvement before the next review period.', '%fname% has been a difficult student both behaviorly and acedamically, and must seek immediate improvement before the next review period.'],

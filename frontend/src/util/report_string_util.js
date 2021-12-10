@@ -26,7 +26,7 @@ export const verbReplacement = (genderPronouns, fname, className, subject, body)
       verbsObj['&' + verb + '&'] = verb
     })
   }
-  let parametersObj = { '%fname%': fname, '%className%': className, '%subject%': subject, '%subjectPronoun%': genderPronouns[0], '%objectPronoun%': genderPronouns[1], '%possessivePronoun%': genderPronouns[2] }
+  let parametersObj = { '%fname%': fname, '%className%': className, '%subject%': subject, '%SubjectPronoun%': genderPronouns[0], '%objectPronoun%': genderPronouns[1], '%PossessivePronoun%': genderPronouns[2], '%subjectPronoun% ': genderPronouns[0].toLowerCase(), ' %possessivePronoun%': genderPronouns[2].toLowerCase() }
   let concatObj = Object.assign(verbsObj, parametersObj)
 
   Object.keys(concatObj).forEach(concatKey => {
