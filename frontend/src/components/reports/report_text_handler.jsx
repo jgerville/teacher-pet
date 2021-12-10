@@ -29,18 +29,31 @@ const ReportTextHandler = ({ reportData, reportDataId, createReport, history, st
     delete nextObject["reportDataId"];
     delete nextObject["studentId"];
 
-    // we need fName and lName for the replacement util function
+    let notCategories = ['genderPronouns', 'overallScore', 'listensAttentively', 'helpsOthers', 'participatesOften', 'asksQuestions', 'goodAttendance', 'onTime', 'polite', 'notDisruptive', 'homeworkCompletion']
     let studentId = reportData[reportDataId]["studentId"];
     let fName = students[studentId].firstName;
     let lName = students[studentId].lastName;
     let className = klass.name;
     let classSubject = klass.subject;
+    
     console.log(fName, lName, className, classSubject, pronouns)
+
     let textArray = Object.values(nextObject);
-    let textString = textArray.join(" ");
+    let objectKeys = Object.keys(nextObject);
+    let bodyString = "";
+    let currString;
+    for (let i = 0; i < objectKeys.length; i++) {
+      if (!notCategories.includes(objectKeys[i])) {
+        currString = textArray[i].replaceAll('%category%', objectKeys[i]);
+        bodyString += (currString);
+      } else {
+        bodyString += (textArray[i]);
+      }
+    }
+    console.log("bodystring:", bodyString)
     // insert util function that replaces placeholders here
     // e.g. replacePlaceholders(textArray.join(" "))
-    return textString;
+    return bodyString;
   }
   
   const [body, setBody] = useState(convertToText(reportData[reportDataId]));

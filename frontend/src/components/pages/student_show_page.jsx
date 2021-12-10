@@ -49,6 +49,7 @@ const StudentShowPage = ({ student, getStudent, studentId }) => {
           <Link className="btn" to={`/students/${studentId}/reports`}>
             Create a new report
           </Link>
+          <div className="separator"></div>
           <ReportIndex studentId={studentId} />
         </>
       )}

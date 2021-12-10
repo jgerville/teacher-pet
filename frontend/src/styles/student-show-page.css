@@ -30,12 +30,12 @@
   width: 70%;
 }
 
-/* .report-index .separator {
+.student-show-page .separator {
   height: 10px;
   width: 80%;
   margin-top: 15px;
-  border-bottom: 1px solid #FFE652;
-} */
+  border-bottom: 1px solid #C2FFF9;
+}
 
 .report-index-item {
   display: flex;
