@@ -22,6 +22,10 @@
   position: relative;
 }
 
+.top-line .dots:hover {
+  cursor: pointer;
+}
+
 .top-line .dots .panel {
   position: absolute;
   display: flex;

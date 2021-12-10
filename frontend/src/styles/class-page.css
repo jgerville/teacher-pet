@@ -73,7 +73,7 @@
   color: white;
 }
 
-.class-page .class-form i, .class-page .student-form-container i {
+.class-page .class-form i.fa-times, .class-page .student-form-container i.fa-times {
   padding: 5px;
   position: absolute;
   font-size: 20px;
@@ -103,6 +103,7 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   grid-gap: 5px;
+  text-align: center;
 }
 
 .add-many-tab, .add-one-tab {
@@ -152,6 +153,44 @@
   /* grid-template-columns: repeat(4, 1fr); */
   grid-gap: 10px;
   padding: 0;
+}
+
+.class-page .student-form-container .student-index ul li {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.class-page .student-form-container .student-index ul li i {
+  margin-left: 3px;
+  position: relative;
+}
+
+.class-page .student-form-container .student-index ul li .dots {
+  display: flex;
+  align-items: center;
+}
+
+.class-page .student-form-container .student-index ul li .dots:hover {
+  cursor: pointer;
+}
+
+.class-page .student-form-container .student-index ul li .dots .panel {
+  display: flex;
+  align-items: center;
+}
+
+.class-page .student-form-container .student-index ul li .panel button {
+  font-size: 12px;
+  margin: 1px;
+  padding: 1px;
+  background-color: #FFE652;
+  color: #009DAE;
+}
+
+.class-page .student-form-container .student-index ul li .panel button:hover {
+  background-color: #FFCCCC;
+  color: #009DAE;
 }
 
 .class-page .separator {

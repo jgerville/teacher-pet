@@ -30,7 +30,7 @@ const StudentForm = ({ close }) => {
             viewStudents={switchToStudents}
           />
           {currentTab === "addMany" && <AddManyFormContainer />}
-          {currentTab === "students" && <StudentIndexContainer />}
+          {currentTab === "students" && <StudentIndexContainer showDelete={true} />}
         </div>
       </div>
     </>
