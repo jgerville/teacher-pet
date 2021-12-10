@@ -5,7 +5,7 @@
 // const possessivePronoun = genderPronouns[2];
 
 export const verbReplacement = (genderPronouns, fname, className, subject, body) => {
-  const verbsRegular = ['complete', 'fulfill', 'distract', 'lack', 'show', 'miss', 'need', 'participate', 'ask']
+  const verbsRegular = ['complete', 'fulfill', 'distract', 'lack', 'show', 'miss', 'need', 'participate', 'ask', 'listen']
   let verbsObj = {}
   if (genderPronouns[0] !== 'They') {
     verbsObj['&be&'] = 'is';
