@@ -8,7 +8,7 @@ import { withRouter } from 'react-router';
 import { createReport, updateReport } from '../../actions/report_actions';
 import { showReportData } from '../../actions/report_data_actions';
 
-const ReportTextHandler = ({ reportData, reportDataId, createReport }) => {
+const ReportTextHandler = ({ reportData, reportDataId, createReport, history }) => {
   const [isEditing, setIsEditing] = useState(false);
   
   // const [pronouns, setPronouns] = useState("");
@@ -45,6 +45,7 @@ const ReportTextHandler = ({ reportData, reportDataId, createReport }) => {
     try {
       setError("");
       await createReport(studentId, editedReport);
+      history.push(`/students/${studentId}`);
     } catch (error) {
       setError("Something went wrong. Please try again!")
     }
@@ -71,6 +72,7 @@ ReportTextHandler.propTypes = {
   reportData: PropTypes.object.isRequired,
   reportDataId: PropTypes.string.isRequired,
   createReport: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired,
 }
 
 const mapStateToProps = ({ entities: { reportData }, entities, }, ownProps) => ({
