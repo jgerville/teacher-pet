@@ -17,7 +17,7 @@ const reportDataKeys = {
       false: ['%SubjectPronoun% &lack& focus.', '%SubjectPronoun% &be& not attentive and needs work in order to do well in this class.','%SubjectPronoun% is easily distracted and needs work on listening to the teacher and fellow students during classtime.'],
     },
     helpsOthers: {
-      true: ['%SubjectPronoun% &be& collaborative and helpful.', 'Students look to %fname% for help with %subject% who is always ready and able to help %possessivePronoun% fellow students.', '%SubjectPronoun% &be& a kind student who &collaborates/collaborate& with students with pleasure.'],
+      true: ['%SubjectPronoun% &be& collaborative and helpful.', 'Students look to %fname% for help with %subject% who is always ready and able to help %possessivePronoun% fellow students.', '%SubjectPronoun% &be& a kind student who &collaborate& with students with pleasure.'],
       false: ['%SubjectPronoun% &be& not inclined to work with others.', '%SubjectPronoun% &find& it difficult to constructively collaborate in a group-setting.', '%SubjectPronoun% &be& disruptive and have challenges with group work.']
     },
     participatesOften: {
@@ -25,7 +25,7 @@ const reportDataKeys = {
       false: ['%SubjectPronoun% &be& not active in class.', 'It may lend well to understanding the subject better if %fname% participated more often during classtime.', '%SubjectPronoun% should be more active in class.']
     },
     asksQuestions: {
-      true: ['%SubjectPronoun% &be& comfortable asking questions.', '%SubjectPronoun% &asks/ask& relevant questions that lend to a good class discussion.', 'I am happy that %fname% is not shy about asking questions about concepts that %subjectPronoun% &do& not fully understand.'],
+      true: ['%SubjectPronoun% &be& comfortable asking questions.', '%SubjectPronoun% &ask& relevant questions that lend to a good class discussion.', 'I am happy that %fname% is not shy about asking questions about concepts that %subjectPronoun% &do& not fully understand.'],
       false: ['%SubjectPronoun% &do& not ask questions, which would help to better %possessivePronoun% understanding of the subject.', 'It would furhter classroom collaboration and dialogue if %fname% would participate more in class.', '%SubjectPronoun% needs to raise %possessivePronoun% participation grade in my class.']
     },
     goodAttendance: {
