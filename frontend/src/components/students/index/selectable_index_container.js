@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { getStudentsByUser } from "../../../actions/student_actions";
-import { sortAlphabetically, sortAlphabeticallyWord } from "../../../util/array_util";
+import { sortAlphabetically } from "../../../util/array_util";
 import SelectableStudentIndex from "./selectable_student_index";
 
 const mapStateToProps = ({ entities: { students } }) => ({
