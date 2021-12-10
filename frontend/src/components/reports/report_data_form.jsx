@@ -67,16 +67,22 @@ class ReportForm extends React.Component {
     this.setCategories();
     let reportDataArray = Object.keys(this.state)
     let reportData = {}
-    reportDataArray.forEach( key => {
+    reportDataArray.forEach(key => {
       if ((this.state[key] !== null) && (this.state[key] !== [])) {
         reportData[key] = this.state[key]
       }
     })
-    console.log(reportData)
-    this.props.createReportData(reportData).then((res) => 
-      console.log(res)
-      )
+    try {
+      const reportDataRes = await this.props.createReportData(reportData);
+      console.log(reportDataRes);
+      const nextId = reportDataRes.reportData.reportDataId
+      this.props.history.push(`/reports/${nextId}`);
+    } catch (error) {
+      console.log("we got an error here:", error);
+    }
   }
+
+
 
   render() {
     return (
