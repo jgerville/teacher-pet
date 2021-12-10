@@ -49,7 +49,7 @@ const reportDataKeys = {
       false: ['%SubjectPronoun% &have& incomplete homework more often than not.', 'Homework completion needs to improve for %fname%.']
     },
     category: {
-      1: ['This %category% has been hard for %fname%.', '%fname% has performed poorly in %category%.', '%fname% urgently needs to improve in %category%.'],
+      1: ['%category% has been hard for %fname%.', '%fname% has performed poorly in %category%.', '%fname% urgently needs to improve in %category%.'],
       2: ['Although %category% is challenging, %fname% needs to improve performance.', '%fname% is falling behind in %category%.', 'If no improvement is shown, %fname% may need to retake %category%.'],
       3: ['%fname% has performed satisfactorily in %category%.', '%fname% is performing on par with the class average in %category%.', 'Although performing satisfactorily, there is room for improvement in %category%.'],
       4: ['%fname% has done well in %category%.', '%fname% is showing promise in %category%.'],
