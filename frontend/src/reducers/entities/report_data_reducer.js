@@ -10,16 +10,17 @@ const reportReducer = (state = {}, action) => {
   
   switch (action.type) {
     case RECEIVE_REPORT_DATA:
-      nextState[action.report._id] = action.report;
+      debugger;
+      nextState[action.reportData._id] = action.report;
       return nextState;
     case RECEIVE_REPORTS_DATA:
       const objectForm = {};
-      for (const report of action.reports) {
+      for (const report of action.reportsData) {
         objectForm[report._id] = report;
       }
       return objectForm;
     case REMOVE_REPORT_DATA:
-      delete nextState[action.reportId];
+      delete nextState[action.reportDataId];
       return nextState;
     default:
       return state;
