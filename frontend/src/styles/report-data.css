@@ -5,18 +5,24 @@
 
 .report-form {
   min-width: 50em;
-  border-radius: 8px;
   background-color: #C2FFF9;
 }
 
-.report-form-top {
-  margin: 3em;
+.report-form-top, .report-form-bottom {
+  margin: 3em 3em 1em 3em;
   padding: 3em;
   display: flex;
   justify-content: space-between;
   min-width: 50em;
   border-radius: 8px;
   background-color: #C2FFF9;
+}
+
+.report-form-bottom {
+  background-color: #71DFE7;
+  padding: 1em;
+  margin: 1em 6em;
+  border-radius: 8px;
 }
 
 /* .report-form-memo {
@@ -108,5 +114,5 @@ input[type=radio]:checked::before {
 }
 
 :root {
-  --radio-filter-color: #009DAE;
+  --radio-filter-color: #d4bd36;
 }

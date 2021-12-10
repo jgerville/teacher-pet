@@ -81,7 +81,7 @@ class ReportForm extends React.Component {
   render() {
     return (
       <div className="report-form-container">
-        <div className="report-form-title">How is STUDENT doing?</div>
+        <div className="report-form-title">Student Name</div>
         <p></p>
         <form className="report-form" onSubmit={this.handleSubmit}>
           {/* <div className="report-form-memo">
@@ -102,19 +102,19 @@ class ReportForm extends React.Component {
               </div>
               <div> <h5>Overall Performance</h5>
                 <label class="report-radio">
-                  <input type="radio" name="overall-score" value="1" onChange={this.update("overallScore")} />&nbsp;Poor
-                </label>
-                <label class="report-radio">
-                  <input type="radio" name="overall-score" value="2" onChange={this.update("overallScore")} />&nbsp;Below Expectations
-                </label>
-                <label class="report-radio">
-                  <input type="radio" name="overall-score" value="3" onChange={this.update("overallScore")} />&nbsp;Fair
+                  <input type="radio" name="overall-score" value="5" onChange={this.update("overallScore")} />&nbsp;Excellent
                 </label>
                 <label class="report-radio">
                   <input type="radio" name="overall-score" value="4" onChange={this.update("overallScore")} />&nbsp;Good
                 </label>
                 <label class="report-radio">
-                  <input type="radio" name="overall-score" value="5" onChange={this.update("overallScore")} />&nbsp;Excellent
+                  <input type="radio" name="overall-score" value="3" onChange={this.update("overallScore")} />&nbsp;Fair
+                </label>
+                <label class="report-radio">
+                  <input type="radio" name="overall-score" value="2" onChange={this.update("overallScore")} />&nbsp;Below Expectations
+                </label>
+                <label class="report-radio">
+                  <input type="radio" name="overall-score" value="1" onChange={this.update("overallScore")} />&nbsp;Poor
                 </label>
               </div>
             </div>
@@ -171,30 +171,133 @@ class ReportForm extends React.Component {
             </div>
           </div>
           <div className="report-form-bottom">
-            <label className="report-radio">
+            <h5>Custom Categories</h5>
+            <div id="category-1" className="cat-container">
+              <label className="report-radio">
 
-            </label>
-            <label className="report-radio">
+              </label>
+              <label className="report-radio">
 
-            </label>
-            <label className="report-radio">
+              </label>
+              <label className="report-radio">
 
-            </label>
-            <label className="report-radio">
+              </label>
+              <label className="report-radio">
 
-            </label>
-            <label className="report-radio">
+              </label>
+              <label className="report-radio">
 
-            </label>
-            <label className="report-radio">
+              </label>
+              <label className="report-radio">
 
-            </label>
+              </label>
+            </div>
+            <div id="category-2" className="cat-container">
+              <label className="report-radio">
+
+              </label>
+              <label className="report-radio">
+
+              </label>
+              <label className="report-radio">
+
+              </label>
+              <label className="report-radio">
+
+              </label>
+              <label className="report-radio">
+
+              </label>
+              <label className="report-radio">
+
+              </label>
+            </div>
+            <div id="category-3" className="cat-container">
+              <label className="report-radio">
+
+              </label>
+              <label className="report-radio">
+
+              </label>
+              <label className="report-radio">
+
+              </label>
+              <label className="report-radio">
+
+              </label>
+              <label className="report-radio">
+
+              </label>
+              <label className="report-radio">
+
+              </label>
+            </div>
+            <div id="category-4" className="cat-container">
+              <label className="report-radio">
+
+              </label>
+              <label className="report-radio">
+
+              </label>
+              <label className="report-radio">
+
+              </label>
+              <label className="report-radio">
+
+              </label>
+              <label className="report-radio">
+
+              </label>
+              <label className="report-radio">
+
+              </label>
+            </div>
+            <div id="category-5" className="cat-container">
+              <label className="report-radio">
+
+              </label>
+              <label className="report-radio">
+
+              </label>
+              <label className="report-radio">
+
+              </label>
+              <label className="report-radio">
+
+              </label>
+              <label className="report-radio">
+
+              </label>
+              <label className="report-radio">
+
+              </label>
+            </div>
+            <div id="category-6" className="cat-container">
+              <label className="report-radio">
+
+              </label>
+              <label className="report-radio">
+
+              </label>
+              <label className="report-radio">
+
+              </label>
+              <label className="report-radio">
+
+              </label>
+              <label className="report-radio">
+
+              </label>
+              <label className="report-radio">
+
+              </label>
+            </div>
           </div>
 
 
           <div>Additional categories
             <div>Category One
-              <input type="text" onChange={this.updateCategory("cat1")} />
+              <input type="text" placeholder="Enter subject" onChange={this.updateCategory("cat1")} />
               <div>Score
                 <input type="radio" name="cat-1" value="1" onChange={this.updateCategory("cat1Val")}/>Poor
                 <input type="radio" name="cat-1" value="2" onChange={this.updateCategory("cat1Val")}/>Below Expectations
