@@ -46,32 +46,42 @@ router.post('/',
     const reportdataObj = {user: req.user.id}
 
     const reqBody = req.body
-    const reqBodyKeys = Object.keys(req.body)
+    const reqBodyKeys = Object.keys(reqBody)
 
     // send this up
     const reportContentObj = {}
-    const randomSample = array => array[Math.floor(Math.random() * array.length)]
+    // console.log(reqBody)
+    // const randomSample = array => array[Math.floor(Math.random() * array.length)]
 
     reqBodyKeys.forEach(key => {
       let reqBodyValue = reqBody[key]
       let reportContent
 
       if (key !== 'categories' && key !== 'studentId') {
-        reportContent = randomSample(reportDataKeys[key][reqBodyValue])
-        reportdataObj[key] = req.body[key]
+        let reportContentKeys = Object.values(reportDataKeys[key][reqBodyValue])
+        console.log(reportContentKeys)
+        console.log(typeof reportContentKeys)
+        reportContent = reportContentKeys[Math.floor(Math.random() * reportContentKeys.length)]
+        reportdataObj[key] = reqBody[key]
         reportContentObj[key] = reportContent
       } else if (key === 'studentId') {
-        reportdataObj[key] = req.body[key]
+        reportdataObj[key] = reqBody[key]
         reportContentObj['studentId'] = reqBody['studentId']
-      } else {
+      } else if (key === 'categories') {
+        // debugger
+
         // set k-v pair to the object to save to db
-        reportdataObj[key] = req.body[key]
+        reportdataObj[key] = reqBody[key]
 
         // loop over categories value array to get indiv k-v pairs
-        reqBody[key].forEach(category => {
-          let categoryName = Object.keys(category)[0];
-          reportContentObj[categoryName] = randomSample(reqBody[key][categoryName]);
+        reqBody[key].forEach(cat => {
+          let categoryName = Object.keys(cat)[0];
+          let reportCategoryScore = Object.values(cat)[0]
+          let reportCategoryKeys = reportDataKeys["category"][reportCategoryScore]
+          reportContentObj[categoryName] = reportCategoryKeys[Math.floor(Math.random() * reportCategoryKeys.length)]
         })
+      } else {
+
       }
     })
 
