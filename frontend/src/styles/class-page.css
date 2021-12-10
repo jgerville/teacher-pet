@@ -115,10 +115,12 @@
   text-align: center;
   color: #009DAE;
   font-weight: 700;
+  transition: 0.3s ease-out;
 }
 
 .add-many-tab:hover, .add-one-tab:hover {
   cursor: pointer;
+  background-color: #ffdb05;
 }
 
 .class-page .student-form-container .add-many p {
@@ -162,8 +164,14 @@
 }
 
 .class-page .student-form-container .student-index ul li i {
-  margin-left: 3px;
   position: relative;
+  margin-left: 3px;
+  color: #009DAE;
+  transition: 0.3s ease-out;
+}
+
+.class-page .student-form-container .student-index ul li i:hover {
+  color: #71DFE7;
 }
 
 .class-page .student-form-container .student-index ul li .dots {
