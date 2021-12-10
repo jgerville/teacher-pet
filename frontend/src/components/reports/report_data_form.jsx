@@ -167,7 +167,7 @@ class ReportForm extends React.Component {
             <div id="all-cat-container">
               <div className="double-cat-container">
                 <div id="category-1" className="cat-container">
-                  <input type="text" placeholder="Subject #1" className="cat-text" onChange={this.updateCategory("cat1")} />
+                  <input type="text" placeholder="Category #1" className="cat-text" onChange={this.updateCategory("cat1")} />
                   <label className="report-radio">
                     <input type="radio" name="cat-1" value="5" onChange={this.updateCategory("cat1Val")} />&nbsp;Excellent
                   </label>
@@ -185,7 +185,7 @@ class ReportForm extends React.Component {
                   </label>
                 </div>
                 <div id="category-2" className="cat-container">
-                  <input type="text" placeholder="Subject #2" className="cat-text" onChange={this.updateCategory("cat2")} />
+                  <input type="text" placeholder="Category #2" className="cat-text" onChange={this.updateCategory("cat2")} />
                   <label className="report-radio">
                     <input type="radio" name="cat-2" value="5" onChange={this.updateCategory("cat2Val")} />&nbsp;Excellent
                   </label>
@@ -205,7 +205,7 @@ class ReportForm extends React.Component {
               </div>
               <div className="double-cat-container">
                 <div id="category-3" className="cat-container">
-                  <input type="text" placeholder="Subject #3" className="cat-text" onChange={this.updateCategory("cat3")} />
+                  <input type="text" placeholder="Category #3" className="cat-text" onChange={this.updateCategory("cat3")} />
                   <label className="report-radio">
                     <input type="radio" name="cat-3" value="5" onChange={this.updateCategory("cat3Val")} />&nbsp;Excellent
                   </label>
@@ -223,7 +223,7 @@ class ReportForm extends React.Component {
                   </label>
                 </div>
                 <div id="category-4" className="cat-container">
-                  <input type="text" placeholder="Subject #4" className="cat-text" onChange={this.updateCategory("cat4")} />
+                  <input type="text" placeholder="Category #4" className="cat-text" onChange={this.updateCategory("cat4")} />
                   <label className="report-radio">
                     <input type="radio" name="cat-4" value="5" onChange={this.updateCategory("cat4Val")} />&nbsp;Excellent
                   </label>
@@ -243,7 +243,7 @@ class ReportForm extends React.Component {
               </div>
               <div className="double-cat-container">
                 <div id="category-5" className="cat-container">
-                  <input type="text" placeholder="Subject #5" className="cat-text" onChange={this.updateCategory("cat5")} />
+                  <input type="text" placeholder="Category #5" className="cat-text" onChange={this.updateCategory("cat5")} />
                   <label className="report-radio">
                     <input type="radio" name="cat-5" value="5" onChange={this.updateCategory("cat5Val")} />&nbsp;Excellent
                   </label>
@@ -261,7 +261,7 @@ class ReportForm extends React.Component {
                   </label>
                 </div>
                 <div id="category-6" className="cat-container">
-                  <input type="text" placeholder="Subject #6" className="cat-text" onChange={this.updateCategory("cat6")} />
+                  <input type="text" placeholder="Category #6" className="cat-text" onChange={this.updateCategory("cat6")} />
                   <label className="report-radio">
                     <input type="radio" name="cat-6" value="5" onChange={this.updateCategory("cat6Val")} />&nbsp;Excellent
                   </label>
