@@ -12,7 +12,7 @@ const EditReport = ({ body, handleChange, close }) => {
           autoFocus
           cacheMeasurements
           onChange={handleChange}
-          placeholder="You can press ctrl-z or cmd-z to get the text back!"
+          placeholder="If this used to have text in it, you can press ctrl-z or cmd-z to get the text back!"
           value={body}
         />
         <button onClick={close} className="btn">Done Editing</button>

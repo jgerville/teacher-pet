@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import DisplayReport from './display_report';
 import EditReport from './edit_report';
@@ -10,7 +10,8 @@ import { showReportData } from '../../actions/report_data_actions';
 
 const ReportTextHandler = ({ reportData, reportDataId, createReport, history }) => {
   const [isEditing, setIsEditing] = useState(false);
-  
+  const [copyButtonText, setCopyButtonText] = useState("Copy")
+  const [disabled, setDisabled] = useState("");
   // const [pronouns, setPronouns] = useState("");
   const [error, setError] = useState("");
 
@@ -35,6 +36,16 @@ const ReportTextHandler = ({ reportData, reportDataId, createReport, history }) 
   
   const [body, setBody] = useState(convertToText(reportData[reportDataId]));
 
+  const copyToClipboard = async (e) => {
+    setDisabled("disabled");
+    await navigator.clipboard.writeText(body)
+    setCopyButtonText("Copied!")
+    setTimeout(() => {
+      setCopyButtonText("Copy");
+      setDisabled("");
+    }, 1500)
+  };
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     // let editedReport = Object.assign({}, report);
@@ -59,6 +70,7 @@ const ReportTextHandler = ({ reportData, reportDataId, createReport, history }) 
         <>
           <DisplayReport body={body} />
           <div className="button-holder">
+            <button className={`btn ${disabled}`} onClick={copyToClipboard}>{copyButtonText}</button>
             <button className="btn" onClick={startEditing}>Edit</button>
             <button className="btn" onClick={handleSubmit}>Save</button>
           </div>
