@@ -30,7 +30,22 @@
   width: 70%;
 }
 
+/* .report-index .separator {
+  height: 10px;
+  width: 80%;
+  margin-top: 15px;
+  border-bottom: 1px solid #FFE652;
+} */
+
+.report-index-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .report-index-item .report-index-header {
+  align-self: flex-start;
+  /* margin-left: 10%; */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -84,5 +99,8 @@
 }
 
 .report-index-item p {
+  background-color: #C2FFF9;
+  padding: 1em;
+  border-radius: 8px;
   margin-bottom: 25px;
 }
