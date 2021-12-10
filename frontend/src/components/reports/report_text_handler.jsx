@@ -10,7 +10,7 @@ import { showReportData } from '../../actions/report_data_actions';
 
 const ReportTextHandler = ({ reportData, reportDataId, createReport, history, students, klass }) => {
   const [isEditing, setIsEditing] = useState(false);
-  const [copyButtonText, setCopyButtonText] = useState("Copy")
+  const [copyButtonText, setCopyButtonText] = useState("Copy to clipboard")
   const [disabled, setDisabled] = useState("");
   // const [pronouns, setPronouns] = useState("");
   const [error, setError] = useState("");
@@ -37,9 +37,10 @@ const ReportTextHandler = ({ reportData, reportDataId, createReport, history, st
     let classSubject = klass.subject;
     console.log(fName, lName, className, classSubject, pronouns)
     let textArray = Object.values(nextObject);
-    return textArray.join(" ");
+    let textString = textArray.join(" ");
     // insert util function that replaces placeholders here
     // e.g. replacePlaceholders(textArray.join(" "))
+    return textString;
   }
   
   const [body, setBody] = useState(convertToText(reportData[reportDataId]));
@@ -49,7 +50,7 @@ const ReportTextHandler = ({ reportData, reportDataId, createReport, history, st
     await navigator.clipboard.writeText(body)
     setCopyButtonText("Copied!")
     setTimeout(() => {
-      setCopyButtonText("Copy");
+      setCopyButtonText("Copy to clipboard");
       setDisabled("");
     }, 1500)
   };
