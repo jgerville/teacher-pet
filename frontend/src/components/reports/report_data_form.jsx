@@ -6,6 +6,8 @@ import '../../styles/report-data.css'
 class ReportForm extends React.Component {
   constructor(props) {
     super(props)
+    console.log(this.props.students)
+    this.studentName = `${this.props.students[this.props.studentId].firstName} ${this.props.students[this.props.studentId].lastName}`
     this.state = {
       studentId: this.props.studentId,
       genderPronouns: null,
@@ -89,7 +91,7 @@ class ReportForm extends React.Component {
       <div className="report-form-container">
         <div className="report-form-title">
           <div id="report-student-name">
-            <div onClick={() => this.props.openModal()}>Student Name&nbsp;&nbsp;&nbsp;&nbsp;<BsQuestionCircleFill color="#017987" /></div>
+            <div onClick={() => this.props.openModal()}>{this.studentName}&nbsp;&nbsp;&nbsp;&nbsp;<BsQuestionCircleFill color="#017987" /></div>
           </div>
           {this.props.modal === 'instructions' ? <ReportDataInstructions /> : null}
         </div>

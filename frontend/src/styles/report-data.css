@@ -18,6 +18,10 @@
   background-color: #C2FFF9;
 }
 
+.report-form-top {
+  margin: 1em 3em 1em;
+}
+
 .report-form-bottom {
   display: flex;
   flex-direction: column;
