@@ -12,15 +12,26 @@ const students = require('./routes/api/students')
 const reportdata = require('./routes/api/report_data')
 const reports = require('./routes/api/report')
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 if (process.env.NODE_ENV === 'production') {
+  app.use((req, res, next) => {
+    if (req.headers.host === 'teacher-pet.herokuapp.com') {
+      return res.redirect(301, 'https://www.teacherspet.io');
+    }
+    if (req.headers['x-forwarded-proto'] !== 'https') {
+      return res.redirect('https://' + req.headers.host + req.url);
+    } else {
+      return next();
+    }
+  })
   app.use(express.static('frontend/build'));
   app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
   })
 }
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
 
 app.get("/", (req, res) => res.send("Hello World"));
 
