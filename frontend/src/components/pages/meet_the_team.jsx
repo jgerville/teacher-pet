@@ -10,7 +10,7 @@ const MeetTheTeam = () => (
             <img src="https://avatars.githubusercontent.com/u/79581995?v=4" alt="julian" />
             <p className='teammate-name'>Julian Erville</p>
             <div className='teammate-socials'>
-              <a href="https://www.linkedin.com/">
+              <a href="https://www.linkedin.com/in/julian-erville-9a8911224/">
                 <i class="fab fa-linkedin"></i>
               </a>
               <a href="https://github.com/jgerville/">
@@ -22,7 +22,7 @@ const MeetTheTeam = () => (
             <img src="https://avatars.githubusercontent.com/u/89127270?v=4" alt="emily" />
             <p className='teammate-name'>Emily Bell</p>
             <div className='teammate-socials'>
-              <a href="https://www.linkedin.com/">
+              <a href="https://www.linkedin.com/in/emily-bell-062991/">
                 <i class="fab fa-linkedin"></i>
               </a>
               <a href="https://github.com/ecbell">
