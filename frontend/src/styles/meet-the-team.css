@@ -2,6 +2,34 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-color: #C2FFF9;
+  height: 100%;
+}
+
+.team-members {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #FFE652;
+  margin-top: 1em;
+  border-radius: 8px;
+}
+
+.team-col {
+  display: flex;
+  flex-direction: column;
+}
+
+#project-desc{
+  display: flex;
+  font-size: large;
+  padding: 1em;
+  background-color: #009DAE;
+  color: white;
+  margin: 1em;
+  width: 45%;
+  border-radius: 8px;
+
 }
 
 .team-list-container ul {
@@ -13,4 +41,27 @@
 .team-list-container img {
   width: 200px;
   height: 200px;
+}
+
+.teammate-card {
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+  background-color: #FFE652;
+  padding: 1em;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.teammate-name {
+  font-size: 20px;
+  font-weight: 500;
+  color: #009DAE;
+}
+
+.teammate-socials > * {
+  flex-direction: space-between;
+  padding: 0 0.5em;
+  color: #009DAE;
+  font-size: 36px;
 }
