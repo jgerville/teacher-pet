@@ -42,7 +42,7 @@
 
 .nav-button {
   margin: 0 1rem 0 0;
-  font-size: large;
+  font-size: 18px;
   background-color: #FFE652;
   color: #009DAE;
   border: none;
@@ -51,6 +51,30 @@
 
 .nav-button-container {
   margin: 0 1rem 0 0;
+}
+
+.meet-team-link {
+  text-decoration: none;
+  font-size: 17px;
+  color: #009DAE;
+}
+
+.test-button {
+  background-color: transparent;
+  border: none;
+}
+
+.team-icon {
+  color: #009DAE;
+  font-size: 24px;
+}
+
+#sign-in-icon {
+  font-size: 24px;
+}
+
+#logout-icon {
+  font-size: 24px;
 }
 
 
