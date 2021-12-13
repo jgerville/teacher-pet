@@ -6,27 +6,27 @@ const reportDataKeys = {
       3: [['They','them','Their']] 
     },
     overallScore: {
-      1: ['%fname% has performed very unsatisfactorily in class and needs quick improvement to not only pass this class but proceed onto next level coursework in %subject%.', 'Unfortunately, I do not write this report with great pleasure. %fname% has failed to perform adequately in %className% and must urgently show improvement before the next review period.', '%fname% has been a difficult student both behaviorly and acedamically, and must seek immediate improvement before the next review period.'],
-      2: ['Academically, %fname% has performed unsatisfactorily in %className% and %possessivePronoun% behaviour shows a need for more awareness of %possessivePronoun% peers and teachers.', 'Although %className% is a nuanced subject that few are able to grasp immediately, %fname% does need to show improvement in %possessivePronoun% grades and comprehension of %subject%.', 'Unfortunately, %fname% has fallen behind in %subject% and needs to spend more time outside of class grapsing the subject.'],
-      3: ['%fname% has performed satisfactorily in %className% and is respectful to other students. Slight improvement in grasping concepts are still needed to continue to perform well on tests', '%fname% has an average grade in %className%. I would recomend further attention to homework outside of class.', '%fname% has performed on average well enough to proceed in %possessivePronoun% academic career, although more attention to detail is needed to truly grasp %subject% well.'],
+      1: ['%fname% has performed very unsatisfactorily in class and needs quick improvement to not only pass this class but proceed onto next level coursework in %subject%.', 'Unfortunately, I do not write this report with great pleasure. %fname% has failed to perform adequately in %className% and must urgently show improvement before the next review period.', '%fname% has been a difficult student both behaviorally and academically, and must seek immediate improvement before the next review period.'],
+      2: ['Academically, %fname% has performed unsatisfactorily in %className% and %possessivePronoun% behaviour shows a need for more awareness of %possessivePronoun% peers and teachers.', 'Although %className% is a nuanced subject that few are able to grasp immediately, %fname% does need to show improvement in %possessivePronoun% grades and comprehension of %subject%.', 'Unfortunately, %fname% has fallen behind in %subject% and needs to spend more time outside of class grasping the subject.'],
+      3: ['%fname% has performed satisfactorily in %className% and is respectful to other students. Slight improvement in grasping concepts are still needed to continue to perform well on tests', '%fname% has an average grade in %className%. I would recommend further attention to homework outside of class.', '%fname% has performed on average well enough to proceed in %possessivePronoun% academic career, although more attention to detail is needed to truly grasp %subject% well.'],
       4: ['I am happy to report that %fname% has performed well in %className%. %PossessivePronoun% understanding of %subject% has shown through in class through %possessivePronoun% participation and helping others on tough-to-grasp topics.', '%fname% has performed well in %className%, and it has been a pleasure having %objectPronoun% in my classroom.', 'I have enjoyed %fname%\'s participation in my class, and %possessivePronoun% understanding of %subject% shines through on tests and projects.'],
       5: ['It is with great pleasure to report that %fname% has performed outstandingly well in my class and has been a joy to teach.', 'It has been a joy not only to teach %fname% this year, but also see %objectPronoun% grow tremendously in %possessivePronoun% grasp of the complex subject of %subject%. %fname%\'s grades are outstanding, and I see no immediate suggestions for improvement.', 'I have loved having %fname% in my classroom. %SubjectPronoun% &be& not only academically inclined in %subject% but also &be& respectful to other students in the classroom.'],
     },
     listensAttentively: {
-      true: ['%SubjectPronoun% &be& very attentive.', '%SubjectPronoun% actively &listen& to presentations and lectures as well as other students.', '%PossessivePronoun% strongsuit is listening actively to presentations and lectures.'],
-      false: ['%SubjectPronoun% &lack& focus.', '%SubjectPronoun% &be& not attentive and needs work in order to do well in this class.','%SubjectPronoun% is easily distracted and needs work on listening to the teacher and fellow students during classtime.'],
+      true: ['%SubjectPronoun% &be& very attentive.', '%SubjectPronoun% actively &listen& to presentations and lectures as well as other students.', '%PossessivePronoun% strong suit is listening actively to presentations and lectures.'],
+      false: ['%SubjectPronoun% &lack& focus.', '%SubjectPronoun% &be& not attentive and needs work in order to do well in this class.','%SubjectPronoun% is easily distracted and needs work on listening to the teacher and fellow students during class time.'],
     },
     helpsOthers: {
       true: ['%SubjectPronoun% &be& collaborative and helpful.', 'Students look to %fname% for help with %subject% who is always ready and able to help %possessivePronoun% fellow students.', '%SubjectPronoun% &be& a kind student who &collaborate& with students with pleasure.'],
       false: ['%SubjectPronoun% &be& not inclined to work with others.', '%SubjectPronoun% &find& it difficult to constructively collaborate in a group-setting.', '%SubjectPronoun% &be& disruptive and have challenges with group work.']
     },
     participatesOften: {
-      true: ['%SubjectPronoun% &be& an active participant.', '%SubjectPronoun% constructively &participate& during classtime.', '%SubjectPronoun% &show& knowledge of the subject through %possessivePronoun% participation in class.'],
-      false: ['%SubjectPronoun% &be& not active in class.', 'It may lend well to understanding the subject better if %fname% participated more often during classtime.', '%SubjectPronoun% should be more active in class.']
+      true: ['%SubjectPronoun% &be& an active participant.', '%SubjectPronoun% constructively &participate& during class time.', '%SubjectPronoun% &show& knowledge of the subject through %possessivePronoun% participation in class.'],
+      false: ['%SubjectPronoun% &be& not active in class.', 'It may lend well to understanding the subject better if %fname% participated more often during class time.', '%SubjectPronoun% should be more active in class.']
     },
     asksQuestions: {
       true: ['%SubjectPronoun% &be& comfortable asking questions.', '%SubjectPronoun% &ask& relevant questions that lend to a good class discussion.', 'I am happy that %fname% is not shy about asking questions about concepts that %subjectPronoun% &do& not fully understand.'],
-      false: ['%SubjectPronoun% &do& not ask questions, which would help to better %possessivePronoun% understanding of the subject.', 'It would furhter classroom collaboration and dialogue if %fname% would participate more in class.', '%SubjectPronoun% needs to raise %possessivePronoun% participation grade in my class.']
+      false: ['%SubjectPronoun% &do& not ask questions, which would help to better %possessivePronoun% understanding of the subject.', 'It would further classroom collaboration and dialogue if %fname% would participate more in class.', '%SubjectPronoun% needs to raise %possessivePronoun% participation grade in my class.']
     },
     goodAttendance: {
       true: ['%SubjectPronoun% &have& excellent attendance.', '%SubjectPronoun% &have& perfect attendance.'],
@@ -41,7 +41,7 @@ const reportDataKeys = {
       false: ['%SubjectPronoun% &be& often rude.', '%SubjectPronoun% &be& disrespectful to teachers and fellow students.', '%SubjectPronoun% &need& to have more respect and self-awareness for those around %objectPronoun%.']
     },
     notDisruptive: {
-      true: ['%SubjectPronoun% &be& respectful of classtime.', '%SubjectPronoun% &be& not disruptive during classtime.'],
+      true: ['%SubjectPronoun% &be& respectful of class time.', '%SubjectPronoun% &be& not disruptive during class time.'],
       false: ['%SubjectPronoun% often &distract& the flow of class.', '%SubjectPronoun% &be& often disruptive in class.']
     },
     homeworkCompletion: {
