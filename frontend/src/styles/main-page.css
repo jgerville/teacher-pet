@@ -5,8 +5,10 @@
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
-  height: 100vw;
-  /* width: 100vw; */
+  height: calc(100vh - 60px);
+  margin: 60px 0 0;
+  padding: 0;
+  width: calc(100vw);
 }
 
 .splash::before {
@@ -21,15 +23,18 @@
 .overlay {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   position: absolute;
   justify-content: center;
   margin: 0 3em;
   transform: translate(0.1em, -1em);
-  /* align-items: center; */
-  min-height: 100%;
-  min-width: 100%;
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
   left: 0;
+  right: 0;
   top: 0;
+  bottom: 0;
   z-index: 2;
   font-size: 48px;
   font-weight: 700;
