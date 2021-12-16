@@ -10,15 +10,15 @@ const receiveReportData = (reportData) => ({
   reportData
 });
 
-const receiveReportsData = (reportsData) => ({
-  type: RECEIVE_REPORTS_DATA,
-  reportsData
-});
+// const receiveReportsData = (reportsData) => ({
+//   type: RECEIVE_REPORTS_DATA,
+//   reportsData
+// });
 
-const removeReportData = (reportDataId) => ({
-  type: REMOVE_REPORT_DATA,
-  reportDataId
-});
+// const removeReportData = (reportDataId) => ({
+//   type: REMOVE_REPORT_DATA,
+//   reportDataId
+// });
 
 const receiveErrors = (errors) => ({
   type: RECEIVE_REPORT_DATA_ERRORS,

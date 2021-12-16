@@ -11,10 +11,10 @@ const MeetTheTeam = () => (
             <p className='teammate-name'>Julian Erville</p>
             <div className='teammate-socials'>
               <a href="https://www.linkedin.com/in/julian-erville/">
-                <i class="fab fa-linkedin"></i>
+                <i className="fab fa-linkedin"></i>
               </a>
               <a href="https://github.com/jgerville/">
-                <i class="fab fa-github"></i>
+                <i className="fab fa-github"></i>
               </a>
             </div>
           </div>
@@ -23,10 +23,10 @@ const MeetTheTeam = () => (
             <p className='teammate-name'>Emily Bell</p>
             <div className='teammate-socials'>
               <a href="https://www.linkedin.com/in/emily-bell-062991/">
-                <i class="fab fa-linkedin"></i>
+                <i className="fab fa-linkedin"></i>
               </a>
               <a href="https://github.com/ecbell">
-                <i class="fab fa-github"></i>
+                <i className="fab fa-github"></i>
               </a>
             </div>
           </div>
@@ -37,10 +37,10 @@ const MeetTheTeam = () => (
             <p className='teammate-name'>Chris Cheasty</p>
             <div className='teammate-socials'>
               <a href="https://www.linkedin.com/in/chris-cheasty/">
-                <i class="fab fa-linkedin"></i>
+                <i className="fab fa-linkedin"></i>
               </a>
               <a href="https://github.com/cjc473">
-                <i class="fab fa-github"></i>
+                <i className="fab fa-github"></i>
               </a>
             </div>
           </div>
@@ -49,10 +49,10 @@ const MeetTheTeam = () => (
             <p className='teammate-name'>Matthew Lese</p>
             <div className='teammate-socials'>
               <a href="https://www.linkedin.com/in/matthewlese/">
-                <i class="fab fa-linkedin"></i>
+                <i className="fab fa-linkedin"></i>
               </a>
               <a href="https://github.com/matthewlese">
-                <i class="fab fa-github"></i>
+                <i className="fab fa-github"></i>
               </a>
             </div>
           </div>

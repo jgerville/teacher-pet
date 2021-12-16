@@ -65,3 +65,7 @@
   color: #009DAE;
   font-size: 36px;
 }
+
+.teammate-socials a {
+  transition: 0.3s ease-out;
+}

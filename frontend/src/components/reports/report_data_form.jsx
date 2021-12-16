@@ -98,30 +98,30 @@ class ReportForm extends React.Component {
           <div className="report-form-top">
             <div className="multi-radio-container">
               <div> <h5>Pronouns</h5>
-                <label class="report-radio">
+                <label className="report-radio">
                   <input type="radio" name="pronoun" value="1" onChange={this.update("genderPronouns")} />&nbsp;He/Him/His
                 </label>
-                <label class="report-radio">
+                <label className="report-radio">
                   <input type="radio" name="pronoun" value="2" onChange={this.update("genderPronouns")} />&nbsp;She/Her/Hers
                 </label>
-                <label class="report-radio">
+                <label className="report-radio">
                   <input type="radio" name="pronoun" value="3" onChange={this.update("genderPronouns")} />&nbsp;They/Them/Theirs
                 </label>
               </div>
               <div> <h5>Overall Performance</h5>
-                <label class="report-radio">
+                <label className="report-radio">
                   <input type="radio" name="overall-score" value="5" onChange={this.update("overallScore")} />&nbsp;Excellent
                 </label>
-                <label class="report-radio">
+                <label className="report-radio">
                   <input type="radio" name="overall-score" value="4" onChange={this.update("overallScore")} />&nbsp;Good
                 </label>
-                <label class="report-radio">
+                <label className="report-radio">
                   <input type="radio" name="overall-score" value="3" onChange={this.update("overallScore")} />&nbsp;Fair
                 </label>
-                <label class="report-radio">
+                <label className="report-radio">
                   <input type="radio" name="overall-score" value="2" onChange={this.update("overallScore")} />&nbsp;Below Expectations
                 </label>
-                <label class="report-radio">
+                <label className="report-radio">
                   <input type="radio" name="overall-score" value="1" onChange={this.update("overallScore")} />&nbsp;Poor
                 </label>
               </div>

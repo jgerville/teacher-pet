@@ -2,8 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import logo from '../../images/logo_blue.png'
 import '../../styles/navbar.css'
-import {SocialIcon } from "react-social-icons"
-import { BsPersonCircle, BsArrowUpRightCircle, BsBoxArrowRight, BsDoorOpen} from 'react-icons/bs'
+import {
+  BsPersonCircle,
+  BsArrowUpRightCircle,
+  // BsBoxArrowRight,
+  BsDoorOpen,
+} from "react-icons/bs";
 
 
 class NavBar extends React.Component {
@@ -29,8 +33,6 @@ class NavBar extends React.Component {
     } else {
       return (
         <div className="nav-button-container">
-          {/* <button class="nav-button" onClick={() => this.props.openModal('signup')}>Sign up</button> */}
-          {/* <SocialIcon className='favicon' url="https://github.com/cjc473" bgColor="#D8D9DB" /> */}
           <button className="nav-button" onClick={() => this.props.openModal('login')}><BsPersonCircle id="sign-in-icon"/> Sign in</button>
           <button className="test-button"><Link className='meet-team-link' to="/about" >< BsArrowUpRightCircle className='team-icon'/> Meet the Team</Link></button>
         </div>
