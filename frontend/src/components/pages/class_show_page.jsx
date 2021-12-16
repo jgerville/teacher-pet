@@ -47,7 +47,7 @@ const ClassShowPage = ({ klass, classId, getClass, modal, openModal, closeModal 
       {klass ? (
         <>
           <ClassShowHeader klass={klass} />
-          <AddItemButton open={openModal} itemName="student" />
+          <AddItemButton open={openModal} itemName="student to this class" />
           {modal === "addStudents" && <AddStudentsForm klass={klass} close={closeModal} /> }
           <FilteredStudentIndexContainer />
         </>

@@ -82,6 +82,10 @@ class ReportForm extends React.Component {
     }
   }
 
+  clearForm = () => {
+    document.querySelector("form").reset();
+  }
+
   render() {
     return (
       <div className="report-form-container">
@@ -99,7 +103,7 @@ class ReportForm extends React.Component {
             <div className="multi-radio-container">
               <div> <h5>Pronouns</h5>
                 <label className="report-radio">
-                  <input type="radio" name="pronoun" value="1" onChange={this.update("genderPronouns")} />&nbsp;He/Him/His
+                  <input required type="radio" name="pronoun" value="1" onChange={this.update("genderPronouns")} />&nbsp;He/Him/His
                 </label>
                 <label className="report-radio">
                   <input type="radio" name="pronoun" value="2" onChange={this.update("genderPronouns")} />&nbsp;She/Her/Hers
@@ -110,7 +114,7 @@ class ReportForm extends React.Component {
               </div>
               <div> <h5>Overall Performance</h5>
                 <label className="report-radio">
-                  <input type="radio" name="overall-score" value="5" onChange={this.update("overallScore")} />&nbsp;Excellent
+                  <input required type="radio" name="overall-score" value="5" onChange={this.update("overallScore")} />&nbsp;Excellent
                 </label>
                 <label className="report-radio">
                   <input type="radio" name="overall-score" value="4" onChange={this.update("overallScore")} />&nbsp;Good
@@ -287,6 +291,8 @@ class ReportForm extends React.Component {
             </div>
           </div>
           <div id="report-submit-container">
+            {/* the reset button is a div because if it's a button, the HTML seems to think it's a submit button */}
+            <div id="reset-button" className="reset btn" onClick={this.clearForm}>Reset</div>
             <input type="submit" id="report-data-submit" value="Submit" />
           </div>
         </form>

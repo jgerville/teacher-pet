@@ -129,11 +129,28 @@
   /* font-weight: 500; */
   border-radius: 5px;
   padding: 12px;
-  width: 20em;
+  width: 16em;
+  transition: 0.3s ease-out;
+  margin-left: 1em;
 }
+
+#reset-button {
+  padding: 12px;
+  border-radius: 5px;
+  transition: 0.3s ease-out;
+  font-size: 18px;
+  color: white;
+  background-color: #c6584c;
+  width: 12em;
+}
+
 
 #report-data-submit:hover {
   background-color: #017987;
+}
+
+#reset-button:hover {
+  background-color: #ae1100;
 }
 
 

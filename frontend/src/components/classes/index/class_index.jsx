@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import ReactLoading from "react-loading";
 import ClassIndexItem from "./class_index_item";
 import { sortAlphabetically } from "../../../util/array_util";
+import InfoPage from "../../pages/info_page";
 
 const ClassIndex = ({ classes, getClasses }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -47,6 +48,7 @@ const ClassIndex = ({ classes, getClasses }) => {
           ))}
         </ul>
       ) : null}
+      {classes && classes.length === 0 && <InfoPage />}
     </div>
   );
 };
