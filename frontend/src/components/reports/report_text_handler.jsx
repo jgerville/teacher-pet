@@ -37,8 +37,6 @@ const ReportTextHandler = ({ reportData, reportDataId, createReport, history, st
     let className = klass.name;
     let classSubject = klass.subject;
     
-    console.log(fName, lName, className, classSubject, pronouns)
-    
     let textArray = Object.values(nextObject);
     let objectKeys = Object.keys(nextObject);
     let bodyString = "";
@@ -53,10 +51,6 @@ const ReportTextHandler = ({ reportData, reportDataId, createReport, history, st
     }
 
     let replacedBody = verbReplacement(pronouns, fName, className, classSubject, bodyString)
-    console.log("bodystring:", bodyString)
-    console.log("replaced:", replacedBody)
-    // insert util function that replaces placeholders here
-    // e.g. replacePlaceholders(textArray.join(" "))
     return replacedBody;
   }
   

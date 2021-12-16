@@ -6,7 +6,6 @@ import '../../styles/report-data.css'
 class ReportForm extends React.Component {
   constructor(props) {
     super(props)
-    console.log(this.props.students)
     this.studentName = `${this.props.students[this.props.studentId].firstName} ${this.props.students[this.props.studentId].lastName}`
     this.state = {
       studentId: this.props.studentId,
@@ -66,8 +65,6 @@ class ReportForm extends React.Component {
 
   async handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state);
-    console.log(this.props);
     this.setCategories();
     let reportDataArray = Object.keys(this.state)
     let reportData = {}
@@ -78,7 +75,6 @@ class ReportForm extends React.Component {
     })
     try {
       const reportDataRes = await this.props.createReportData(reportData);
-      console.log(reportDataRes);
       const nextId = reportDataRes.reportData.reportDataId
       this.props.history.push(`/reports/${nextId}`);
     } catch (error) {

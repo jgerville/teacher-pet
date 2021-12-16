@@ -34,12 +34,4 @@ export const verbReplacement = (genderPronouns, fname, className, subject, body)
   })
 
   return body;
-  // console.log(body)
 }
-
-// let pronouns = ['She','Her','Her']
-// let body = '%fname% has performed very unsatisfactorily in class and needs quick improvement to not only pass this class but proceed onto next level coursework in %subject%.  %subjectPronoun% &be& an active participant.  %subjectPronoun% &have& excellent attendance. %subjectPronoun% &be& very punctual.'
-// let fname = 'Matt'
-// let className = 'American History'
-// let subject = 'History'
-// console.log(verbReplacement(pronouns, body))
