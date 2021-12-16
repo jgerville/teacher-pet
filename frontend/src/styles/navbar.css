@@ -47,6 +47,7 @@
   color: #009DAE;
   border: none;
   border-radius: 5px;
+  transition: 0.3s ease-out;
 }
 
 .nav-button-container {
@@ -57,11 +58,22 @@
   text-decoration: none;
   font-size: 17px;
   color: #009DAE;
+  transition: 0.3s ease-out;
 }
+
 
 .test-button {
   background-color: transparent;
   border: none;
+  transition: 0.3s ease-out;
+}
+
+.test-button * {
+  transition: 0.3s ease-out;
+}
+
+.nav-button:hover, .test-button:hover * {
+  color: #0d6efd;
 }
 
 .team-icon {
