@@ -25,7 +25,7 @@ const reportDataKeys = {
       false: ['%SubjectPronoun% &be& not active in class.', 'It may lend well to understanding the subject better if %fname% participated more often during class time.', '%SubjectPronoun% should be more active in class.']
     },
     asksQuestions: {
-      true: ['%SubjectPronoun% &be& comfortable asking questions.', '%SubjectPronoun% &ask& relevant questions that lend to a good class discussion.', 'I am happy that %fname% is not shy about asking questions about concepts that %subjectPronoun% &do& not fully understand.'],
+      true: ['%SubjectPronoun% &be& comfortable asking questions.', '%SubjectPronoun% &ask& relevant questions that lend to a good class discussion.', 'I am happy that %fname% is not shy about asking questions about concepts that %subjectPronoun%  &do& not fully understand.'],
       false: ['%SubjectPronoun% &do& not ask questions, which would help to better %possessivePronoun% understanding of the subject.', 'It would further classroom collaboration and dialogue if %fname% would participate more in class.', '%SubjectPronoun% needs to raise %possessivePronoun% participation grade in my class.']
     },
     goodAttendance: {
