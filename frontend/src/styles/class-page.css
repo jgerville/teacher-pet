@@ -25,6 +25,10 @@
   align-items: center;
 }
 
+.class-page .class-index .new-info p {
+    color: red;
+}
+
 .class-page .class-index .class-list {
   list-style-type: none;
   display: flex;

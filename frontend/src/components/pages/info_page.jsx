@@ -4,10 +4,9 @@ import { connect } from 'react-redux'
 
 const InfoPage = ({ user }) => {
   return (
-    <div>
+    <div className="new-info">
       <p>Step 1: Click on "Add a new student." Write their name(s) in the form, then click on the submit button.</p>
       <p>Step 2: Click on "Add a new class." Write the name of a class and its subject, then click on the submit button.</p>
-      <p>Step 3: </p>
     </div>
   )
 }

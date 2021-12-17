@@ -159,9 +159,11 @@ passport.authenticate('jwt', { session: false }),
             klass.students.forEach(studentId => {
               Student.findById(studentId)
                 .then(student => {
-                  const index = student.classes.indexOf(classId)
-                  student.classes.splice(index, 1)
-                  student.save()
+                  if (student) {
+                    const index = student.classes.indexOf(classId)
+                    student.classes.splice(index, 1)
+                    student.save()
+                  }
                 })
             })
           }
