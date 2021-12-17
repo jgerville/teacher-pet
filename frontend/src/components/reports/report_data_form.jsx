@@ -101,7 +101,7 @@ class ReportForm extends React.Component {
           </div> */}
           <div className="report-form-top">
             <div className="multi-radio-container">
-              <div> <h5>Pronouns</h5>
+              <div> <h5>Pronouns *</h5>
                 <label className="report-radio">
                   <input required type="radio" name="pronoun" value="1" onChange={this.update("genderPronouns")} />&nbsp;He/Him/His
                 </label>
@@ -112,7 +112,7 @@ class ReportForm extends React.Component {
                   <input type="radio" name="pronoun" value="3" onChange={this.update("genderPronouns")} />&nbsp;They/Them/Theirs
                 </label>
               </div>
-              <div> <h5>Overall Performance</h5>
+              <div> <h5>Overall Performance *</h5>
                 <label className="report-radio">
                   <input required type="radio" name="overall-score" value="5" onChange={this.update("overallScore")} />&nbsp;Excellent
                 </label>
@@ -132,7 +132,7 @@ class ReportForm extends React.Component {
             </div>
             <div className="boolean-radio-container">
               <div className="boolean-labels">
-                <h5>Highlights</h5>
+                <h5>Highlights (choose 0-3)</h5>
                 <div className="boolean-category">Listens attentively</div>
                 <div className="boolean-category">Helps others</div>
                 <div className="boolean-category">Participates often</div>
@@ -172,7 +172,7 @@ class ReportForm extends React.Component {
             </div>
           </div>
           <div className="report-form-bottom">
-            <h5>Custom Categories</h5>
+            <h5>Custom Categories (optional)</h5>
             <div id="all-cat-container">
               <div className="double-cat-container">
                 <div id="category-1" className="cat-container">
