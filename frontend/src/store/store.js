@@ -3,7 +3,7 @@ import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'
 import hardSet from 'redux-persist/lib/stateReconciler/hardSet'
 import thunk from 'redux-thunk';
-import logger from 'redux-logger';
+// import logger from 'redux-logger';
 
 import rootReducer from '../reducers/root_reducer';
 
@@ -19,7 +19,7 @@ const configureStore = (preloadedState = {}) => {
   let store = createStore(
     persistedReducer,
     preloadedState,
-    applyMiddleware(thunk, logger)
+    applyMiddleware(thunk)
   )
   let persistor = persistStore(store);
   return { store, persistor }
