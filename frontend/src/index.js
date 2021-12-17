@@ -9,12 +9,13 @@ import { logout } from './actions/session_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
+  let persistor;
   if (localStorage.jwtToken) {
     setAuthToken(localStorage.jwtToken);
     const decodedUser = jwt_decode(localStorage.jwtToken);
     const preloadedState = { session: { isAuthenticated: true, user: decodedUser } };
 
-    store = configureStore(preloadedState);
+    ({ store, persistor } = configureStore(preloadedState));
 
     const currentTime = Date.now() / 1000;
     if (decodedUser.exp < currentTime) {
@@ -22,13 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = '/';
     }
   } else {
-    store = configureStore({});
+    ({ store, persistor } = configureStore({}));
   }
   const root = document.getElementById('root');
 
   window.getState = store.getState;
 
-  ReactDOM.render(<Root store={store} />, root);
+  ReactDOM.render(<Root store={store} persistor={persistor} />, root);
 });
 
 

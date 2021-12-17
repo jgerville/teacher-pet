@@ -78,7 +78,7 @@ class ReportForm extends React.Component {
       const nextId = reportDataRes.reportData.reportDataId
       this.props.history.push(`/reports/${nextId}`);
     } catch (error) {
-      console.log("we got an error here:", error);
+      // console.log("we got an error here:", error);
     }
   }
 
