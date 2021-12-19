@@ -8,9 +8,9 @@ class MainPage extends React.Component {
       <div className="splash">
         <header className="header">
           <div className="overlay">
-            <div id="splash-welcome">Welcome to Teacher's Pet</div>
-            <div id="splash-desc">A digital aide for composing student evaluations.</div>
-            <div>
+            <div className="container-fluid" id="splash-welcome">Welcome to Teacher's Pet</div>
+            <div className="container-fluid" id="splash-desc">A digital aide for composing student evaluations.</div>
+            <div className="container-fluid">
               <button className="nav-button" id="splash-signup" onClick={() => this.props.openModal('signup')}>Create Account</button>
             </div>
           </div>

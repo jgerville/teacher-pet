@@ -59,6 +59,29 @@
   margin: 2em 0;
 }
 
+@media (max-width: 1000px) {
+  .splash .header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+    .splash .overlay {
+      margin: 0;
+      justify-content: center;
+    }
+
+    .splash #splash-welcome {
+      margin-top: 2rem;
+    }
+
+    .splash .container-fluid {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      text-align: center;
+    }
+
+}
+
   /* background-color: #000;
   color: #fff;
   mix-blend-mode: multiply;
