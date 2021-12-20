@@ -1,0 +1,105 @@
+/* .navbar { */
+  /* background-color: #FFE652; */
+  /* background-color: #009DAE; */
+  /* display: flex;
+  justify-content: space-between; */
+/* } */
+
+/* .navbar + * {
+  margin-top: 60px;
+}
+
+  .nav-header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: #009DAE;
+    margin: 0 2rem;
+  }
+
+  .nav-header * {
+    list-style-type: none;
+    text-decoration: none;
+  }
+
+    #nav-logo {
+      max-width: 1.4em;
+      background-size: cover;
+      background-position: center;
+      margin: 0 0.3em;
+    }
+
+    #nav-title {
+      display: flex;
+      font-weight: 500;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      vertical-align: center;
+      text-decoration: none;
+      transform: translate(0, 0.1em);
+    }
+
+  .nav-toggler {
+    display: none;
+    margin: 0 1rem 0 0;
+  }
+
+  .nav-button-container {
+    margin: 0 1rem 0 0;
+  }
+  
+    .nav-button {
+      margin: 0 1rem 0 0;
+      font-size: 18px;
+      background-color: #FFE652;
+      color: #009DAE;
+      border: none;
+      border-radius: 5px;
+      transition: 0.3s ease-out;
+    }
+
+    .test-button {
+      background-color: transparent;
+      border: none;
+      transition: 0.3s ease-out;
+    }
+
+      .test-button * {
+        transition: 0.3s ease-out;
+      }
+
+      .team-icon {
+        color: #009DAE;
+        font-size: 24px;
+      }
+
+    .meet-team-link {
+      text-decoration: none;
+      font-size: 17px;
+      color: #009DAE;
+      transition: 0.3s ease-out;
+    }
+
+    .nav-button:hover, .test-button:hover * {
+      color: #0d6efd;
+    }
+
+    #sign-in-icon {
+      font-size: 24px;
+    }
+
+    #logout-icon {
+      font-size: 24px;
+} */
+
+/* media call 600px */
+/* @media (max-width: 600px) {
+  .nav-toggler {
+    display: block;
+  }
+
+  .nav-button-container {
+    display: none;
+  }
+} */

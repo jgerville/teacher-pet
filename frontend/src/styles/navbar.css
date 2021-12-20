@@ -1,92 +1,69 @@
 .navbar {
   background-color: #FFE652;
-  /* background-color: #009DAE; */
-  display: flex;
-  justify-content: space-between;
+  padding: 0;
 }
 
-.navbar + * {
-  margin-top: 60px;
-}
-
-.nav-header {
-  display: flex;
-  align-items: center;
-  position: relative;
+.navbar * {
   color: #009DAE;
-  margin: 0 2rem;
 }
 
-.nav-header * {
-  list-style-type: none;
-  text-decoration: none;
+  .navbar-brand *, .trans1, .trans2 * {
+    transition: 0.3s ease-in-out;
+    text-decoration: none;
+  }
+
+  .navbar-brand:hover * {
+    fill: #0072ae;
+    color: #0072ae;
+  }
+
+    .navbar-brand a {
+      font-size: xx-large;
+      font-weight: 500;
+    }
+
+    .navbar-brand svg {
+      max-width: 2.5rem;
+      margin: 0 0.3em 5px 0;
+      width: 40px;
+      height: 40px;
+    }
+
+    .navbar-toggler-icon{
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 157, 174, 1.0%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      color: #009DAE;
+    }
+  
+  .nav-button {
+    margin: 0 1rem 0 0;
+    font-size: 18px;
+    background-color: #FFE652;
+    color: #009DAE;
+    border: none;
+    border-radius: 5px;
+    /* transition: 0.3s ease-out; */
+  }
+
+    .nav-item:hover * {
+      color: #0072ae;
+      fill: #0072ae;
+    }
+
+      .team-icon {
+        color: #009DAE;
+        font-size: 24px;
+      }
+
+      .meet-team-link {
+        text-decoration: none;
+        font-size: 17px;
+        color: #009DAE;
+      }
+
+    #sign-in-icon {
+      font-size: 24px;
+    }
+
+    #logout-icon {
+      font-size: 24px;
 }
-
-#nav-logo {
-  max-width: 1.4em;
-  background-size: cover;
-  background-position: center;
-  margin: 0 0.3em;
-}
-
-#nav-title {
-  display: flex;
-  font-weight: 500;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  vertical-align: center;
-  text-decoration: none;
-  transform: translate(0, 0.1em);
-}
-
-.nav-button {
-  margin: 0 1rem 0 0;
-  font-size: 18px;
-  background-color: #FFE652;
-  color: #009DAE;
-  border: none;
-  border-radius: 5px;
-  transition: 0.3s ease-out;
-}
-
-.nav-button-container {
-  /* margin: 0 1rem 0 0; */
-}
-
-.meet-team-link {
-  text-decoration: none;
-  font-size: 17px;
-  color: #009DAE;
-  transition: 0.3s ease-out;
-}
-
-
-.test-button {
-  background-color: transparent;
-  border: none;
-  transition: 0.3s ease-out;
-}
-
-.test-button * {
-  transition: 0.3s ease-out;
-}
-
-.nav-button:hover, .test-button:hover * {
-  color: #0d6efd;
-}
-
-.team-icon {
-  color: #009DAE;
-  font-size: 24px;
-}
-
-#sign-in-icon {
-  font-size: 24px;
-}
-
-#logout-icon {
-  font-size: 24px;
-}
-
-
