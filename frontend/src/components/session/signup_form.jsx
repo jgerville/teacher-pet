@@ -119,7 +119,6 @@ class SignupForm extends React.Component {
               required
             />
             {this.renderErrors()}
-            <br />
             <input className={`session-submit btn ${this.state.disabled}`} type="submit" value="Submit" />
 
           </div>
