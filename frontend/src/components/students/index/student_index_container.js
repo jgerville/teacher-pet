@@ -1,9 +1,10 @@
 import { connect } from "react-redux"
 import { getStudentsByUser } from "../../../actions/student_actions";
+import { sortAlphabetically } from "../../../util/array_util";
 import StudentIndex from "./student_index"
 
 const mapStateToProps = ({ entities: { students }}) => ({
-  students: Object.values(students),
+  students: sortAlphabetically(Object.values(students), "lastName"),
 })
 
 const mapDispatchToProps = dispatch => ({

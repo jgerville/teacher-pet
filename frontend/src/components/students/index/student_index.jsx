@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import ReactLoading from "react-loading";
-import { sortAlphabetically } from "../../../util/array_util";
 import StudentIndexItem from "./student_index_item";
 import DotButtons from "../../classes/show/dot_buttons";
 
@@ -43,7 +42,7 @@ const StudentIndex = ({ students, getStudents, enableLinks, classes, showDelete 
       )}
       {notEmpty(students) ? (
         <ul className="student-list">
-          {sortAlphabetically(students, "lastName").map((student) => (
+          {students.map((student) => (
             <li key={student._id}>
               <StudentIndexItem student={student} enableLinks={enableLinks} />
               {showDelete && <DotButtons entity={student} kind="student" />}
