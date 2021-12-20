@@ -33,10 +33,10 @@ class NavBar extends React.Component {
       return (
         <ul className="navbar-nav ms-auto">
           <li className="nav-item">
-            <button className="nav-button" onClick={this.logoutUser}><a className="trans1" href="#"><BsDoorOpen className="trans2" id="logout-icon"/> Logout</a></button>
+            <button className="nav-button nav-link" onClick={this.logoutUser}><a className="trans1" href="#"><BsDoorOpen className="trans2" id="logout-icon"/> Logout</a></button>
           </li>
           <li className="nav-item">
-            <button className="nav-button"><Link className='meet-team-link trans1' to="/about"><BsArrowUpRightCircle className='team-icon trans2'/> Meet the Team</Link></button>
+            <button className="nav-button nav-link"><Link className='meet-team-link trans1' to="/about"><BsArrowUpRightCircle className='team-icon trans2'/> Meet the Team</Link></button>
           </li>
         </ul>
       );

@@ -6,6 +6,7 @@ const InfoPage = ({ user }) => {
   return (
     <div className="new-info">
       <p>Step 1: Click on "Add a new student." Write their name(s) in the form, then click on the submit button.</p>
+      <br />
       <p>Step 2: Click on "Add a new class." Write the name of a class and its subject, then click on the submit button.</p>
     </div>
   )

@@ -19,18 +19,24 @@ const StudentForm = ({ close }) => {
     }
   };
 
+  const doNothing = (e) => {
+    e.stopPropagation();
+  }
+
   return (
     <>
       <div className="modal-background" onClick={close}/>
-      <div className="modal-child">
-        <div className="student-form-container">
-          <i className="fas fa-times" onClick={close} />
-          <StudentFormHeader
-            addMany={switchToMany}
-            viewStudents={switchToStudents}
-          />
-          {currentTab === "addMany" && <AddManyFormContainer />}
-          {currentTab === "students" && <StudentIndexContainer showDelete={true} />}
+      <div className="centerer" onClick={close}>
+        <div className="modal-child" onClick={doNothing}>
+          <div className="student-form-container">
+            <i className="fas fa-times" onClick={close} />
+            <StudentFormHeader
+              addMany={switchToMany}
+              viewStudents={switchToStudents}
+            />
+            {currentTab === "addMany" && <AddManyFormContainer />}
+            {currentTab === "students" && <StudentIndexContainer showDelete={true} />}
+          </div>
         </div>
       </div>
     </>

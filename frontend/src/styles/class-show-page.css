@@ -11,7 +11,8 @@
 }
 
 .class-show-page header .top-line {
-  width: 500px;
+  /* width: 500px; */
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,7 +32,7 @@
   display: flex;
   flex-direction: column;
   top: -10px;
-  right: -70px;
+  right: -80px;
 }
 
 
@@ -113,6 +114,16 @@
 
 /******************************************/
 /* for the add-students-to-class modal: */
+
+.class-show-page .centerer {
+  z-index: 23;
+  justify-content: center;
+}
+
+.class-show-page .modal-child {
+  z-index: 24;
+}
+
 .class-show-page .student-form-container {
   display: flex;
   flex-direction: column;
@@ -178,4 +189,21 @@
 
 .error-text {
   color: #FFCCCC;
+}
+
+@media (max-width: 600px) {
+  .class-show-page .student-form-container .student-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .class-show-page .add-something-button-holder + .student-index .student-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1100px) {
+  .student-index-item,
+  .student-index-item * {
+    height: 100%;
+  }
 }

@@ -26,7 +26,8 @@
 }
 
 .class-page .class-index .new-info p {
-    color: red;
+  margin: 0 2rem;
+  color: red;
 }
 
 .class-page .class-index .class-list {
@@ -55,6 +56,14 @@
   background-color: #009DAE;
 }
 
+.class-page .centerer {
+  z-index: 23;
+}
+
+.class-page .modal-child {
+  z-index: 24;
+}
+
 .class-page .class-form {
   position: relative;
   display: flex;
@@ -63,13 +72,15 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  padding: 20px;
+  padding: 1rem;
 }
 
 .class-page .class-form input {
-  padding: 5px;
+  padding: 0.5em;
   margin-bottom: 10px;
   width: 80%;
+  border: 2px solid #009DAE;
+  border-radius: 5px;
 }
 
 .class-page .class-form button {
@@ -78,11 +89,11 @@
 }
 
 .class-page .class-form i.fa-times, .class-page .student-form-container i.fa-times {
-  padding: 5px;
+  /* padding: 5px; */
   position: absolute;
   font-size: 20px;
-  top: -25px;
-  right: -20px;
+  top: -5px;
+  right: 0;
 }
 
 .class-page .class-form i:hover, .class-page .student-form-container i:hover {
@@ -103,6 +114,7 @@
 .class-page .student-form-container .student-form-header {
   width: 100%;
   display: grid;
+  margin-top: 1.5rem;
   align-items: center;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
@@ -153,10 +165,9 @@
   display: grid;
   height: 100%;
   width: 100%;
-  /* grid-template-rows: repeat(8, 1fr); */
+  margin-top: 1.5rem;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 1fr 1fr 1fr;
-  /* grid-template-columns: repeat(4, 1fr); */
   grid-gap: 10px;
   padding: 0;
 }
@@ -179,6 +190,8 @@
 }
 
 .class-page .student-form-container .student-index ul li .dots {
+  position: relative;
+  right: 0;
   display: flex;
   align-items: center;
 }
@@ -207,7 +220,7 @@
 
 .class-page .separator {
   height: 10px;
-  width: 500px;
+  width: 80%;
   margin-top: 10px;
   border-bottom: 1px solid #FFE652;
 }
@@ -218,4 +231,29 @@
 
 .class-page .class-list a {
   text-decoration: none;
+}
+
+@media (max-width: 403px) {
+  .add-many-tab, .add-one-tab {
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 665px) {
+  .class-page .student-form-container .student-index ul li .dots {
+    display: none;
+  }
+
+  .class-page .class-index, 
+  .class-page .class-list {
+    width: 80%;
+  }
+
+  .class-page .class-list li,
+  .class-page .class-list li a {
+    width: 100%;
+  }
 }

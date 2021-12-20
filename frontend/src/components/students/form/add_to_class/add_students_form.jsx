@@ -46,25 +46,31 @@ const AddStudentsForm = ({ klass, allStudents, addStudents, close }) => {
     }
   };
 
+  const doNothing = (e) => {
+    e.stopPropagation();
+  }
+
   return (
     <>
       <div className="modal-background" onClick={close} />
-      <div className="modal-child">
-        <div className="student-form-container">
-          <i className="fas fa-times" onClick={close} />
-          <h2>Select the students you want to add</h2>
-          <SelectableStudentIndexContainer toggle={addOrRemoveStudent} />
-          {error && <p className="error-text">{error}</p>}
-          {isLoading ? (
-            <ReactLoading
-              type={"spinningBubbles"}
-              color={"#808080"}
-              height={50}
-              width={50}
-            />
-          ) : (
-            <button className={`btn ${disabled}`} onClick={handleSubmit}>Add to {klass.name}</button>
-          )}
+      <div className="centerer" onClick={close}>
+        <div className="modal-child" onClick={doNothing}>
+          <div className="student-form-container">
+            <i className="fas fa-times" onClick={close} />
+            <h2>Select the students you want to add</h2>
+            <SelectableStudentIndexContainer toggle={addOrRemoveStudent} />
+            {error && <p className="error-text">{error}</p>}
+            {isLoading ? (
+              <ReactLoading
+                type={"spinningBubbles"}
+                color={"#808080"}
+                height={50}
+                width={50}
+              />
+            ) : (
+              <button className={`btn ${disabled}`} onClick={handleSubmit}>Add to {klass.name}</button>
+            )}
+          </div>
         </div>
       </div>
     </>
