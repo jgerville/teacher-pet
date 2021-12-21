@@ -1,10 +1,19 @@
-.report-form-container {
-  /* display: flex; */
-  /* justify-content: space-between; */
+.report-form-title {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#report-student-name {
+  margin: 2em 4em 0 0;
+  align-items: center;
+  font-size: 24px;
+  text-align: center;
+  vertical-align: center;
 }
 
 .report-form {
-  min-width: 50em;
+  /* min-width: 50em; */
   background-color: #C2FFF9;
 }
 
@@ -13,7 +22,7 @@
   padding: 3em;
   display: flex;
   justify-content: space-between;
-  min-width: 50em;
+  /* min-width: 50em; */
   border-radius: 8px;
   background-color: #C2FFF9;
 }
@@ -31,18 +40,22 @@
   border-radius: 8px;
 }
 
-#all-cat-container {
+/* #all-cat-container {
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-between;
+} */
+
+#all-cat-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3em;
 }
 
-/* .report-form-memo {
-  width: 16em;
-  margin: 0 3em 0 0;
-  background-color: #71DFE7;
-  padding: 1em;
-  border-radius: 8px;
-} */
+.cat-container {
+  display: inline-flex;
+  flex-direction: column;
+}
 
 .multi-radio-container {
   background-color: #71DFE7;
@@ -63,12 +76,9 @@
   border: 0.1em solid #009DAE;
 }
 
-/* h5 {
-  color: white;
-} */
-
 .boolean-radio-container {
   display: flex;
+  flex-direction: column;
   background-color: #71DFE7;
   padding: 1em;
   border-radius: 8px;
@@ -87,13 +97,33 @@
   padding: 0.3em 0 0 0;
 }
 
+.boolean-row, .boolean-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.boolean-header h5 {
+  margin-right: 0.8rem;
+}
+
+.radio-buttons, .true-and-false {
+  display: flex;
+  justify-content: space-evenly;
+  width: 5rem;
+}
+
+.true-and-false h6 {
+  margin: 0 0.5rem;
+}
+
 .boolean-labels {
   margin: 0 0 0 0;
 }
 
 .boolean-category {
   line-height: 24px;
-  margin: 0 3em;
+  /* margin: 0 3em; */
 }
 
 .boolean-radio {
@@ -105,20 +135,6 @@
   padding-bottom: 2em;
   display: flex;
   justify-content: center;
-}
-
-.report-form-title {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-#report-student-name {
-  margin: 2em 4em 0 0;
-  align-items: center;
-  font-size: 24px;
-  text-align: center;
-  vertical-align: center;
 }
 
 #report-data-submit {
@@ -186,4 +202,41 @@ input[type=radio]:checked::before {
 
 :root {
   --radio-filter-color: #d4bd36;
+}
+
+@media (max-width: 1000px) {
+  .report-form-top {
+    flex-direction: column;
+    gap: 3em;
+  }
+
+  .multi-radio-container {
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+    /* align-items: center; */
+  }
+
+  #all-cat-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 726px) {
+  #all-cat-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .multi-radio-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 638px) {
+  .boolean-radio-container {
+
+  }
 }
