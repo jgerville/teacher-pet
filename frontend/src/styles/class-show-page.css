@@ -115,13 +115,14 @@
 /******************************************/
 /* for the add-students-to-class modal: */
 
-.class-show-page .add-students-centerer {
+.class-show-page .centerer {
   z-index: 23;
   justify-content: center;
 }
 
 .class-show-page .modal-child {
   z-index: 24;
+  height: 80vh;
 }
 
 .class-show-page .student-form-container {
@@ -189,6 +190,12 @@
 
 .error-text {
   color: #FFCCCC;
+}
+
+@media (max-width: 386px) {
+  .class-show-page .centerer .student-form-container .student-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 600px) {

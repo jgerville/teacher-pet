@@ -62,9 +62,7 @@
   z-index: 23;
 }
 
-/* .class-page .class-form-centerer .modal-child, */
 .class-page .view-students-centerer .modal-child {
-  /* height: fit-content; */
   height: 80vh;
   overflow: scroll;
 }
@@ -73,9 +71,6 @@
   overflow: auto;
 }
 
-.class-page .view-students-centerer .modal-child {
-  height: 80vh;
-}
 
 .class-page .modal-child {
   z-index: 24;
