@@ -123,7 +123,6 @@
 
 .boolean-category {
   line-height: 24px;
-  /* margin: 0 3em; */
 }
 
 .boolean-radio {
@@ -235,8 +234,26 @@ input[type=radio]:checked::before {
   }
 }
 
-@media (max-width: 638px) {
+@media (max-width: 460px) {
   .boolean-radio-container {
+    gap: 1rem;
+  }
 
+  .radio-buttons, .true-and-false {
+    width: 3rem;
+  }
+
+  .true-and-false h6 {
+    margin: 0 0.1rem;
+  }
+
+  .report-form-top, .report-form-bottom {
+    margin: 3em 0 1em;
+    padding: 2em;
+  }
+  
+  .report-form-bottom {
+    padding: 1em;
+    margin: 1em 2em;
   }
 }
