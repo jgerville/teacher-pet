@@ -12,7 +12,10 @@
   align-items: center;
 }
 
-.centerer {
+.centerer,
+.class-form-centerer,
+.add-students-centerer,
+.view-students-centerer {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -33,7 +36,8 @@
   padding-right: 1rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  overflow:scroll;
+  overflow: scroll;
+  /* height: fit-content; */
   transition: all ease 1s;
 }
 

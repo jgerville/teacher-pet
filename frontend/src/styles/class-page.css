@@ -56,8 +56,25 @@
   background-color: #009DAE;
 }
 
-.class-page .centerer {
+.class-page .class-form-centerer,
+.class-page .add-students-centerer,
+.class-page .view-students-centerer {
   z-index: 23;
+}
+
+/* .class-page .class-form-centerer .modal-child, */
+.class-page .view-students-centerer .modal-child {
+  /* height: fit-content; */
+  height: 80vh;
+  overflow: scroll;
+}
+
+.class-page .add-students-centerer .modal-child {
+  overflow: auto;
+}
+
+.class-page .view-students-centerer .modal-child {
+  height: 80vh;
 }
 
 .class-page .modal-child {
@@ -102,16 +119,20 @@
 
 .class-page .student-form-container {
   position: relative;
-  display: flex;
+  display: block;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   width: 100%;
   height: 100%;
+  /* height: fit-content; */
+  /* height: 80vh; */
+  /* overflow: auto; */
 }
 
 .class-page .student-form-container .student-form-header {
+  float: left;
   width: 100%;
   display: grid;
   margin-top: 1.5rem;
@@ -147,6 +168,8 @@
   padding: 8px;
   width: 100%;
   height: 90px;
+  border: 2px solid #009DAE;
+  border-radius: 5px;
   resize: none;
 }
 
@@ -156,6 +179,7 @@
 }
 
 .class-page .student-form-container .student-index {
+  float: left;
   width: 100%;
   text-align: left;
 }
@@ -176,6 +200,9 @@
   position: relative;
   display: flex;
   align-items: center;
+  background-color: #FFCCCC;
+  border-radius: 8px;
+  padding: 2px 5px;
 }
 
 .class-page .student-form-container .student-index ul li i {
@@ -231,6 +258,12 @@
 
 .class-page .class-list a {
   text-decoration: none;
+}
+
+@media (max-width: 386px) {
+  .class-page .student-form-container .student-index ul {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 403px) {

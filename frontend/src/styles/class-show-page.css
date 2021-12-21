@@ -115,7 +115,7 @@
 /******************************************/
 /* for the add-students-to-class modal: */
 
-.class-show-page .centerer {
+.class-show-page .add-students-centerer {
   z-index: 23;
   justify-content: center;
 }

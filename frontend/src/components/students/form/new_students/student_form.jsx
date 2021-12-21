@@ -6,16 +6,19 @@ import StudentIndexContainer from "../../index/student_index_container";
 
 const StudentForm = ({ close }) => {
   const [currentTab, setCurrentTab] = useState("addMany");
+  const [centerer, setCenterer] = useState("add-students-centerer")
 
   const switchToMany = () => {
     if (currentTab !== "addMany") {
       setCurrentTab("addMany");
+      setCenterer("add-students-centerer")
     }
   };
 
   const switchToStudents = () => {
     if (currentTab !== "students") {
       setCurrentTab("students");
+      setCenterer("view-students-centerer")
     }
   };
 
@@ -26,7 +29,7 @@ const StudentForm = ({ close }) => {
   return (
     <>
       <div className="modal-background" onClick={close}/>
-      <div className="centerer" onClick={close}>
+      <div className={centerer} onClick={close}>
         <div className="modal-child" onClick={doNothing}>
           <div className="student-form-container">
             <i className="fas fa-times" onClick={close} />

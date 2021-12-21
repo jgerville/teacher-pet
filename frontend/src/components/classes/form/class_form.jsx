@@ -37,7 +37,7 @@ const ClassForm = ({ errors, createClass, close }) => {
   return (
     <>
       <div className="modal-background"/>
-      <div className="centerer" onClick={close}>
+      <div className="class-form-centerer" onClick={close}>
         <div className="modal-child" onClick={doNothing}>
           <form className="class-form">
             <i className="fas fa-times" onClick={close} />
