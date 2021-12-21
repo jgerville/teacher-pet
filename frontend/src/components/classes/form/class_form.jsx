@@ -62,7 +62,7 @@ const ClassForm = ({ errors, createClass, close }) => {
             <input
               type="text"
               id="note"
-              placeholder="note"
+              placeholder="Note"
               onChange={(e) => setNote(e.target.value)}
               value={note}
             />

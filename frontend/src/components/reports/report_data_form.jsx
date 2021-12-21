@@ -132,7 +132,7 @@ class ReportForm extends React.Component {
             </div>
             <div className="boolean-radio-container">
               <div className="boolean-header">
-                <h5>Highlights (choose 0-3)</h5>
+                <h5>Highlights (optional)</h5>
                 <div className="true-and-false">
                   <h6>True</h6>
                   <h6>False</h6>

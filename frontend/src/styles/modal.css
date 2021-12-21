@@ -63,7 +63,8 @@
   /* background-color: #C2FFF9; */
 }
 
-.session-form div ul {
+
+.session-form ul, .session-form span {
   margin-top: 10px;
   display: flex;
   padding: 0;
@@ -75,12 +76,14 @@
 }
 
 .session-submit {
+  position: relative;
   transition: 0.3s ease-out;
   text-align: center;
   font-size: 16px;
   background-color: #009DAE;
   /* border: 1px solid rgb(184, 34, 45); */
   color: #FFF;
+  z-index: 30;
 }
 
 .session-submit:hover {

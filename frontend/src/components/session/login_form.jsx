@@ -9,13 +9,15 @@ class LoginForm extends React.Component {
       email: '',
       password: '',
       disabled: "disabled",
-      errors: {}
+      errors: {},
+      incompleteMessage: '',
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.loginDemoUser = this.loginDemoUser.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.closeModal = this.props.closeModal.bind(this);
+    this.showMessageIfDisabled = this.showMessageIfDisabled.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -42,18 +44,13 @@ class LoginForm extends React.Component {
     }
   }
 
-  // switchModal(e) {
-  //   e.preventDefault();
-  //   this.closeModal();
-  // }
-
   componentDidMount() {
     this.props.removeSessionErrors();
   }
 
   handleSubmit(e) {
     e.preventDefault();
-
+    this.setState({ incompleteMessage: "" });
     let user = {
       email: this.state.email,
       password: this.state.password
@@ -74,6 +71,14 @@ class LoginForm extends React.Component {
       this.closeModal();
       this.props.history.push("/classes")
     })
+  }
+
+  showMessageIfDisabled(e) {
+    if (this.state.disabled) {
+      this.setState({
+        incompleteMessage: "Please fill out each field to sign up."
+      })
+    }
   }
 
   renderErrors() {
@@ -108,7 +113,10 @@ class LoginForm extends React.Component {
             <br />
             <br />
             {this.renderErrors()}
-            <input className={`session-submit btn ${this.state.disabled}`} type="submit" value="Submit" />
+            {this.state.incompleteMessage && <span>{this.state.incompleteMessage}</span>}
+            <div className="submit-container" onClick={this.showMessageIfDisabled}>
+              <input className={`session-submit btn ${this.state.disabled}`} type="submit" value="Submit" />
+            </div>
 
           </div>
         </form>
