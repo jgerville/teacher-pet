@@ -72,3 +72,9 @@
     #logout-icon {
       font-size: 24px;
 }
+
+@media (max-width: 355px) {
+  .navbar-brand a {
+    font-size: x-large;
+  }
+}
