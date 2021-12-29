@@ -55,6 +55,15 @@
   mix-blend-mode: multiply;
   font-size: 0.7em;
   padding: 0.2em 1.2em;
+  margin: 2em 1em 2em 0;
+}
+
+#splash-demo {
+  color: white;
+  background-color: #009DAE;
+  mix-blend-mode: multiply;
+  font-size: 0.7em;
+  padding: 0.2em 1.2em;
   margin: 2em 0;
 }
 
